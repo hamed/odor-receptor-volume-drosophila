@@ -16,7 +16,7 @@
 % \geometry{margin=2in} % for example, change the margins to 2 inches all round
 % \geometry{landscape} % set up the page for landscape
 %   read geometry.pdf for detailed page layout information
-
+\usepackage{mathtools}
 \usepackage{graphicx} % support the \includegraphics command and options
 
 % \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
@@ -69,6 +69,65 @@ To be writen later.
 odor receptors.
 
 \section{Methods}
+
+Let the response of receptor neuron $n$ to the molecule $m$ be $r_{nm}$. 
+The response $r_{nm}$ depends on the volume of the molecule, $v_m$, 
+and many other physio-chemical properties of the molecule $m$.
+Therefore, we separate the response $r_{nm}$ in two terms, 
+\begin{equation}
+r_{nm} = f_n(v_m) \psi_{nm}.
+\label{eqn:factors}
+\end{equation}
+The first term, $f_n(v)$, depends only on the molecular volume of odorants.
+The second term, $\psi_{nm}$ may include every other properties of molecules, but the molecular volume.
+Both terms are characteristic of each receptor, and they might vary from neuron to neuron.
+In fact, the first term, $f_n(v)$, is the tuning curve of neuron $n$ in respect to the feature of molecular volume, 
+and like many other tuning curves, it can be approximated with a Gaussian function
+\[
+\displaystyle f_n(v) = e^{-\frac{(v-v_n)^2}{2\sigma^2_n}}, 
+\]
+where, $v_n$ is the preferred molecular volume of receptor $n$ and $\sigma_n$ represents its volume selectivity. 
+In this work we want to estimate $v_n$ and $\sigma_n$. 
+To do so, first we calculate the response weighted average of molecular volumes, 
+$\frac{\sum_m v_m r_{nm}}{\sum_m r_{nm}}$ and then we use equation \ref{eqn:factors} to expand it:
+\[
+\frac{\displaystyle \sum_m v_m r_{nm}}{\displaystyle \sum_m r_{nm}} = \frac{\displaystyle \sum_m v_m f_n(v_m) \psi_{nm}}{\displaystyle \sum_m f_n(v_m) \psi_{nm}}.
+\]
+Here we can replace $\sum_m$ with $\int dv$:
+\[
+\sum_m \dots f_n(v_m) \psi_{nm} =  \langle \psi_{nm} \rangle_m \int_0^\infty \dots f_n(v) g(v)  dv, 
+\]
+in which, $\langle \psi_{nm} \rangle_m$ denotes the average of $\psi_{nm}$ over variable $m$, 
+and $g(v)$ is the density of states, it says the molecular volume of how many odorants are between $v$ and $v+dv$.
+The density of states, $g(v)$, is a characteristic of odorants and it can be approximated with a Gaussian function as well, 
+\[
+\displaystyle g(v) = e^{-\frac{(v- \langle v_m \rangle)^2}{2\sigma_{v}^2}},
+\]
+
+
+\[
+h_n(v) = f_n(v) g(v)
+\]
+
+
+\[
+\sum_m \dots f_n(v_m) \psi_{nm} = \langle \psi_{nm} \rangle_m \int_v \dots h_n(v) dv 
+\]
+
+
+
+\[
+\displaystyle h(v) = e^{-\frac{(v-\mu_n)^2}{2\sigma^2}}
+\]
+
+
+\begin{eqnarray}
+\frac{\sum_m v_m r_{nm}}{\sum_m r_{nm}} &=& \frac{\langle \psi_{nm} \rangle_m \int_v v h_n(v) dv }{\langle \psi_{nm} \rangle_m \int_v  h_n(v) dv }\\
+ &=& \frac{\int_v v h_n(v) dv}{ \int_v  h_n(v) dv } \\
+ &=& \langle v \rangle_{h_n}
+\end{eqnarray}•
+
+
 gaussian dists, source of data, etc.
 
 \section{Results}
