@@ -18,6 +18,11 @@
 %   read geometry.pdf for detailed page layout information
 \usepackage{mathtools}
 \usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+
 
 % \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
@@ -65,14 +70,26 @@ To be writen later.
 \end{abstract}
 
 \section{Introduction}
+
 \begin{figure}
-\centering
-\includegraphics[width=0.5 \textwidth]{fig/binding-pocket}
-\caption{This figure shows three different scenarios of receptor-odorant interaction according to the molecular volume of odorant and the volume of binding-pocket of the receptor.
-From left to right, misfit because of small size of molecule, perfect match and misfit because of large size of the molecule. 
-The red disk (dark grey in b\&w) demonstrate an odorant molecule, 
-and the blue shape (light grey in b\&w) represents an odor-receptor and binding-pocket.}
-\label{fig:binding-pocket}
+	\centering
+		\begin{subfigure}[b]{0.5 \textwidth}
+			\includegraphics[width=\textwidth]{fig/binding-pocket}
+			\caption{Binding-pocket size}
+			\label{fig:pocket-size}
+		\end{subfigure}
+	\begin{subfigure}[b]{0.5 \textwidth}
+		\includegraphics[width=\textwidth]{fig/binding-pocket-flex}
+		\caption{Binding-pocket flexibility}
+		\label{fig:pocket-flex}
+	\end{subfigure}
+	\caption{This figure shows different scenarios that may happen when an odorant molecule binds to a receptor. 
+	Figure \ref{fig:pocket-size} shows the effect of binding-pocket size. 
+	From left to right, misfit because of small size of molecule, perfect match and misfit because of large size of the molecule.
+	Figure \ref{fig:pocket-flex} demonstrates that the flexibility of a receptor may compensate the size mismatches. 
+	The red disk (dark grey in b\&w) demonstrate an odorant molecule, 
+	and the blue shape (light grey in b\&w) represents an odor-receptor and binding-pocket.}
+	\label{fig:binding-pocket}
 \end{figure}•
 
 
