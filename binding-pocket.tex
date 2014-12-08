@@ -138,18 +138,22 @@ and then we calculate $v_n$ from
 \begin{equation}
 v_n =  \sigma_n^2 \left ( \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}} \right ).
 \end{equation}•
-The resulting $f_n(v)$ are plotted over the actual data, for one receptor (Fig.~\ref{fig:Or42a}) and for all (Fig.~\ref{fig:vol-res}).
+The resulting $f_n(v)$ are plotted over the actual data, for one receptor and for all 28 receptors (Fig.~\ref{fig:vol-res}).
 Now we know the preferred volume $v_n$ of each receptor and also its volume selectivity $\sigma_n$.
 
 
 \section{Results}
 
-We calculated $f_n(v)$ for 28 receptors (Fig. \ref{fig:vol-res}),  \ref{fig:Or42a}
+We calculated the parameters of $f_n(v)$ for 28 receptors (Fig. \ref{fig:vol-res}). 
+The calculated values, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volume} and \ref{fig:volume_selectivity} respectively.
+Figure \ref{fig:preferred_volume} demonstrate that the molecular volume preference of receptors are different. 
+Figure \ref{fig:volume_selectivity} illustrate that the volume selectivity of receptors are also different.
+
 
 \begin{figure}
 
 \caption{Response of odor-receptor Or42a  versus molecular volume of odorants (Circles), and the fitted function $f_n(v)$ from Eq. \ref{eqn:factors} (solid line).}
-\label{fig:Or42a}
+
 \end{figure}•
 
 \begin{figure}
@@ -157,7 +161,7 @@ We calculated $f_n(v)$ for 28 receptors (Fig. \ref{fig:vol-res}),  \ref{fig:Or42
 \includegraphics[width=\textwidth]{fig/vol-res}
 \includegraphics[width=0.75 \textwidth]{fig/vol-res-Or42a}
 \caption{Response of odor-receptors  versus molecular volume of odorants (Circles), and the fitted functions $f_n(v)$ from Eq. \ref{eqn:factors} (solid lines), 
-for all 28 receptors (top) and one selected receptor Or42a(bottom). }
+for all 28 receptors (top) and for one selected receptor Or42a(bottom) to demonstrate the details. }
 \label{fig:vol-res}
 \end{figure}•
 
@@ -166,6 +170,7 @@ for all 28 receptors (top) and one selected receptor Or42a(bottom). }
 \caption{The prefered volumes of 28 receptors ($v_n$), and their error bars. Error bars are calculated using Jack-Knife method. 
 This figure suggests that the size of binding-pocket varies across receptors. 
 Some receptors binds to smaller molecules (Or52b) but some other receptors prefer larger molecules (Or13a and Or98a).}
+\label{fig:preferred_volume}
 \end{figure}•
 
 \begin{figure}
@@ -173,6 +178,7 @@ Some receptors binds to smaller molecules (Or52b) but some other receptors prefe
 \caption{This figure shows the volume selectivity of each receptor ($\sigma_n$), the error bars are calculated using Jack-Knife method.
 Some receptors like Or30a are more volume selective but on the other hand, some other receptors like Or13a and Or42b are less sensitive toward the molecular volumes.
 This might be due to mechanical flexibility of the binding-pocket.}
+\label{fig:volume_selectivity}
 \end{figure}•
 
 \bibliographystyle{plain}
