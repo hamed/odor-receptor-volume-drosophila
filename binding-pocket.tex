@@ -67,6 +67,9 @@ To be writen later.
 \section{Introduction}
 
 \section{Methods}
+We want to study the relation between neural responses and molecular volumes, so we need the respective data. 
+We take the neural data of DoOR database \cite{DoOR2010} and we calculate molecular volume using a computational chemistry software -- VEGA ZZ. 
+
 A receptor neuron $n$ is excited by odorants $m \in M_n$ and the response of $r_{nm}$ is recorded, where $0 \le r_{nm} \le 1$. 
 Different neurons might be excited by different set of odorants $M_n$. 
 The response $r_{nm}$ depends on the molecular volume of the odorant, $v_m$, 
@@ -141,28 +144,31 @@ Now we know the preferred volume $v_n$ of each receptor $n$ and also its volume 
 
 \section{Results}
 
-
 \begin{figure}
 \includegraphics[width=\textwidth]{fig/vol-res-Or42a}
-\caption{Response of an odor-receptor (Or42a) versus molecular volume of odorants.}
+\caption{Response of odor-receptor Or42a  versus molecular volume of odorants (Circles), and the fitted function $f_n(v)$ from Eq. \ref{eqn:factors} (solid line).}
 \label{fig:Or42a}
 \end{figure}•
 
 \begin{figure}
 \includegraphics[width=\textwidth]{fig/vol-res}
-\caption{Response of odor-receptors  versus molecular volume of odorants.}
+\caption{Response of 28 odor-receptors  versus molecular volume of odorants (Circles), and the fitted functions $f_n(v)$ from Eq. \ref{eqn:factors} (solid lines).}
 \label{fig:vol-res}
 \end{figure}•
 
 \begin{figure}
 \includegraphics[width=\textwidth]{fig/mean-vol}
-\caption{mean volume.}
+\caption{The prefered volumes of 28 receptors, and their error bars. Error bars are calculated using Jack-Knife method. 
+This figure suggests that the size of binding-pocket varies across receptors. 
+Some receptors binds to smaller molecules (Or52b) but some other receptors prefer larger molecules (Or13a and Or98a).}
 \end{figure}•
 
 \begin{figure}
 \includegraphics[width=\textwidth]{fig/std-vol}
-\caption{std volume.}
+\caption{The selectivity of receptors.}
 \end{figure}•
 
+\bibliographystyle{plain}
+\bibliography{binding-pocket}
 
 \end{document}
