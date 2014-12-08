@@ -103,8 +103,8 @@ The response $r_{nm}$ depends on the molecular volume of the odorant, $v_m$,
 and many other possible physio-chemical properties of the molecule $m$; 
 Therefore, we separate the response $r_{nm}$ into two terms:
 \begin{equation}
-r_{nm} = f_n(v_m) \psi_{nm}.
-\label{eqn:factors}
+	r_{nm} = f_n(v_m) \psi_{nm}.
+	\label{eqn:factors}
 \end{equation}
 The first term, $f_n(v)$, depends only on the molecular volume of odorants.
 The second term, $\psi_{nm}$ may include every other properties of molecules, but the molecular volume.
@@ -112,20 +112,20 @@ Both terms are characteristic of each receptor, and they might vary from neuron 
 In fact, the first term, $f_n(v)$, is the tuning curve of neuron $n$ in respect to the feature of molecular volumes, 
 and like many other tuning curves, it can be approximated with a Gaussian function
 \begin{equation}
-\displaystyle f_n(v) = e^{-\frac{(v-v_n)^2}{2\sigma^2_n}}, 
+	\displaystyle f_n(v) = e^{-\frac{(v-v_n)^2}{2\sigma^2_n}}, 
 \end{equation}
 where, $v_n$ is the preferred molecular volume of receptor $n$ and $\sigma_n$ represents its volume selectivity. 
 In this work we want to estimate $v_n$ and $\sigma_n$. 
 To do so, first we calculate the response weighted average of molecular volumes, 
 $\frac{\sum_{m\in M_n} v_m r_{nm}}{\sum_{m\in M_n} r_{nm}}$ and then we use equation \ref{eqn:factors}:
 \begin{equation}
-\frac{\displaystyle \sum_{m\in M_n} v_m r_{nm}}{\displaystyle \sum_{m\in M_n} r_{nm}} = \frac{\displaystyle \sum_{m\in M_n} v_m f_n(v_m) \psi_{nm}}{\displaystyle \sum_{m\in M_n} f_n(v_m) \psi_{nm}}.
-\label{eqn:sta}
+	\frac{\displaystyle \sum_{m\in M_n} v_m r_{nm}}{\displaystyle \sum_{m\in M_n} r_{nm}} = \frac{\displaystyle \sum_{m\in M_n} v_m f_n(v_m) \psi_{nm}}{\displaystyle \sum_{m\in M_n} f_n(v_m) \psi_{nm}}.
+	\label{eqn:sta}
 \end{equation}
 Here we can convert $\sum$ to $\int$ following this rule:
 \begin{equation}
-\sum_{m\in M_n} \dots f_n(v_m) \psi_{nm} =  \langle \psi_{nm} \rangle_m \int_0^\infty \dots f_n(v) g_n(v)  dv. 
-\label{eqn:sigma_to_int}
+	\sum_{m\in M_n} \dots f_n(v_m) \psi_{nm} =  \langle \psi_{nm} \rangle_m \int_0^\infty \dots f_n(v) g_n(v)  dv. 
+	\label{eqn:sigma_to_int}
 \end{equation}
 In which, 
 $\langle \psi_{nm} \rangle_m$ denotes the average of $\psi_{nm}$ over all $m \in M_n$, 
@@ -134,18 +134,18 @@ In the above equation,
 $g_n(v)$ is the density of states, it says for each set of odorants $M_n$, how many molecules have a molecular volume in the range of $v$ and $v+dv$.
 This function can be approximated by a Gaussian function of the form 
 \begin{equation}
-g_n(v) = e^{-\frac{(v- v_{M_n})^2}{2\sigma_{M_n}^2}},
+	g_n(v) = e^{-\frac{(v- v_{M_n})^2}{2\sigma_{M_n}^2}},
 \end{equation}
 where $v_{M_n}$ and $\sigma_{M_n}$ are the average and standard deviation of molecular volume of the set $M_n$.
 Now we convert $\sum$ to $\int$ in equation \ref{eqn:sta} using equation \ref{eqn:sigma_to_int}, to get
 \begin{equation}
-\frac{\displaystyle \sum_{m\in M_n} v_m r_{nm}}{\displaystyle \sum_{m\in M_n} r_{nm}} = \frac{\displaystyle \int v f_n(v) g_n(v) dv}{\displaystyle \int f_n(v) g_n(v) dv}.
-\label{eqn:sta_int}
+	\frac{\displaystyle \sum_{m\in M_n} v_m r_{nm}}{\displaystyle \sum_{m\in M_n} r_{nm}} = \frac{\displaystyle \int v f_n(v) g_n(v) dv}{\displaystyle \int f_n(v) g_n(v) dv}.
+	\label{eqn:sta_int}
 \end{equation}
 We replace the product of $f_n(v)$ and $g_n(v)$ in the above equation with $h_n(v) = f_n(v) g_n(v)$, to make a simpler form
 \begin{equation}
-\frac{\displaystyle \sum_{m\in M_n} v_m r_{nm}}{\displaystyle \sum_{m\in M_n} r_{nm}} = \frac{\displaystyle \int_v v h_n(v) dv}{ \displaystyle \int_v  h_n(v) dv }.
-\label{eqn:mean}
+	\frac{\displaystyle \sum_{m\in M_n} v_m r_{nm}}{\displaystyle \sum_{m\in M_n} r_{nm}} = \frac{\displaystyle \int_v v h_n(v) dv}{ \displaystyle \int_v  h_n(v) dv }.
+	\label{eqn:mean}
 \end{equation}
 The function $h_n(v)$ is a Gaussian function because it is the product of two Gaussian functions, 
 \begin{equation}
@@ -159,11 +159,11 @@ We just calculated the mean $\mu_{h_n}$ and standard deviation $\sigma_{h_n}$ of
 Now calculating the mean $v_n$ and the standard deviation $\sigma_n$ of $f_n(v)$ is trivial,
 first we calculate $\sigma_n$ from 
 \begin{equation}
-\sigma_n^2 = \frac{\sigma^2_{g_n} \sigma^2_{h_n}}{\sigma^2_{g_n} - \sigma^2_{h_n}}
+	\sigma_n^2 = \frac{\sigma^2_{g_n} \sigma^2_{h_n}}{\sigma^2_{g_n} - \sigma^2_{h_n}}
 \end{equation}•
 and then we calculate $v_n$ from 
 \begin{equation}
-v_n =  \sigma_n^2 \left ( \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}} \right ).
+	v_n =  \sigma_n^2 \left ( \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}} \right ).
 \end{equation}•
 The resulting $f_n(v)$ are plotted over the actual data, for one receptor and for all 28 receptors (Fig.~\ref{fig:vol-res}).
 Now we know the preferred volume $v_n$ of each receptor and also its volume selectivity $\sigma_n$.
@@ -178,34 +178,28 @@ Figure \ref{fig:volume_selectivity} illustrate that the volume selectivity of re
 
 
 \begin{figure}
-
-\caption{Response of odor-receptor Or42a  versus molecular volume of odorants (Circles), and the fitted function $f_n(v)$ from Eq. \ref{eqn:factors} (solid line).}
-
+	\centering
+	\includegraphics[width=\textwidth]{fig/vol-res}
+	\includegraphics[width=0.75 \textwidth]{fig/vol-res-Or42a}
+	\caption{Response of odor-receptors  versus molecular volume of odorants (Circles), and the fitted functions $f_n(v)$ from Eq. \ref{eqn:factors} (solid lines), 
+	for all 28 receptors (top) and for one selected receptor Or42a(bottom) to demonstrate the details. }
+	\label{fig:vol-res}
 \end{figure}•
 
 \begin{figure}
-\centering
-\includegraphics[width=\textwidth]{fig/vol-res}
-\includegraphics[width=0.75 \textwidth]{fig/vol-res-Or42a}
-\caption{Response of odor-receptors  versus molecular volume of odorants (Circles), and the fitted functions $f_n(v)$ from Eq. \ref{eqn:factors} (solid lines), 
-for all 28 receptors (top) and for one selected receptor Or42a(bottom) to demonstrate the details. }
-\label{fig:vol-res}
+	\includegraphics[width=\textwidth]{fig/mean-vol}
+	\caption{The prefered volumes of 28 receptors ($v_n$), and their error bars. Error bars are calculated using Jack-Knife method. 
+	This figure suggests that the size of binding-pocket varies across receptors. 
+	Some receptors binds to smaller molecules (Or52b) but some other receptors prefer larger molecules (Or13a and Or98a).}
+	\label{fig:preferred_volume}
 \end{figure}•
 
 \begin{figure}
-\includegraphics[width=\textwidth]{fig/mean-vol}
-\caption{The prefered volumes of 28 receptors ($v_n$), and their error bars. Error bars are calculated using Jack-Knife method. 
-This figure suggests that the size of binding-pocket varies across receptors. 
-Some receptors binds to smaller molecules (Or52b) but some other receptors prefer larger molecules (Or13a and Or98a).}
-\label{fig:preferred_volume}
-\end{figure}•
-
-\begin{figure}
-\includegraphics[width=\textwidth]{fig/std-vol}
-\caption{This figure shows the volume selectivity of each receptor ($\sigma_n$), the error bars are calculated using Jack-Knife method.
-Some receptors like Or30a are more volume selective but on the other hand, some other receptors like Or13a and Or42b are less sensitive toward the molecular volumes.
-This might be due to mechanical flexibility of the binding-pocket.}
-\label{fig:volume_selectivity}
+	\includegraphics[width=\textwidth]{fig/std-vol}
+	\caption{This figure shows the volume selectivity of each receptor ($\sigma_n$), the error bars are calculated using Jack-Knife method.
+	Some receptors like Or30a are more volume selective but on the other hand, some other receptors like Or13a and Or42b are less sensitive toward the molecular volumes.
+	This might be due to mechanical flexibility of the binding-pocket.}
+	\label{fig:volume_selectivity}
 \end{figure}•
 
 \bibliographystyle{plain}
