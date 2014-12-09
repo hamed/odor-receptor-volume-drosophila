@@ -106,6 +106,15 @@
 
 
 \section{Methods}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5 \textwidth]{fig/hist-volumes}
+	\caption{Density function of molecular volumes ($g(v)$), considering all molecules. 
+		The actual density function of molecular of volumes in each experiment ($g_n(v)$) might be slightly different 
+		because each experiment uses a different subset of molecules. 
+		The solid line is a Gaussian fit (Eq. \ref{eqn:hist-volumes}).}
+	\label{fig:hist-volumes}
+\end{figure}•
 We want to study the relation between neural responses and molecular volumes, so we need the respective data. 
 We take the neural data of DoOR database \cite{DoOR2010} and we calculate molecular volume using a computational chemistry software -- VEGA ZZ. 
 
@@ -144,9 +153,10 @@ $\langle \psi_{nm} \rangle_m$ denotes the average of $\psi_{nm}$ over all $m \in
 and can be moved out of the integral for it is independent of $v$.
 In the above equation, 
 $g_n(v)$ is the density of states, it says for each set of odorants $M_n$, how many molecules have a molecular volume in the range of $v$ and $v+dv$.
-This function can be approximated by a Gaussian function of the form 
+This function can be approximated by a Gaussian function of the form (Fig.\ref{fig:hist-volumes})
 \begin{equation}
 	g_n(v) = e^{-\frac{(v- v_{M_n})^2}{2\sigma_{M_n}^2}},
+	\label{eqn:hist-volumes}
 \end{equation}
 where $v_{M_n}$ and $\sigma_{M_n}$ are the average and standard deviation of molecular volume of the set $M_n$.
 Now we convert $\sum$ to $\int$ in equation \ref{eqn:sta} using equation \ref{eqn:sigma_to_int}, to get
