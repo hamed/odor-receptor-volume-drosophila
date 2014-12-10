@@ -119,7 +119,8 @@
 We want to study the relation between neural responses and molecular volumes, so we need the respective data. 
 We take the neural data of DoOR database \cite{DoOR2010} and we calculate molecular volume using a computational chemistry software -- VEGA ZZ. 
 
-A receptor neuron $n$ is excited by odorants $m \in M_n$ and the response of $r_{nm}$ is recorded, where $0 \le r_{nm} \le 1$. 
+An olfactory receptor neuron $n$ is excited by odorants $m \in M_n$ and the response of $r_{nm}$ is recorded, 
+where $0 \le r_{nm} \le 1$. 
 Different neurons might be excited by different set of odorants $M_n$. 
 The response $r_{nm}$ depends on the molecular volume of the odorant, $v_m$, 
 and many other possible physio-chemical properties of the molecule $m$; 
@@ -135,6 +136,7 @@ In fact, the first term, $f_n(v)$, is the tuning curve of neuron $n$ in respect 
 and like many other tuning curves, it can be approximated with a Gaussian function
 \begin{equation}
 	\displaystyle f_n(v) = e^{-\frac{(v-v_n)^2}{2\sigma^2_n}}, 
+	\label{eqn:volume-dependence}
 \end{equation}
 where, $v_n$ is the preferred molecular volume of receptor $n$ and $\sigma_n$ represents its volume selectivity. 
 In this work we want to estimate $v_n$ and $\sigma_n$. 
@@ -193,7 +195,6 @@ Now we know the preferred volume $v_n$ of each receptor and also its volume sele
 
 
 \section{Results}
-
 The function $f_n(v)$ can be considered as the tuning curve of olfactory receptors in response to molecular volume;
 Therefore, each receptor has a preferred molecular volume $v_n$ and receptors can show different degree of selectivity $\sigma_n$.
 We calculated the parameters of $f_n(v)$ for 28 receptors (Fig. \ref{fig:vol-res}). 
@@ -201,12 +202,16 @@ The calculated values, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volum
 Figure \ref{fig:preferred_volume} demonstrate that the molecular volume preference of receptors are different. 
 Figure \ref{fig:volume_selectivity} illustrate that the volume selectivity of receptors are also different.
 
-It is not clear which features of molecules are measured by olfactory receptors.
-There are many works that tries to make connection between physio-chemical properties of molecule and the evoked neural response. 
-But this non-linear volume dependence is in the way and may mask important relations between molecules and neural responses.
+It is not clear which features of molecules are measured by olfactory receptors, yet. 
+It is a topic of ongoing researches 
+and there are many works that tries to make connections between physio-chemical properties of molecule 
+and the evoked neural response. 
+But this non-linear volume dependence (Eq. \ref{eqn:factors} and Eq. \ref{eqn:volume-dependence}) is in the way. 
+It may mask important relations between molecules and neural responses.
+
 By considering our finding and correcting the effect of molecular volume on the response of olfactory receptor neurons, 
 one might discover more subtle dependence between molecular features and neural responses, 
-which otherwise would be masked by this effect.
+which otherwise would be masked by this non-linear effect.
 
 The preferred volume of each receptor may provides us with information about the size of the binding-pocket.
 The volume selectivity of a receptor may results from the rigidity or flexibility of the binding-pocket structure; 
