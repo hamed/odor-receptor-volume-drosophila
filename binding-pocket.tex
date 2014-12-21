@@ -199,28 +199,29 @@ that includes the neural responses of most olfactory receptors (OR) of Drosophil
 		The solid line is a Gaussian fit (Eq. \ref{eqn:hist-volumes}).}
 	\label{fig:hist-volumes}
 \end{figure}•
-In this section, we introduce the format of neural data, 
-the source of molecular volumes, 
-and the mathematical method of calculating the size and flexibility of binding-pocket from the neural data.
-
 We want to study the relation between neural responses and molecular volumes, so we need the respective data. 
 We take the neural data of DoOR database \cite{DoOR2010} and we calculate molecular volume using a computational chemistry software -- VEGA ZZ. 
 
-An olfactory receptor neuron $n$ is excited by odorants $m \in M_n$ and the response of $r_{nm}$ is recorded, 
-where $0 \le r_{nm} \le 1$. 
-Different neurons might be excited by different set of odorants $M_n$. 
+DoOR database can be summarized in an $N\times M$ matrix. 
+Its elements $r_{nm}$, are the response of neuron $n$ to odorant $m$. 
+This matrix is normalized between 0 and 1 so we have $0 \le r_{nm} \le 1$, where 1 is the strongest response.
+The only problem is that this matrix has some missing values (NA), 
+different neurons are excited by different set of odorants, 
+so  when summing over $m$, $\sum_m$, we are calculating $\sum_{m, r_{nm} \neq \text{NA}}$, but for simplicity, 
+we use the former notation. 
+
 The response $r_{nm}$ depends on the molecular volume of the odorant, $v_m$, 
-and many other possible physio-chemical properties of the molecule $m$; 
-Therefore, we separate the response $r_{nm}$ into two terms:
+and other physio-chemical properties of the molecule $m$; 
+We assume that we can separate the response $r_{nm}$ into two terms:
 \begin{equation}
 	r_{nm} = f_n(v_m) \psi_{nm}.
 	\label{eqn:factors}
 \end{equation}
-The first term, $f_n(v)$, depends only on the molecular volume of odorants.
-The second term, $\psi_{nm}$ may include every other properties of molecules, but the molecular volume.
+The first term, $f_n(v_m)$, depends only on the molecular volume of odorants.
+The second term, $\psi_{nm}$ include every other influential properties of molecules, but the molecular volume.
 Both terms are characteristic of each receptor, and they might vary from neuron to neuron.
-In fact, the first term, $f_n(v)$, is the tuning curve of neuron $n$ in respect to the feature of molecular volumes, 
-and like many other tuning curves, it can be approximated with a Gaussian function
+In fact, the first term, $f_n(v)$, is the tuning curve of neuron $n$ in respect to the molecular volumes, 
+it can be approximated with a Gaussian function
 \begin{equation}
 	\displaystyle f_n(v) = e^{-\frac{(v-v_n)^2}{2\sigma^2_n}}, 
 	\label{eqn:volume-dependence}
@@ -228,35 +229,39 @@ and like many other tuning curves, it can be approximated with a Gaussian functi
 where, $v_n$ is the preferred molecular volume of receptor $n$ and $\sigma_n$ represents its volume selectivity. 
 In this work we want to estimate $v_n$ and $\sigma_n$. 
 To do so, first we calculate the response weighted average of molecular volumes, 
-$\frac{\sum_{m\in M_n} v_m r_{nm}}{\sum_{m\in M_n} r_{nm}}$ and then we use equation \ref{eqn:factors}:
+$\frac{\sum_{m} v_m r_{nm}}{\sum_{m} r_{nm}}$ and then we use equation \ref{eqn:factors}:
 \begin{equation}
-	\frac{\displaystyle \sum_{m\in M_n} v_m r_{nm}}{\displaystyle \sum_{m\in M_n} r_{nm}} = \frac{\displaystyle \sum_{m\in M_n} v_m f_n(v_m) \psi_{nm}}{\displaystyle \sum_{m\in M_n} f_n(v_m) \psi_{nm}}.
+	\frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} = \frac{\displaystyle \sum_{m} v_m f_n(v_m) \psi_{nm}}{\displaystyle \sum_{m} f_n(v_m) \psi_{nm}}.
 	\label{eqn:sta}
 \end{equation}
 Here we can convert $\sum$ to $\int$ following this rule:
 \begin{equation}
-	\sum_{m\in M_n} \dots f_n(v_m) \psi_{nm} =  \langle \psi_{nm} \rangle_m \int_0^\infty \dots f_n(v) g_n(v)  dv. 
+	\sum_{m} \dots f_n(v_m) \psi_{nm} =  \langle \psi_{nm} \rangle_m \int_0^\infty \dots f_n(v) g_n(v)  dv. 
 	\label{eqn:sigma_to_int}
 \end{equation}
 In which, 
-$\langle \psi_{nm} \rangle_m$ denotes the average of $\psi_{nm}$ over all $m \in M_n$, 
-and can be moved out of the integral for it is independent of $v$.
+$\langle \psi_{nm} \rangle_m$ denotes the average of $\psi_{nm}$ over all $m$ and where $r_{nm} \neq \text{NA}$. 
+It can be moved out of the integral for it is independent of $v$.
 In the above equation, 
-$g_n(v)$ is the density of states, it says for each set of odorants $M_n$, how many molecules have a molecular volume in the range of $v$ and $v+dv$.
+$g_n(v)$ is the density of states, it says how many molecules have a molecular volume in the range of $v$ and $v+dv$.
 This function can be approximated by a Gaussian function of the form (Fig.\ref{fig:hist-volumes})
 \begin{equation}
-	g_n(v) = e^{-\frac{(v- v_{M_n})^2}{2\sigma_{M_n}^2}},
+	g_n(v) = e^{-\frac{(v- v_{g_n})^2}{2 \sigma_{g_n}^2}},
 	\label{eqn:hist-volumes}
 \end{equation}
-where $v_{M_n}$ and $\sigma_{M_n}$ are the average and standard deviation of molecular volume of the set $M_n$.
+ideally, $g_n(v)$ should not depend on the neuron $n$ and it should be stated as $g(v)$, 
+it is the property of odorant, not neurons. 
+But here, we have many missing values ($r_{nm} = NA$), 
+so we have to calculate $g_n(v)$ for each neuron separately; 
+Therefor, $v_{g_n}$ and $\sigma_{g_n}$ are the average and standard deviation of molecular volume while $r_{nm} \neq \text{NA}$.
 Now we convert $\sum$ to $\int$ in equation \ref{eqn:sta} using equation \ref{eqn:sigma_to_int}, to get
 \begin{equation}
-	\frac{\displaystyle \sum_{m\in M_n} v_m r_{nm}}{\displaystyle \sum_{m\in M_n} r_{nm}} = \frac{\displaystyle \int v f_n(v) g_n(v) dv}{\displaystyle \int f_n(v) g_n(v) dv}.
+	\frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} = \frac{\displaystyle \int v f_n(v) g_n(v) dv}{\displaystyle \int f_n(v) g_n(v) dv}.
 	\label{eqn:sta_int}
 \end{equation}
 We replace the product of $f_n(v)$ and $g_n(v)$ in the above equation with $h_n(v) = f_n(v) g_n(v)$, to make a simpler form
 \begin{equation}
-	\frac{\displaystyle \sum_{m\in M_n} v_m r_{nm}}{\displaystyle \sum_{m\in M_n} r_{nm}} = \frac{\displaystyle \int_v v h_n(v) dv}{ \displaystyle \int_v  h_n(v) dv }.
+	\frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} = \frac{\displaystyle \int_v v h_n(v) dv}{ \displaystyle \int_v  h_n(v) dv }.
 	\label{eqn:mean}
 \end{equation}
 The function $h_n(v)$ is a Gaussian function because it is the product of two Gaussian functions, 
@@ -277,7 +282,7 @@ and then we calculate $v_n$ from
 \begin{equation}
 	v_n =  \sigma_n^2 \left ( \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}} \right ).
 \end{equation}•
-The resulting $f_n(v)$ are plotted over the actual data, for one receptor and for all 28 receptors (Fig.~\ref{fig:vol-res}).
+The resulting $f_n(v)$ are plotted over the actual data, for one receptor and for all XX receptors (Fig.~\ref{fig:vol-res}).
 Now we know the preferred volume $v_n$ of each receptor and also its volume selectivity $\sigma_n$.
 
 
