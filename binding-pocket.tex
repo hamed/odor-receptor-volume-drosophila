@@ -62,6 +62,8 @@
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
 
+\newcommand{\numberofreceptors}{28 }
+
 
 \begin{document}
 \maketitle
@@ -199,6 +201,7 @@ that includes the neural responses of most olfactory receptors (OR) of Drosophil
 		The solid line is a Gaussian fit (Eq. \ref{eqn:hist-volumes}).}
 	\label{fig:hist-volumes}
 \end{figure}•
+
 We want to study the relation between neural responses and molecular volumes, so we need the respective data. 
 We take the neural data of DoOR database \cite{DoOR2010} and we calculate molecular volume using a computational chemistry software -- VEGA ZZ. 
 
@@ -282,11 +285,11 @@ and then we calculate $v_n$ from
 \begin{equation}
 	v_n =  \sigma_n^2 \left ( \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}} \right ).
 \end{equation}•
-The resulting $f_n(v)$ are plotted over the actual data, for one receptor and for all XX receptors (Fig.~\ref{fig:vol-res}).
+The resulting $f_n(v)$ are plotted over the actual data, for one receptor and for \numberofreceptors  receptors (Fig.~\ref{fig:vol-res}).
 Now we know the preferred volume $v_n$ of each receptor and also its volume selectivity $\sigma_n$.
 
 
-\section{Results}
+\section{Results and discussions}
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{fig/vol-res}
@@ -295,7 +298,6 @@ Now we know the preferred volume $v_n$ of each receptor and also its volume sele
 	for all 28 receptors (top) and for one selected receptor Or42a(bottom) to demonstrate the details. }
 	\label{fig:vol-res}
 \end{figure}•
-
 \begin{figure}
 	\includegraphics[width=\textwidth]{fig/mean-vol}
 	\caption{The prefered volumes of 28 receptors ($v_n$), and their error bars. Error bars are calculated using Jack-Knife method. 
@@ -303,7 +305,6 @@ Now we know the preferred volume $v_n$ of each receptor and also its volume sele
 	Some receptors binds to smaller molecules (Or52b) but some other receptors prefer larger molecules (Or13a and Or98a).}
 	\label{fig:preferred_volume}
 \end{figure}•
-
 \begin{figure}
 	\includegraphics[width=\textwidth]{fig/std-vol}
 	\caption{This figure shows the volume selectivity of each receptor ($\sigma_n$), the error bars are calculated using Jack-Knife method.
@@ -312,9 +313,19 @@ Now we know the preferred volume $v_n$ of each receptor and also its volume sele
 	\label{fig:volume_selectivity}
 \end{figure}•
 
-The function $f_n(v)$ can be considered as the tuning curve of olfactory receptors in response to molecular volume;
-Therefore, each receptor has a preferred molecular volume $v_n$ and receptors can show different degree of selectivity $\sigma_n$.
-We calculated the parameters of $f_n(v)$ for 28 receptors (Fig. \ref{fig:vol-res}). 
+There are two main assumption in this work: 
+First we assumed that the response of an olfactory receptor can be factorized into two terms, 
+according to equation \ref{eqn:factors}.
+Second, we assumed that the volume dependence part in equation \ref{eqn:factors} 
+have a Gaussian form (Eq. \ref{eqn:volume-dependence}).
+Considering the binding-process (Fig. \ref{fig:binding-pocket}), and the neural responses \ref{fig:vol-res}.
+Although these assumptions are logical, we also put them in a test. 
+After calculating function $f_n(v)$ for each olfactory receptor, we can calculate $\psi_{nm}$ of the equation \ref{eqn:factors}.
+If $\psi_{nm}$ is independent of molecular volumes, it means that the assumptions where justified. 
+
+The function $f_n(v)$ can be considered as the tuning curve of olfactory receptors in response to molecular volume. 
+Each receptor has a preferred molecular volume $v_n$ and receptors can show different degree of selectivity $\sigma_n$.
+We calculated the parameters of $f_n(v)$ for \numberofreceptors receptors (Fig. \ref{fig:vol-res}). 
 The calculated values, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volume} and \ref{fig:volume_selectivity} respectively.
 Figure \ref{fig:preferred_volume} demonstrate that the molecular volume preference of receptors are different. 
 Figure \ref{fig:volume_selectivity} illustrate that the volume selectivity of receptors are also different.
