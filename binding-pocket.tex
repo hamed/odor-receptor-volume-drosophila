@@ -318,13 +318,14 @@ First we assumed that the response of an olfactory receptor can be factorized in
 according to equation \ref{eqn:factors}.
 Second, we assumed that the volume dependence part in equation \ref{eqn:factors} 
 have a Gaussian form (Eq. \ref{eqn:volume-dependence}).
-Considering the binding-process (Fig. \ref{fig:binding-pocket}), and the neural responses \ref{fig:vol-res}.
-Although these assumptions are logical, we also put them in a test. 
+Considering the physics and chemistry behind the binding-process (Fig. \ref{fig:binding-pocket}), 
+and the neural responses (Fig. \ref{fig:vol-res}), these assumptions are not illogical, 
+but, to be sure, we also put them in a test. 
 After calculating function $f_n(v)$ for each olfactory receptor, we can calculate $\psi_{nm}$ of the equation \ref{eqn:factors}.
-If $\psi_{nm}$ is independent of molecular volumes, it means that the assumptions where justified. 
+If $\psi_{nm}$ is independent of molecular volumes, it means that the assumptions where justified.
 
-The function $f_n(v)$ can be considered as the tuning curve of olfactory receptors in response to molecular volume. 
-Each receptor has a preferred molecular volume $v_n$ and receptors can show different degree of selectivity $\sigma_n$.
+The function $f_n(v)$ can be considered as the tuning curve of olfactory receptor $n$ in response to molecular volume. 
+Each receptor has a preferred molecular volume $v_n$ and shows a degree of selectivity $\sigma_n$. 
 We calculated the parameters of $f_n(v)$ for \numberofreceptors receptors (Fig. \ref{fig:vol-res}). 
 The calculated values, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volume} and \ref{fig:volume_selectivity} respectively.
 Figure \ref{fig:preferred_volume} demonstrate that the molecular volume preference of receptors are different. 
@@ -332,21 +333,20 @@ Figure \ref{fig:volume_selectivity} illustrate that the volume selectivity of re
 
 It is not clear which features of molecules are measured by olfactory receptors, yet. 
 It is a topic of ongoing researches 
-and there are many works that tries to make connections between physio-chemical properties of molecule 
-and the evoked neural response. 
-But this non-linear volume dependence (Eq. \ref{eqn:factors} and Eq. \ref{eqn:volume-dependence}) is in the way. 
-It may mask important relations between molecules and neural responses.
+and there are many works that tries to connect the physio-chemical properties of molecules to the evoked neural response or perceived smells.
+But the non-linear volume dependence (Eq. \ref{eqn:factors} and Eq. \ref{eqn:volume-dependence})  
+may mask important relations between molecules and neural responses.
 
-By considering our finding and correcting the effect of molecular volume on the response of olfactory receptor neurons, 
+By considering the effect of molecular volume on the response of olfactory receptor neurons, 
 one might discover more subtle dependence between molecular features and neural responses, 
 which otherwise would be masked by this non-linear effect.
 
-We also make some prediction about the 3D structure of olfactory receptors:
+We also make some prediction about {\it in-vivo} 3D structure of the binding-pocket of olfactory receptors:
 The preferred volume of each receptor results from the size of the binding-pocket; 
 The volume selectivity of a receptor results from the rigidity or flexibility of the binding-pocket; 
 Therefore, our results provides information about both structural and dynamical properties of olfactory receptors in Drosophila. 
 These data add some constrains over the 3D structure of olfactory receptors, 
-which may help the prediction or calculation of the 3D structure of these proteins. 
+which may help the prediction and calculation of 3D structure of these proteins. 
 
 The method of this work can be combined with mutagenesis as well. 
 Some genes of an olfactory receptor are mutated, 
@@ -358,15 +358,22 @@ In this work we studied the factor $f_n(v)$ of the equation \ref{eqn:factors} an
 To study $\psi_{nm}$, more data are necessary. 
 To save time and expenses of the experiments, 
 it is better if these additional data were around the preferred volume of each olfactory receptor.
-In table \ref{tab:receptor-odorant} we suggested the best selection of odorants for each of 28 studied receptors.
+In table \ref{tab:receptor-odorant} we suggested the best selection of odorants for each of \numberofreceptors studied receptors.
 
 \begin{table}
-	\begin{tabular}{|l|l|l|}
+\centering
+	\begin{tabular}{|l|r|r|r|}
 		\hline 
-		Olfactory receptor & studied odorants & proposed odorants \\ \hline 
-		OrXa & 
+		Receptor & studied & $v_n \pm \sigma_n$ & proposed\\ \hline 
+		Or1a & & & \\
+		Or2a & & & \\
+		Or3b & & & \\	\hline
 	\end{tabular}
-	\caption{I have to think to the layout ...}
+	\caption{Based on this study we suggest some odorants to be studied experimentally for each receptors. 		
+		The numbers of suggested odorants are in last column and the actual list of odorants are in supporting information.
+		These odorants are selected according to their molecular volume, if it is in the range of $v_n \pm \sigma_n$.
+		The other columns include the number of studied ordorant for each receptor, 
+		the number of studied odorants with a molecular volume in range of $v_n \pm \sigma_n$.}
 	\label{tab:receptor-odorant}
 \end{table}•
 
