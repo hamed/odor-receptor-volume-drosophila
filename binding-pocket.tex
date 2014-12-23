@@ -62,7 +62,7 @@
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
 
-\newcommand{\numberofreceptors}{28 }
+\newcommand{\numberofreceptors}{32 }
 
 
 \begin{document}
@@ -214,7 +214,7 @@ We take the neural data of DoOR database \cite{DoOR2010} and we calculate molecu
 DoOR database can be summarized in an $N\times M$ matrix. 
 Its elements $r_{nm}$, are the response of neuron $n$ to odorant $m$. 
 This matrix is normalized between 0 and 1 so we have $0 \le r_{nm} \le 1$, where 1 is the strongest response.
-The only problem is that this matrix has some missing values (NA), 
+The only problem is that this matrix has some Not Available values (NA), 
 different neurons are excited by different set of odorants, 
 so  when summing over $m$, $\sum_m$, we are calculating $\sum_{m, r_{nm} \neq \text{NA}}$, but for simplicity, 
 we use the former notation. 
@@ -306,7 +306,7 @@ Now we know the preferred volume $v_n$ of each receptor and also its volume sele
 \end{figure}•
 \begin{figure}
 	\includegraphics[width=\textwidth]{fig/mean-vol}
-	\caption{The prefered volumes of 28 receptors ($v_n$), and their error bars. Error bars are calculated using Jack-Knife method. 
+	\caption{The prefered volumes of \numberofreceptors receptors ($v_n$), and their error bars. Error bars are calculated using Jack-Knife method. 
 	This figure suggests that the size of binding-pocket varies across receptors. 
 	Some receptors binds to smaller molecules (Or52b) but some other receptors prefer larger molecules (Or13a and Or98a).}
 	\label{fig:preferred_volume}
