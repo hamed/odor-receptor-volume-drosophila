@@ -80,7 +80,7 @@
 	We show that this dependence can be described by a Gaussian function: 
 	Each olfactory receptor prefers a particular volume (the mean), 
 	with some degree of selectivity (the standard deviation). 
-	These two parameters predict the size and flexibility of the binding-pocket of the olfactory receptors, 
+	These two parameters predict the volume and flexibility of the binding-pocket of the olfactory receptors, 
 	which are the targets of structural biology studies; 
 	Therefore, our results provide structural biologist with some additional information about the structure olfactory receptors. 
 \end{abstract}
@@ -99,9 +99,9 @@
 		\label{fig:pocket-flex}
 	\end{subfigure}
 	\caption{This figure shows different scenarios that may happen when an odorant molecule binds to a receptor. 
-	Figure \ref{fig:pocket-size} shows the effect of binding-pocket size. 
-	From left to right, misfit because of small size of molecule, perfect match and misfit because of large size of the molecule.
-	Figure \ref{fig:pocket-flex} demonstrates that the flexibility of a receptor may compensate the size mismatches. 
+	Figure \ref{fig:pocket-size} shows the effect of binding-pocket volume. 
+	From left to right, misfit because of small volume of molecule, perfect match and misfit because of large molecular volume.
+	Figure \ref{fig:pocket-flex} demonstrates that the flexibility of a receptor may compensate for the volume mismatches. 
 	The red disk (dark grey in b\&w) demonstrate an odorant molecule, 
 	and the blue shape (light grey in b\&w) represents an odor-receptor and binding-pocket.}
 	\label{fig:binding-pocket}
@@ -113,21 +113,24 @@ avoid poison~\cite{},
 escape from danger~\cite{}, 
 find mate~\cite{}, 
 and bind to their offspring~\cite{}.
-An olfactory system detects the chemicals in the surrounding, 
+An olfactory system detects volatile chemicals in the surrounding, 
 encodes the results and transmit them to limbic system and cortex~\cite{Menini2010}.
 
 The front end of the olfactory system are olfactory receptor neurons. 
 Each neuron expresses only one kind of olfactory receptor, 
 neurons of the same type converge into the same glomeruli of the olfactory bulb,
 so that each glomerulus of olfactory bulb receives an amplified signal from only one type of olfactory receptor~\cite{}.
-That makes the olfactory bulb (or antennal lobe in insects) the best place to record the effect of odorant molecules on the olfactory receptors and from these recording we know that the olfactory systems use a combinatorial code: 
+That makes the olfactory bulb (or antennal lobe in insects) the best place to record the effect of odorant molecules on the olfactory receptors. 
+From these recording we know that the olfactory systems use a combinatorial code: 
 an olfactory receptor can be triggered by different odorant molecules, 
 and an odorant molecule can excite different olfactory receptors~\cite{}.  
-However, it is not clear yet which properties of a molecule affects its smell,
+However, it is not clear yet which properties of a molecule contribute to its smell,
 it is a topic of ongoing researches~\cite{Keller2004, Franco2011b, Weiss2012} and there are many theories~\cite{Turin1996, Klopping1971,Brookes2007}.
+
 In this study, 
-we investigate the effect of molecular volumes of odorant on the neural responses. 
-We suggest that this effect should be taken into account before any further of molecular basis of olfaction.
+we investigate the relation between molecular volumes of odorants and the responses of olfactory receptor neurons. 
+Our results suggest that molecular volume is a considerable factor, but not the only factor that determines the neural response of the olfactory receptor neurons.
+
 
 The olfactory receptors are transmembrane proteins.
 In vertebrates, they belong to the family of g-protein coupled receptor (GPCR), 
@@ -143,23 +146,22 @@ where the ligands (odorants) bind to.
 The binding activates the receptors and
 The activated receptor changes the potential of the cell, directly or indirectly.
 
-The amount of change in the membrane potential depends on the number of activated receptors and the time that they remain activated~\cite{}.
-These are affected by various physio-chemical properties of ligand and receptor~\cite{}, 
-but here we focus on only two of them, which are geometrical constrains: the size and the flexibility of the binding pocket.
+The amount of change in the membrane potential depends on the number of activated olfactory receptor proteins and the time that they remain activated~\cite{}.
+These are affected by various physio-chemical properties of ligand (odorant) and receptor~\cite{}, 
+but here we focus on only two of them, which are geometrical constrains: the volume and the flexibility of the binding pocket.
 The molecular volume of a ligand should match the dimensions of the binding-pocket of the receptor,
 then it fits into the binding-pocket of the receptor and triggers the signal transduction. 
-Any mismatch in the sizes will affect the neural responses (Fig. \ref{fig:pocket-size}), 
-on the other hand the flexibility of the binding-pocket can compensate part of the size mismatch (Fig. \ref{fig:pocket-flex}),
-so knowing these two factors, is the first step in decoding the olfactory encoding.
+Any mismatch in the volumes will affect the neural responses (Fig. \ref{fig:pocket-size}), 
+on the other hand the flexibility of the binding-pocket can compensate for the volume mismatch (Fig. \ref{fig:pocket-flex}),
 
-We could know the size and flexibility of the binding-pocket, if we knew its three dimensional structure.
+We could know the volume and flexibility of the binding-pocket, if we knew its three dimensional structure.
 But this is not the case here, it is not easy to know the structure of integral proteins in general~\cite{}, 
 and the 3d structure of olfactory receptors is the topic of ongoing researches, 
-using various methods like Molecular Dynamic simulations (MD)~\cite{}, 
+using various methods like Molecular Dynamic (MD) simulations~\cite{}, 
 mutagenesis studies~\cite{}, heterologus expression studies~\cite{}, and homology modeling~\cite{}.
-In this study, we use neural recording to predict the size and flexibility of binding-pocket of olfactory receptors, {\it in vivo}.
+In this study, we use neural recording to predict the volume and flexibility of binding-pocket of olfactory receptors, {\it in vivo}.
 
-In this study first we show that the molecular volume affects the neural responses, 
+In this study we show that the molecular volume affects the neural responses, 
 and then we use this fact to predict the structural properties of the binding-pocket of olfactory receptor.
 To perform this study we use a public domain, well structured database -- DoOR -- 
 that includes the neural responses of most olfactory receptors (OR) of Drosophila to many odorants~\cite{DoOR2010}. 
@@ -307,7 +309,7 @@ Now we know the preferred volume $v_n$ of each receptor and also its volume sele
 \begin{figure}
 	\includegraphics[width=\textwidth]{fig/mean-vol}
 	\caption{The prefered volumes of \numberofreceptors receptors ($v_n$), and their error bars. Error bars are calculated using Jack-Knife method. 
-	This figure suggests that the size of binding-pocket varies across receptors. 
+	This figure suggests that the volume of binding-pocket varies across receptors. 
 	Some receptors binds to smaller molecules (Or52b) but some other receptors prefer larger molecules (Or13a and Or98a).}
 	\label{fig:preferred_volume}
 \end{figure}•
@@ -348,7 +350,7 @@ one might discover more subtle dependence between molecular features and neural 
 which otherwise would be masked by this non-linear effect.
 
 We also make some prediction about {\it in-vivo} 3D structure of the binding-pocket of olfactory receptors:
-The preferred volume of each receptor results from the size of the binding-pocket; 
+The preferred volume of each receptor results from the volume of the binding-pocket; 
 The volume selectivity of a receptor results from the rigidity or flexibility of the binding-pocket; 
 Therefore, our results provides information about both structural and dynamical properties of olfactory receptors in Drosophila. 
 These data add some constrains over the 3D structure of olfactory receptors, 
@@ -357,7 +359,7 @@ which may help the prediction and calculation of 3D structure of these proteins.
 The method of this work can be combined with mutagenesis~\cite{} as well. 
 Some genes of an olfactory receptor are mutated, 
 then its response to a selection of molecules are measured and finally the preferred volume and volume selectivity are calculated.
-In this way we can understand which amino acids of the olfactory receptor contribute to the size and flexibility of the binding-pocket, 
+In this way we can understand which amino acids of the olfactory receptor contribute to the volume and flexibility of the binding-pocket, 
 as well as affecting the function of the receptors.
 
 In this work we studied the factor $f_n(v)$ of the equation \ref{eqn:factors} and we said nothing about $\psi_{nm}$. 
