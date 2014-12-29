@@ -350,31 +350,34 @@ Now we know the preferred volume $v_n$ of each receptor and also its flexibility
 
 There are two main assumption in this work: 
 First we assumed that the response of an olfactory receptor can be factorized into two terms, 
-according to equation \ref{eqn:factors}.
-Second, we assumed that the volume dependence part in equation \ref{eqn:factors} 
+according to (\ref{eqn:factors}).
+Second, we assumed that the volume dependence factor $f_n(v_m)$ in (\ref{eqn:factors}) 
 have a Gaussian form (Eq. \ref{eqn:volume-dependence}).
 Considering the physics and chemistry behind the binding-process (Fig. \ref{fig:binding-pocket}), 
-and the neural responses (Fig. \ref{fig:vol-res}), these assumptions are not illogical, 
-but, to be sure, we also put them in a test. 
-After calculating function $f_n(v)$ for each olfactory receptor, we can calculate $\psi_{nm}$ of the equation \ref{eqn:factors}.
-If $\psi_{nm}$ is independent of molecular volumes, it means that the assumptions where justified.
+and the neural responses (Fig. \ref{fig:vol-res}), 
+these assumptions are logical. 
 
-The function $f_n(v)$ can be considered as the tuning curve of olfactory receptor $n$ in response to molecular volume. 
-Each receptor has a preferred molecular volume $v_n$ and shows a degree of flexibility $\sigma_n$. 
+%but, to be sure, we also put them in a test. 
+%After calculating function $f_n(v)$ for each olfactory receptor, we can calculate $\psi_{nm}$ of the equation \ref{eqn:factors}.
+%If $\psi_{nm}$ is independent of molecular volumes, it means that the assumptions where justified.
+
+The function $f_n(v)$ can be considered as the tuning curve of olfactory receptor $n$ in response to molecular volume (Fig.~\ref{fig:vol-res}). 
+Each receptor has a preferred molecular volume $v_n$ and shows some flexibility $\sigma_n$. 
 We calculated the parameters of $f_n(v)$ for \numberofreceptors receptors (Fig. \ref{fig:vol-res}). 
 The calculated values, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volume} and \ref{fig:volume_flexibility} respectively.
 Figure \ref{fig:preferred_volume} demonstrate that the molecular volume preference of receptors are different. 
 Figure \ref{fig:volume_flexibility} illustrate that the flexibility of receptors are also different.
 
-It is not clear which features of molecules are measured by olfactory receptors, yet. 
-It is a topic of ongoing researches  
-and there are many works that tries to connect the physio-chemical properties of molecules to the evoked neural response or perceived smells~\cite{Gabler2013,Schmuker2007}.
+Here we showed that the responses of olfactory receptor neurons are related to the molecular volume of odorants, 
+apart from that, it is not clear which other features of molecules are measured by olfactory receptors. 
+It is a topic of ongoing researches , 
+there are many works that try to connect the physio-chemical properties of molecules to the evoked neural response or perceived smells~\cite{Gabler2013,Schmuker2007}.
 But the non-linear volume dependence (Eq. \ref{eqn:factors} and Eq. \ref{eqn:volume-dependence})  
 may mask important relations between molecules and neural responses.
 
 By considering the effect of molecular volume on the response of olfactory receptor neurons, 
-one might discover more subtle dependence between molecular features and neural responses, 
-which otherwise would be masked by this non-linear effect.
+one might discover more subtle dependence between other molecular features and neural responses, by studding $\psi_{nm}$, 
+which otherwise would be masked by this non-linear relation $f_n(v)$.
 
 We also make some prediction about {\it in-vivo} 3D structure of the binding-pocket of olfactory receptors:
 The preferred volume of each receptor results from the volume of the binding-pocket; 
