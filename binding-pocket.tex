@@ -224,7 +224,7 @@ We take the neural data of DoOR database \cite{Galizia2010} and we calculate mol
 DoOR database can be summarized in an $N\times M$ matrix. 
 Its elements $r_{nm}$, are the response of neuron $n$ to odorant $m$. 
 This matrix is normalized between 0 and 1 so we have $0 \le r_{nm} \le 1$, where 1 is the strongest response.
-The only problem is that this matrix has some Not Available values (NA), 
+The only problem is that this matrix has some Not Available (NA) values, 
 different neurons are excited by different set of odorants, 
 so  when summing over $m$, $\sum_m$, we are calculating $\sum_{m: r_{nm} \neq \text{NA}}$, but for simplicity, 
 we use the former notation. 
