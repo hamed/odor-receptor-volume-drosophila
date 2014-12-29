@@ -80,7 +80,7 @@
 	Therefore, it is important to correct the effect of molecular volume before studying molecular bases of olfactory responses.
 	We show that this dependence can be described by a Gaussian function: 
 	Each olfactory receptor prefers a particular volume (the mean), 
-	with some degree of selectivity (the standard deviation). 
+	with some degree of flexibility (the standard deviation). 
 	These two parameters predict the volume and flexibility of the binding-pocket of the olfactory receptors, 
 	which are the targets of structural biology studies; 
 	Therefore, our results provide structural biologist with some additional information about the structure olfactory receptors. 
@@ -240,7 +240,7 @@ it can be approximated with a Gaussian function
 	\displaystyle f_n(v) = e^{-\frac{(v-v_n)^2}{2\sigma^2_n}}, 
 	\label{eqn:volume-dependence}
 \end{equation}
-where, $v_n$ is the preferred molecular volume of receptor $n$ and $\sigma_n$ represents its volume selectivity. 
+where, $v_n$ is the preferred molecular volume of receptor $n$ and $\sigma_n$ represents its volume flexibility. 
 In this work we want to estimate $v_n$ and $\sigma_n$. 
 To do so, first we calculate the response weighted average of molecular volumes, 
 $\frac{\sum_{m} v_m r_{nm}}{\sum_{m} r_{nm}}$ and then we use (\ref{eqn:factors}):
@@ -297,7 +297,7 @@ and then we calculate $v_n$ from
 	v_n =  \sigma_n^2 \left ( \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}} \right ).
 \end{equation}•
 The resulting $f_n(v)$ are plotted over the actual data, for \numberofreceptors  receptors, and for one receptor to magnify the details (Fig.~\ref{fig:vol-res}).
-Now we know the preferred volume $v_n$ of each receptor and also its volume selectivity $\sigma_n$.
+Now we know the preferred volume $v_n$ of each receptor and also its volume flexibility $\sigma_n$.
 
 
 \section{Results and discussions}
@@ -328,10 +328,10 @@ Now we know the preferred volume $v_n$ of each receptor and also its volume sele
 	\end{subfigure}
 	\begin{subfigure}[b]{\textwidth}
 		\includegraphics[width=\textwidth]{fig/std-vol}
-		\caption{The volume selectivity of each receptor ($\sigma_n$), the error bars are calculated using Jack-Knife method.
+		\caption{The volume flexibility of each receptor ($\sigma_n$), the error bars are calculated using Jack-Knife method.
 		Some receptors like Or30a are more volume selective but some other receptors like Or13a and Or42b are less sensitive toward the molecular volumes.
 		This might be due to mechanical flexibility of the binding-pocket.}
-		\label{fig:volume_selectivity}
+		\label{fig:volume_flexibility}
 	\end{subfigure}
 	\caption{}
 \end{figure}•
@@ -348,11 +348,11 @@ After calculating function $f_n(v)$ for each olfactory receptor, we can calculat
 If $\psi_{nm}$ is independent of molecular volumes, it means that the assumptions where justified.
 
 The function $f_n(v)$ can be considered as the tuning curve of olfactory receptor $n$ in response to molecular volume. 
-Each receptor has a preferred molecular volume $v_n$ and shows a degree of selectivity $\sigma_n$. 
+Each receptor has a preferred molecular volume $v_n$ and shows a degree of flexibility $\sigma_n$. 
 We calculated the parameters of $f_n(v)$ for \numberofreceptors receptors (Fig. \ref{fig:vol-res}). 
-The calculated values, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volume} and \ref{fig:volume_selectivity} respectively.
+The calculated values, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volume} and \ref{fig:volume_flexibility} respectively.
 Figure \ref{fig:preferred_volume} demonstrate that the molecular volume preference of receptors are different. 
-Figure \ref{fig:volume_selectivity} illustrate that the volume selectivity of receptors are also different.
+Figure \ref{fig:volume_flexibility} illustrate that the volume flexibility of receptors are also different.
 
 It is not clear which features of molecules are measured by olfactory receptors, yet. 
 It is a topic of ongoing researches  
@@ -366,14 +366,14 @@ which otherwise would be masked by this non-linear effect.
 
 We also make some prediction about {\it in-vivo} 3D structure of the binding-pocket of olfactory receptors:
 The preferred volume of each receptor results from the volume of the binding-pocket; 
-The volume selectivity of a receptor results from the rigidity or flexibility of the binding-pocket; 
+The volume flexibility of a receptor results from the rigidity or flexibility of the binding-pocket; 
 Therefore, our results provides information about both structural and dynamical properties of olfactory receptors in Drosophila. 
 These data add some constrains over the 3D structure of olfactory receptors, 
 which may help the prediction and calculation of 3D structure of these proteins. 
 
 The method of this work can be combined with mutagenesis~\cite{} as well. 
 Some genes of an olfactory receptor are mutated, 
-then its response to a selection of molecules are measured and finally the preferred volume and volume selectivity are calculated.
+then its response to a selection of molecules are measured and finally the preferred volume and volume flexibility are calculated.
 In this way we can understand which amino acids of the olfactory receptor contribute to the volume and flexibility of the binding-pocket, 
 as well as affecting the function of the receptors.
 
