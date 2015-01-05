@@ -118,11 +118,12 @@ An olfactory system detects volatile chemicals in the surrounding,
 encodes the results and transmit them to limbic system and cortex.
 
 The front end of the olfactory system are olfactory receptor neurons.  
-Each neuron expresses only one kind of olfactory receptor,
-neurons of the same type converge into the same glomeruli of the olfactory bulb,
+Each neuron expresses only one kind of olfactory receptor (in insects they are co-expressed with Orco \cite{Larsson2004}),
+neurons of the same type converge into the same glomeruli of the olfactory bulb (or antenatal lobe in insects),
 so that each glomerulus of olfactory bulb receives an amplified signal from only one type of olfactory receptor~\cite{Vosshall2000,Couto2005}.
-That makes the olfactory bulb (or antennal lobe in insects) target of methods like calcium imaging (eg. ~\cite{Silbering2012}), 
-whereas electro-physiological studies directly target olfactory receptor neurons (eg.~\cite{Benton2010}). 
+%That makes the olfactory bulb (or antennal lobe in insects) target of methods like calcium imaging (eg. ~\cite{Silbering2012}), 
+%whereas electro-physiological studies directly target olfactory receptor neurons (eg.~\cite{Benton2010}). 
+
 From neural recordings we know that the olfactory systems use a combinatorial code: 
 an olfactory receptor can be triggered by different odorant molecules, 
 and an odorant molecule can excite different olfactory receptors~\cite{Malnic2000}.
@@ -136,12 +137,15 @@ Our results suggest that molecular volume is a considerable factor,
 but not the only factor that determines the neural response of the olfactory receptor neurons.
 
 The olfactory receptors are transmembrane proteins.
-In vertebrates, thery are metabotropic receptors, they belong to the family of g-protein coupled receptor (GPCR), 
+In vertebrates, they are metabotropic receptors, they belong to the family of g-protein coupled receptor (GPCR), 
 Linda B. Buck and Richard Axel won the Nobel Prize in Physiology or Medicine, in 2004, 
 for the discovery of this~\cite{Buck1991}.
 There are many similarities between the olfactory system of insects and vertebrates~\cite{Wilson2014,Kaupp2010}, 
 and it was assumed that insects use the same kind of signal transduction~\cite{Brody2000,Hill04102002}, 
-but recently, Sato and Wicher argued that the olfactory receptors in insects are inotropic~\cite{Sato2008,Wicher2008,Nagel2011,Rong2011}. 
+but recently, it has been argued that the olfactory receptors in insects are inotropic~\cite{Sato2008,Wicher2008,Nagel2011,Rong2011}, 
+their topology is different from vertebrates~\cite{Benton2007},
+and they function in presence of another common receptor, called Orco or Or83~\cite{Larsson2004}.
+
 
 Regardless of the signal transduction, 
 all olfactory receptor have the same function, they have a binding-pocket (also known as binding-cavity and binding-site),
@@ -226,7 +230,8 @@ Most Drosophila olfactory neurons express two types of odorant receptor genes: O
 	\caption{Density function of molecular volumes ($g(v)$), considering all molecules of DoOR database. 
 		The actual density function of molecular of volumes in each experiment ($g(v)$) might be slightly different 
 		because each experiment uses a different subset of molecules. 
-		The solid line is a Gaussian fit (Eq. \ref{eqn:hist-volumes}).}
+		The solid line is a Gaussian fit (Eq. \ref{eqn:hist-volumes}) and the dashed line shows the median, 
+		which is slightly different from 		the mean.}
 	\label{fig:hist-volumes}
 \end{figure}
 
@@ -320,6 +325,7 @@ and then we calculate $v_n$:
 	v_n =  \sigma_n^2 \left ( \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}} \right ).
 \end{equation}•
 The resulting $f_n(v)$ are plotted over the actual data, for \numberofreceptors receptors (Fig.~\ref{fig:vol-res:all}), 
+in which the relative error of $v_n$ is lesser than 25\%.	
 and for one receptor just magnify the details (Fig.~\ref{fig:vol-res:one}).
 Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
 
@@ -337,9 +343,9 @@ Now we know the preferred volume $v_n$ of each receptor and also its flexibility
 		\caption{}	
 		\label{fig:vol-res:one}	
 	\end{subfigure}
-	\caption{Response of olfactory receptors  versus molecular volume of odorants (Circles), the fitted functions $f_n(v)$ from Eq. \ref{eqn:factors} (solid lines), 
+	\caption{Response of olfactory receptors  versus molecular volume of odorants (Circles), the fitted functions $f_n(v)$ from Eq. 			\ref{eqn:factors} (solid lines), 
 		and the error bars of the mean of $f_n(v)$ (red vertical lines),
-		for all \numberofreceptors receptors Fig. \ref{fig:vol-res:all} and for one selected receptor Or43a Fig. \ref{fig:vol-res:one} just to magnify details. }
+		for all \numberofreceptors receptors in which the relative error is lesser than 25\% (Fig.~\ref{fig:vol-res:all}) and for one selected receptor Or43a (Fig.~\ref{fig:vol-res:one}) just to magnify details. }
 	\label{fig:vol-res}
 \end{figure}
 \begin{figure}
@@ -412,7 +418,7 @@ But this is not the case in current data,
 for many receptors, most data points are on the tails of $f_n(v)$, which is close to zero,
 and for some others receptors like Or22a, Or43b, Or59b and Or98a, 
 the preferred volume is out of the range of current data.
-In table \ref{tab:receptor-odorant} we suggested the best selection of odorants for each of \numberofreceptors studied receptors.
+We suggested the best selection of odorants for each of \numberofreceptors studied receptors (see Venn diagram in Fig.~\ref{fig:receptor-odorant}).
 %\begin{table}
 %\centering
 %	\begin{tabular}{|l|r|r|r|}
@@ -433,9 +439,15 @@ In table \ref{tab:receptor-odorant} we suggested the best selection of odorants 
 \begin{figure}
 %\centering
 	\includegraphics[width=\textwidth]{fig/odorant-suggest}
-	\caption{The DoOR database includes 240 odorant molecules.
-			Each receptor has been excited with only a subset of them (blue shade, dark gray in b\&w print);
-			Therefore, there are missing data (pink shade, light gray in b\&w print).}
+	\caption{Venn diagram of DoOR database and our suggested important odorants of each receptor.
+			The database includes 240 odorant molecules, 
+			only a fraction of them are used to study an olfactory receptor (blue shades)
+			and data for the rest of odorants are not available (pink shades).
+			The hatched area are odorants with molecular volume close to the preferred volume of each receptor
+			($v_n \pm \frac{\sigma}{2}$).
+			We consider them as important samples to study the molecular basis of olfaction,
+			We already know the neural response of hatched blue area, 
+			but the hatched pink odorants could be the target of further experiments.}
 	\label{fig:odorant-suggest}
 \end{figure}
 
