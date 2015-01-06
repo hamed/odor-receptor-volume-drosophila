@@ -254,7 +254,7 @@ Turner2009,VanderGoesvanNaters2007,Yao2005}.
 \end{figure}
 
 We want to study the relation between neural responses and molecular volumes, so we need the respective data. 
-We take the neural data of DoOR database \cite{Galizia2010} and we calculate molecular volume using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
+We take the neural data of DoOR database \cite{Galizia2010} and we calculate molecular volume (supplemental file 3) using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
 We used  GNU R to analyse the data~\cite{Rlanguage}.
 
 DoOR database can be summarized in an $N\times M$ matrix. 
@@ -343,8 +343,9 @@ and then we calculate $v_n$:
 \begin{equation}
 	v_n =  \sigma_n^2 \left ( \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}} \right ).
 \end{equation}•
+The calculated $v_n$ and $\sigma_n$ are in supplemental file 1. 
 The resulting $f_n(v)$ are plotted over the actual data, for \numberofreceptors receptors (Fig.~\ref{fig:vol-res:all}), 
-in which the relative error of $v_n$ is lesser than 25\% and $\sigma_n < 80 \AA$, 
+in which the relative error of $v_n$ is lesser than 25\% and $\sigma_n < 80 \AA^3$, 
 and for one receptor just magnify the details (Fig.~\ref{fig:vol-res:one}).
 Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
 
@@ -445,7 +446,7 @@ Our finding can also save time and expenses of experiments by suggesting importa
 To study $\psi_{nm}$ of a receptor, it is better to have many data points and those data points are better to be around the preferred volume of the receptor.
 But this is not the case in current data, 
 for many receptors, most data points are on the tails of $f_n(v)$, which is close to zero.
-We suggested the best selection of odorants for each of \numberofreceptors studied receptors (see Venn diagram in Fig.~\ref{fig:odorant-suggest}).
+We suggested the best selection of odorants for each of \numberofreceptors studied receptors (see Venn diagram in Fig.~\ref{fig:odorant-suggest} and supplemental file 2).
 %\begin{table}
 %\centering
 %	\begin{tabular}{|l|r|r|r|}
