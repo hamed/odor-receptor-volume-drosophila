@@ -57,7 +57,7 @@
 
 %%% The "real" document content comes below...
 
-\title{Olfactory receptors are sensitive to molecular volume}
+\title{Olfactory receptors are sensitive to molecular volume of odorants}
 \author{Majid Saberi \and Hamed Seyed-allaei\thanks{hamed@ipm.ir}}
 \institution{School of Cognitive Science, \\ Institute for Research in Fundamental Sciences (IPM), \\Tehran, Iran}
 %\date{} % Activate to display a given date or no date (if empty),
@@ -76,9 +76,9 @@
         To study olfaction, 
          first we should know which physical or chemical properties of odorant molecules determine 
 	the response of olfactory receptor neurons.
-	In this work we show that the response of an olfactory receptor neurons in Drosophila depends on molecular volume of an odorant;  
+	In this work we show that the response of an olfactory receptor neuron in Drosophila depends on molecular volume of an odorant;  
 	The molecular volume determines the upper limits of the neural response, 
-	while the actual response may depend on other properties of the molecules.
+	while the actual neural response may depend on other properties of the molecules.
 	We show that the volume dependence can be described by a Gaussian function: 
 	Each olfactory receptor prefers a particular volume (the mean), 
 	with some degree of flexibility (the standard deviation). 
@@ -252,7 +252,7 @@ Turner2009,VanderGoesvanNaters2007,Yao2005}.
 
 We want to study the relation between neural responses and molecular volumes, so we need the respective data. 
 We take the neural data of DoOR database \cite{Galizia2010} and we calculate molecular volume using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
-We used  GNU R and Hmisc package to perform our study \cite{Rlanguage,Hmisc}.
+We used  GNU R to analyse the data and we used Hmisc package of R to calculate error bars with jack-knife method~\cite{Rlanguage,Hmisc}.
 
 DoOR database can be summarized in an $N\times M$ matrix. 
 Its elements $r_{nm}$, are the response of neuron $n$ to odorant $m$. 
