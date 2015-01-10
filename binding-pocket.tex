@@ -274,6 +274,7 @@ we use the former notation.
 The response $r_{nm}$ depends on the molecular volume of the odorant, $v_m$, 
 and other physio-chemical properties of the molecule $m$; 
 We assume that we can separate the response $r_{nm}$ into two terms:
+
 \begin{equation}
 	r_{nm} = f_n(v_m) \psi_{nm}.
 	\label{eqn:factors}
@@ -283,6 +284,7 @@ The second term, $\psi_{nm}$ include every other influential properties of molec
 Both terms are characteristic of each receptor, and they might vary from neuron to neuron.
 In fact, the first term, $f_n(v)$, is the tuning curve of neuron $n$ in respect to the molecular volumes, 
 it can be approximated with a Gaussian function
+
 \begin{equation}
 	\displaystyle f_n(v) = e^{-\frac{(v-v_n)^2}{2\sigma^2_n}}, 
 	\label{eqn:volume-dependence}
@@ -291,11 +293,13 @@ where, $v_n$ is the preferred molecular volume of receptor $n$ and $\sigma_n$ re
 In this work we want to estimate $v_n$ and $\sigma_n$. 
 To do so, first we calculate the response weighted average of molecular volumes, 
 $\frac{\sum_{m} v_m r_{nm}}{\sum_{m} r_{nm}}$ and then we use (\ref{eqn:factors}):
+
 \begin{equation}
 	\frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} = \frac{\displaystyle \sum_{m} v_m f_n(v_m) \psi_{nm}}{\displaystyle \sum_{m} f_n(v_m) \psi_{nm}}.
 	\label{eqn:sta}
 \end{equation}
 Here we can approximate $\sum$ with $\int$, which is common in statistical physics:
+
 \begin{equation}
 	\sum_{m} \dots f_n(v_m) \psi_{nm} \approx  \langle \psi_{nm} \rangle_m \int_0^\infty \dots f_n(v) g(v)  dv. 
 	\label{eqn:sigma_to_int}
@@ -306,6 +310,7 @@ It can be moved out of the integral for it is independent of $v$.
 In the above equation, 
 $g(v)$ is the density of states, $g(v) dv$ indicates how many molecules have a molecular volume in the range of $v$ and $v+dv$.
 This function can be approximated by a Gaussian function, Fig.\ref{fig:hist-volumes}, 
+
 \begin{equation}
 	g(v) = e^{-\frac{(v- v_{g})^2}{2 \sigma_{g}^2}},
 	\label{eqn:hist-volumes}
@@ -316,21 +321,25 @@ But here, we have many missing values ($r_{nm} = NA$),
 so we have to calculate $g(v)$ for each neuron separately; 
 Therefore, $v_{g_n}$ and $\sigma_{g_n}$ are the average and standard deviation of molecular volume while $r_{nm} \neq \text{NA}$.
 Now we rewrite equation (\ref{eqn:sta}) using equation (\ref{eqn:sigma_to_int}):
+
 \begin{equation}
 	\frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} \approx \frac{\displaystyle \int v f_n(v) g_n(v) dv}{\displaystyle \int f_n(v) g_n(v) dv}.
 	\label{eqn:sta_int}
 \end{equation}
 We replace the product of $f_n(v)$ and $g_n(v)$ in the above equation with $h_n(v) = f_n(v) g_n(v)$, to make a simpler form
+
 \begin{equation}
 	\frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} \approx \frac{\displaystyle \int_v v h_n(v) dv}{ \displaystyle \int_v  h_n(v) dv }.
 	\label{eqn:mean}
 \end{equation}
 The function $h_n(v)$ is a Gaussian function because it is the product of two Gaussian functions, 
+
 \begin{equation}
 h_n(v) = e^{-\frac{(v-\mu_{h_n})^2}{2\sigma_{h_n}^2}}, 
 \end{equation}
 so the right hand side of equation \ref{eqn:mean} is nothing but $\mu_{h_n}$ and 
 in a similar way, we can calculate $\sigma_{h_n}$ from the neural data
+
 \begin{eqnarray}
 	\mu_{h_n} &\approx& \frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} \\
 	\sigma_{h_n}^2 &\approx& \frac{\displaystyle \sum_{m} v_m^2 r_{nm}}{\displaystyle \sum_{m} r_{nm}} - \mu_{h_n}^2
@@ -342,10 +351,12 @@ We knew the mean $v_{g_n}$ and standard deviation $\sigma_{g_n}$ of $g_n(v)$ fro
 We just calculated the mean $\mu_{h_n}$ and standard deviation $\sigma_{h_n}$ of $h_n(v)$ from the neural data.
 Now calculating the mean $v_n$ and the standard deviation $\sigma_n$ of $f_n(v)$ is trivial,
 first we calculate $\sigma_n$ from 
+
 \begin{equation}
 	\frac{1}{\sigma_n^2} = \frac{1}{\sigma^2_{h_n}}  - \frac{1}{\sigma^2_{g_n}}
 \end{equation}•
 and then we calculate $v_n$: 
+
 \begin{equation}
 	v_n =  \sigma_n^2 \left ( \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}} \right ).
 \end{equation}•
