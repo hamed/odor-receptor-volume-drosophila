@@ -8,7 +8,7 @@
 \usepackage{lineno}
 
 \usepackage{setspace}
-\doublespacing
+%\doublespacing
 
 %%% Examples of Article customizations
 % These packages are optional, depending whether you want the features they provide.
@@ -67,11 +67,11 @@
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
 
-\newcommand{\numberofreceptors}{ 32 }
+\newcommand{\numberofreceptors}{ 28 }
 
 
 \begin{document}
-\linenumbers
+%\linenumbers
 
 \maketitle
 
@@ -380,9 +380,14 @@ Now we know the preferred volume $v_n$ of each receptor and also its flexibility
 		\caption{}	
 		\label{fig:vol-res:one}	
 	\end{subfigure}
-	\caption{Response of olfactory receptors  versus molecular volume of odorants (Circles), the fitted functions $f_n(v)$ from Eq.~\ref{eqn:factors} (solid lines), 
-		and the error bars of the mean of $f_n(v)$ (red vertical lines),
-		for \numberofreceptors selected receptors (Fig.~\ref{fig:vol-res:all}) and for one selected receptor Or35a (Fig.~\ref{fig:vol-res:one}) just to magnify details. }
+	\caption{(a) Response of \numberofreceptors olfactory receptors  versus molecular volume of odorants (circles),  
+		the fitted functions $f_n(v)$ from Eq.~\ref{eqn:factors} (solid lines), 
+		and the error bars of the mean of $f_n(v)$ (red vertical lines).
+		It shows that response of receptors depend on the molecular volume of odorants,
+		12 of them (receptor names in bold) has a p-value of less than 0.05/49 (Bonferroni correction), 
+		one of them (receptor name in italic) has a p-value of less than 0.05,
+		and the rest have a FDR-corrected p-value of less than 0.05. 
+		(b) Just an example (Or35a) to magnify details. }
 	\label{fig:vol-res}
 \end{figure}
 \begin{figure}
