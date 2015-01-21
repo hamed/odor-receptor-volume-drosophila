@@ -1,0 +1,29 @@
+
+
+
+Dear Editor, 
+
+We showed that olfactory system senses the molecular volume of odorants. The molecular volume has a strong and non-linear influence on the response of olfactory receptors that can mask any other relations among molecules and smells.
+
+This work is suitable for publication in Nature because:
+
+The results are reproducible. 
+We used neural recording that are on public domain (http://neuro.uni-konstanz.de/DoOR/default.html). The principal of our work can be verified in a couple of hours.
+
+It will have an immediate impact.
+Almost all studies of molecular basis of olfactory system have overlooked the effect of molecular volume of odorant on the neural responses and perceived smells. By considering this effect, they will be able to find more subtle but meaningful relations between molecules and smells. All of them should be revisited! 
+
+It has a large audience. 
+The study of olfactory system is an interdisciplinary field, the idea is simple and the mathematic is easy to follow, so even the public can enjoy our work.
+
+It includes predictions. 
+We predicted the sizes and flexibilities of binding cavity of olfactory receptors in Drosophila, from the neural responses of olfactory receptor neurons. The discovery of 3d structure of olfactory receptors will verify our results.
+
+It saves time and expenses of experiments by important sampling.
+There are thousands of odorant molecules and there are hundreds of olfactory receptors. It is hard to experiments all possible pairs and it is not necessary, because most of the pairs give zero responses.  For every receptor, we proposed a list of odorant that are expected to produce considerable neural responses.
+
+Thank you for your consideration, 
+Hamed Seyed-allaei
+
+
+
