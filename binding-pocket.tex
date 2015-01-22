@@ -69,7 +69,7 @@
 
 \newcommand{\numberofreceptors}{ 28 }
 \newcommand{\bonferroni}{ 12 }
-\newcommand{\fdr}{ 15 }
+\newcommand{\fdr}{ 27 }
 \newcommand{\nocorrection}{ 1 }
 
 \begin{document}
@@ -368,10 +368,10 @@ in which p-value < 0.05.
 
 We calculated p-values by permutation test. 
 The alternative hypothesis is 
-{\it "The response of olfactory receptor neurons depend on the molecular volume of odorants."}, 
+``{\it The response of olfactory receptor neurons depend on the molecular volume of odorants.}'', 
 which require  a finite value for $\sigma_n$, 
 then the null hypothesis is 
-{\it "The response of olfactory receptor neurons is independent of molecular volume of odorants."},
+``{\it The response of olfactory receptor neurons is independent of molecular volume of odorants.}'',
 which require $\sigma_n \rightarrow \infty$, 
 so p-value is the probability of having $\sigma'_n<\sigma_n$, 
 where $\sigma_n$ is calculated from the original data, but $\sigma'_n$ calculated using permuted version.
@@ -443,8 +443,22 @@ these assumptions are logical.
 %If $\psi_{nm}$ is independent of molecular volumes, it means that the assumptions where justified.
 
 The function $f_n(v)$ can be considered as the tuning curve of olfactory receptor $n$ in response to molecular volume (Fig.~\ref{fig:vol-res}). 
-Each receptor has a preferred molecular volume $v_n$ and shows some flexibility $\sigma_n$. 
-We calculated the parameters of $f_n(v)$ for \numberofreceptors receptors (Fig. \ref{fig:vol-res}). 
+Each receptor has a preferred molecular volume $v_n$ and shows some flexibility $\sigma_n$, 
+The calculated $f_n(v)$ are in  Fig.~\ref{fig:vol-res}, 
+it includes \numberofreceptors receptors, 
+which show a significant dependence to molecular volume of odorants in their response (p-value $<0.05$).
+
+To address the multiple comparison problem, 
+we also calculated the level of significance according to both Bonferroni (very conservative) and FDR (less conservative) corrections. 
+From the results of \numberofreceptors receptors, 
+\bonferroni of them are significant according to Bonferroni correction (receptor names in bold), 
+\fdr of them are significant according to FDR correction 
+(receptor names in normal typeface plus what was significant according to Bonferroni), 
+and the rest (\nocorrection receptors), 
+only satisfy the criteria of  p-value $<0.05$, without any corrections (receptor names in italic).
+Considering the FDR correction, 
+we can conclude that over one third of receptors (\fdr / 60 ) show significant sensitivity toward molecular volumes. 
+
 The calculated values, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volume} and \ref{fig:volume_flexibility} respectively.
 Figure \ref{fig:preferred_volume} demonstrate that the molecular volume preference of receptors are different. 
 Figure \ref{fig:volume_flexibility} illustrate that the flexibility of receptors are also different.
