@@ -375,6 +375,10 @@ so p-value is the probability of having $\sigma'_n<\sigma_n$,
 where $\sigma_n$ is calculated from the original data, but $\sigma'_n$ calculated using permuted data.
 
 We are testing a hypothesis multiple times over 49 olfactory receptors. 
+If we use a simple threshold of p-value < 0.05, we may have some false positives. 
+To address this issue, we use a conservative threshold of 0.05/49, Bonferroni correction.
+The problem with Bonferroni correction is that it may increases false negatives.
+This problem can be addressed using another method to correct p-values - False Discovery rate.
 
 Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
 
