@@ -68,7 +68,9 @@
          % otherwise the current date is printed 
 
 \newcommand{\numberofreceptors}{ 28 }
-
+\newcommand{\bonferroni}{ 12 }
+\newcommand{\fdr}{ 15 }
+\newcommand{\nocorrection}{ 1 }
 
 \begin{document}
 %\linenumbers
@@ -372,15 +374,16 @@ then the null hypothesis is
 {\it "The response of olfactory receptor neurons is independent of molecular volume of odorants."},
 which require $\sigma_n \rightarrow \infty$, 
 so p-value is the probability of having $\sigma'_n<\sigma_n$, 
-where $\sigma_n$ is calculated from the original data, but $\sigma'_n$ calculated using permuted data.
+where $\sigma_n$ is calculated from the original data, but $\sigma'_n$ calculated using permuted version.
 
-We are testing a hypothesis multiple times over 49 olfactory receptors. 
-If we use a simple threshold of p-value < 0.05, we may have some false positives. 
-To address this issue, we use a conservative threshold of 0.05/49, Bonferroni correction.
+We are testing a hypothesis 60 times for we have 60  olfactory receptors. 
+If we use a simple threshold of 0.05 for the p-value, we may have false positives. 
+To address this issue, we use a conservative threshold of 0.05/60 for the p-values -- Bonferroni correction.
 The problem with Bonferroni correction is that it may increases false negatives.
-This problem can be addressed using another method to correct p-values - False Discovery rate.
+This problem can be addressed using another method -- False Discovery Rate (FDR).
+We used both methods -- Bonferroni and FDR, as well as no correction. The result are labeled accordingly in Fig.\ref{fig:vol-res:all}.
 
-Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
+%Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
 
 
 \section{Results and discussions}
