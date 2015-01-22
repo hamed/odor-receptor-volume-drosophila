@@ -362,15 +362,19 @@ and then we calculate $v_n$:
 \end{equation}•
 The calculated $v_n$ and $\sigma_n$ are in supplemental file 1. 
 The resulting $f_n(v)$ are plotted over the actual data, for \numberofreceptors receptors (Fig.~\ref{fig:vol-res:all}),
-in which $p_{value} < 0.05$. 
+in which p-value < 0.05. 
 
-Our hypothesis here is that the response of olfactory receptor neurons depend on the molecular volume of odorants, 
-which require the value of $\sigma_n$ be finite; Therefore, the null hypothesis will be that 
+We calculated p-values by permutation test. 
+The alternative hypothesis is 
+{\it "The response of olfactory receptor neurons depend on the molecular volume of odorants."}, 
+which require  a finite value for $\sigma_n$, 
+then the null hypothesis is 
+{\it "The response of olfactory receptor neurons is independent of molecular volume of odorants."},
+which require $\sigma_n \rightarrow \infty$, 
+so p-value is the probability of having $\sigma'_n<\sigma_n$, 
+where $\sigma_n$ is calculated from the original data, but $\sigma'_n$ calculated using permuted data.
 
-
-
-Here the $p_{value}$ is the probability of having a r
-
+We are testing a hypothesis multiple times over 49 olfactory receptors. 
 
 Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
 
