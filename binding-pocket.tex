@@ -265,16 +265,18 @@ Turner2009,VanderGoesvanNaters2007,Yao2005}.
 	\label{fig:hist-volumes}
 \end{figure}
 
-We want to study the relation between neural responses and molecular volumes, so we need the respective data. 
+We want to study the relation between neural responses and molecular volumes, 
+so we need the respective data. 
 We take the neural data of DoOR database \cite{Galizia2010} and we calculate molecular volume (supplemental file 3) using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
 We used  GNU R to analyse the data~\cite{Rlanguage}.
 
 DoOR database can be summarized in an $N\times M$ matrix. 
-Its elements $r_{nm}$, are the response of neuron $n$ to odorant $m$. 
+Its elements, $r_{nm}$, are the response of neuron $n$ to odorant $m$. 
 This matrix is normalized between 0 and 1 so we have $0 \le r_{nm} \le 1$, where 1 is the strongest response.
-The only problem is that this matrix has some Not Available (NA) values, 
-different neurons are excited by different set of odorants, 
-so  when summing over $m$, $\sum_m$, we are calculating $\sum_{m: r_{nm} \neq \text{NA}}$, but for simplicity, 
+The only problem is that this matrix has many {\it Not Available} (NA) values, 
+and different neurons are excited by different set of odorants, 
+so  when summing over $m$, $\sum_m$, we are calculating $\sum_{m: r_{nm} \neq \text{NA}}$, 
+but for simplicity, 
 we use the former notation. 
 
 The response $r_{nm}$ depends on the molecular volume of the odorant, $v_m$, 
@@ -370,7 +372,7 @@ The calculated $v_n$ and $\sigma_n$ are in supplemental file 1.
 The resulting $f_n(v)$ are plotted over the actual data, for \numberofreceptors receptors (Fig.~\ref{fig:vol-res:all}),
 in which p-value < 0.05. 
 
-We calculated p-values by permutation test. 
+We calculate p-values by permutation test. 
 The alternative hypothesis is 
 ``{\it The response of olfactory receptor neurons depend on the molecular volume of odorants.}'', 
 which require  a finite value for $\sigma_n$, 
@@ -381,11 +383,13 @@ so p-value is the probability of having $\sigma'_n<\sigma_n$,
 where $\sigma_n$ is calculated from the original data, but $\sigma'_n$ calculated using permuted version.
 
 We are testing a hypothesis 60 times for we have 60  olfactory receptors. 
-If we use a simple threshold of 0.05 for the p-value, we may have false positives. 
+If we use a simple threshold of 0.05 for the p-values, we may have false positives. 
 To address this issue, we use a conservative threshold of 0.05/60 for the p-values -- Bonferroni correction.
 The problem with Bonferroni correction is that it may increases false negatives.
 This problem can be addressed using another method -- False Discovery Rate (FDR).
-We used both methods -- Bonferroni and FDR, as well as no correction. The result are labeled accordingly in Fig.\ref{fig:vol-res:all}.
+We used both methods -- Bonferroni and FDR, as well as no correction. 
+The result are labelled accordingly in Fig.\ref{fig:vol-res:all}.
+
 
 %Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
 
