@@ -261,8 +261,7 @@ Turner2009,VanderGoesvanNaters2007,Yao2005}.
 	\centering
 	\includegraphics[width=0.5 \textwidth]{fig/hist-volumes}
 	\caption{Density function of molecular volumes $g(v)$, considering all molecules of DoOR database. 
-		The actual density function of molecular of volumes in each experiment, $g(v)$, might be slightly different 
-		because each experiment uses a different subset of molecules. 
+		%The actual density function of molecular of volumes in each experiment, $g(v)$, might be slightly different  because each experiment uses a different subset of molecules. 
 		The solid line is a Gaussian fit (Eq. \ref{eqn:hist-volumes}) and the dashed line shows the median, 
 		which is slightly different from  the mean.}
 	\label{fig:hist-volumes}
@@ -426,44 +425,35 @@ The results are in Fig.~\ref{}.
 		}
 	\label{fig:vol-res}
 \end{figure}
+
 \begin{figure}
-	\begin{subfigure}[b]{\textwidth}
+%	\begin{subfigure}[b]{\textwidth}
 		\centering
-		\includegraphics[width=  \textwidth]{fig/mean-vol}
-		\caption{The preferred volumes of \numberofreceptors receptors ($v_n$), and their error bars. 
-		The error bars are calculated using Jack-Knife method. 
-		Some receptors prefer smaller molecules - like Or33b, Or7a and  Or92a, 
-		but some other receptors prefer larger molecules - like  Or85e,  Or74a and  Or59c.}
+		\includegraphics[width=  0.85 \textwidth]{fig/mean-vol}
 		\label{fig:preferred_volume}
-	\end{subfigure}
-	\begin{subfigure}[b]{\textwidth}
-	\centering
-		\includegraphics[width=  \textwidth]{fig/std-vol}
-		\caption{The flexibility of each receptor ($\sigma_n$), the error bars are calculated using Jack-Knife method.
-			Some receptors like Or46a,  Or71a and Or22b are volume  selective, 
-			but some other receptors like Or88a,  Or82a and  Or74a show flexibility and respond to broader range of molecular volumes.
-		}
+		\includegraphics[width=  0.85 \textwidth]{fig/std-vol}
 		\label{fig:volume_flexibility}
-	\end{subfigure}
-	\caption{}
+%	\end{subfigure}
+	\caption{The preferred volumes of \numberofreceptors receptors $v_n$ (top). 
+		and their flexibilities $\sigma_n$ (down). 
+		The error bars are calculated using Jack-Knife method. 
+		Some receptors like Or33b, Or7a and  Or92a prefer smaller molecules, 
+		but some others like Or85e,  Or74a and  Or59c prefer larger molecules.
+		Some receptors like Or46a,  Or71a and Or22b are volume  selective, 
+		but some others like Or88a,  Or82a and  Or74a respond to broader range of molecular volumes.
+		}
 \end{figure}
 
 \begin{figure}
 	\centering
 	%\includegraphics[width=  \textwidth]{fig/mean-vol}
 	%\includegraphics[width=  \textwidth]{fig/std-vol}
-	\includegraphics[width= 0.75 \textwidth]{fig/pair-pval}
-	\caption{The binding-pocket's volume and flexibility in olfactory receptors are divers.
-		The upper triangle shows pairs of olfactory receptors that differ in the binding-pocket's volume,
-		the lower triangle shows the pairs that differ in the binding-pocket's flexibility.
-		The darkness shows significance level:
-		White is insignificant, 
-		all the shades of blue are significant with p-value of less than 0.05,
-		two darker shades are significant considering FDR correction, 
-		and the darkest shade is significant according to Bonferroni correction.
+	\includegraphics[width= 0.5 \textwidth]{fig/pair-pval}
+	\caption{Pairs of olfactory receptors that differ significantly in their binding-pocket's volume (upper triangle) and flexibility (lower triangle).
+			All shade of blue have p-value of less than 0.05, 
+			two darker shades have FDR corrected p-values of less than 0.05 and the darkest shade has Bonferroni corrected p-value of less than 0.05.
 		}
 \end{figure}
-
 
 There are two main assumption in this work: 
 First we assumed that the response of an olfactory receptor can be factorized into two terms, 
