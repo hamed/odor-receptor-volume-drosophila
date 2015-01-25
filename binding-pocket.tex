@@ -25,6 +25,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{wrapfig}
+\usepackage[leftcaption]{sidecap}
 
 \usepackage[style=numeric-comp, sorting=none, url=false, isbn=false]{biblatex}
 \addbibresource{binding-pocket.bib}
@@ -154,7 +155,7 @@ an olfactory receptor can be triggered by different odorant molecules,
 and an odorant molecule can excite different olfactory receptors~\cite{Malnic2000}.
 The combinatorial code helps the olfactory system to discriminates trillion odors~\cite{Bushdid2014}.
 However, it is not clear yet which properties of a molecule contribute to its smell,
-it is a topic of ongoing researches and there are many theories~\cite{Turin,Keller2004,Araneda2000,Brookes2007,Franco2011,Pelz2006,Gabler2013,Schmuker2007,Haddad2008,Snitz2013,Yablonka2012,gane2013,boyle2013,zarzo2011}.
+it is a topic of ongoing researches and there are many theories~\cite{Turin,Keller2004,Araneda2000,Brookes2007,Franco2011,Pelz2006,Gabler2013,Schmuker2007,Haddad2008,Snitz2013,Yablonka2012,gane2013}.
 
 In this study, 
 we investigate the relation between molecular volumes of odorants and the responses of olfactory receptor neurons. 
@@ -180,7 +181,7 @@ the activated receptors changes the potential of the cell,
 directly (inotropic) or indirectly (metabotropic).
 
 The amount of change in the membrane potential of a olfactory receptor neuron depends on the number of activated olfactory receptor proteins and the time that they remain activated,
-which are determined by various physio-chemical properties of the ligand (odorant) and the receptor~\cite{Turin,Araneda2000,Gabler2013,boyle2013}, 
+which are determined by various physio-chemical properties of the ligand (odorant) and the receptor~\cite{Turin,Araneda2000,Gabler2013}, 
 but here we focus only on to properties: the volume and the flexibility of the binding-pocket.
 The molecular volume of a ligand should match the dimensions of the binding-pocket of the receptor,
 then it fits into the binding-pocket of the receptor and triggers the signal transduction. 
@@ -404,7 +405,7 @@ The results are in Fig.~\ref{}.
 	\centering
 %	\begin{subfigure}[b]{\textwidth}
 		\includegraphics[width=\textwidth]{fig/vol-res}
-		\caption{}
+		%\caption{}
 		\label{fig:vol-res:all}		
 %	\end{subfigure}
 %	\begin{subfigure}[b]{0.75 \textwidth}
@@ -424,7 +425,8 @@ The results are in Fig.~\ref{}.
 \end{figure}
 \begin{figure}
 	\begin{subfigure}[b]{\textwidth}
-		\includegraphics[width=\textwidth]{fig/mean-vol}
+		\centering
+		\includegraphics[width=  \textwidth]{fig/mean-vol}
 		\caption{The preferred volumes of \numberofreceptors receptors ($v_n$), and their error bars. 
 		The error bars are calculated using Jack-Knife method. 
 		Some receptors prefer smaller molecules - like Or33b, Or7a and  Or92a, 
@@ -432,7 +434,8 @@ The results are in Fig.~\ref{}.
 		\label{fig:preferred_volume}
 	\end{subfigure}
 	\begin{subfigure}[b]{\textwidth}
-		\includegraphics[width=\textwidth]{fig/std-vol}
+	\centering
+		\includegraphics[width=  \textwidth]{fig/std-vol}
 		\caption{The flexibility of each receptor ($\sigma_n$), the error bars are calculated using Jack-Knife method.
 			Some receptors like Or46a,  Or71a and Or22b are volume  selective, 
 			but some other receptors like Or88a,  Or82a and  Or74a show flexibility and respond to broader range of molecular volumes.
@@ -441,6 +444,23 @@ The results are in Fig.~\ref{}.
 	\end{subfigure}
 	\caption{}
 \end{figure}
+
+\begin{figure}
+	\centering
+	%\includegraphics[width=  \textwidth]{fig/mean-vol}
+	%\includegraphics[width=  \textwidth]{fig/std-vol}
+	\includegraphics[width= 0.5 \textwidth]{fig/pair-pval}
+	\caption{The binding-pocket's volume and flexibility in olfactory receptors are divers.
+		The upper triangle shows pairs of olfactory receptors that differ in the binding-pocket's volume,
+		The lower triangle shows pairs that differ in the binding-pocket's flexibility.
+		The darkness of the shades show the level of significance:
+		Whites are insignificant differences, 
+		all the shades of blue have a p-value of less than 0.05,
+		darker shades are significant considering FDR correction, 
+		and the darkest shade are significant according to Bonferroni correction.
+		}
+\end{figure}
+
 
 There are two main assumption in this work: 
 First we assumed that the response of an olfactory receptor can be factorized into two terms, 
@@ -495,7 +515,7 @@ If all olfactory receptors had the same preferred volume and flexibility,
 any change in the molecular volume would change only the intensity of smell not its quality.
 But olfactory receptors have different preferred volumes and flexibilities, 
 so any change in the molecular volume of an odorant results in a different combinatorial encoding which affects the quality of perceived smell as well. 
-This agrees with the work of M. Zarzo, larger molecules  smell better~\cite{zarzo2011}.
+This agrees with the work of M. Zarzo: larger molecules  smell better~\cite{}.
 That may describe the difference in the smell of methanol, ethanol, propanol and butanol. 
 Methanol smells pungent, ethanol smells pleasant and winy, propanol smells like ethanol while butanol is similar to ethanol with little banana like aroma.
 The molecular volume affects the combinatorial encoding, 
