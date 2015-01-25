@@ -74,6 +74,8 @@
 \newcommand{\nocorrection}{ 2 }
 
 \begin{document}
+
+
 %\linenumbers
 
 \maketitle
@@ -120,6 +122,7 @@
 		\caption{Binding-pocket volume}
 		\label{fig:pocket-size}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[b]{0.45 \textwidth}
 		\includegraphics[width=\textwidth]{fig/binding-pocket-flex}
 		\caption{Binding-pocket flexibility}
@@ -257,11 +260,11 @@ Turner2009,VanderGoesvanNaters2007,Yao2005}.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5 \textwidth]{fig/hist-volumes}
-	\caption{Density function of molecular volumes ($g(v)$), considering all molecules of DoOR database. 
-		The actual density function of molecular of volumes in each experiment ($g(v)$) might be slightly different 
+	\caption{Density function of molecular volumes $g(v)$, considering all molecules of DoOR database. 
+		The actual density function of molecular of volumes in each experiment, $g(v)$, might be slightly different 
 		because each experiment uses a different subset of molecules. 
 		The solid line is a Gaussian fit (Eq. \ref{eqn:hist-volumes}) and the dashed line shows the median, 
-		which is slightly different from 		the mean.}
+		which is slightly different from  the mean.}
 	\label{fig:hist-volumes}
 \end{figure}
 
@@ -388,7 +391,7 @@ To address this issue, we use a conservative threshold of 0.05/60 for the p-valu
 The problem with Bonferroni correction is that it may increases false negatives.
 This problem can be addressed using another method -- False Discovery Rate (FDR).
 We used both methods -- Bonferroni and FDR, as well as no correction. 
-The result are labelled accordingly in Fig.\ref{fig:vol-res:all}.
+The result are labelled accordingly in Fig.\ref{fig:vol-res}.
 
 We also wants to show that the receptors are divers according to their volumes and flexibilities. 
 To estimate the p-values, 
