@@ -372,7 +372,7 @@ and then we calculate $v_n$:
 \end{equation}•
 The calculated $v_n$ and $\sigma_n$ are in supplemental file 1. 
 The resulting $f_n(v)$ are plotted over the actual data, for \numberofreceptors receptors (Fig.~\ref{fig:vol-res}),
-in which p-value $<0.05$. 
+in which p-values $<0.05$. 
 
 We calculate p-values by permutation test. 
 The alternative hypothesis is 
@@ -381,12 +381,13 @@ which require  a finite value for $\sigma_n$,
 then the null hypothesis is 
 ``{\it The response of olfactory receptor neurons is independent of molecular volume of odorants.}'',
 which require $\sigma_n \rightarrow \infty$, 
-so p-value is the probability of having $\sigma'_n<\sigma_n$, 
+so p-value is the probability of having $\sigma'_n\leq\sigma_n$, 
 where $\sigma_n$ is calculated from the original data, but $\sigma'_n$ calculated using permuted version.
 
-We are testing a hypothesis 60 times for we have 60  olfactory receptors. 
-If we use a simple threshold of 0.05 for the p-values, we may have false positives. 
-To address this issue, we use a conservative threshold of 0.05/60 for the p-values -- Bonferroni correction.
+We are testing a hypothesis on 60  olfactory receptors simultaneously. 
+If we use a simple threshold of 0.05 for the p-value of each receptor, we may have false positives. 
+To address this issue, multiple-comparison problem, 
+we use Bonferroni correction. 
 The problem with Bonferroni correction is that it may increases false negatives.
 This problem can be addressed using another method -- False Discovery Rate (FDR).
 We used both methods -- Bonferroni and FDR, as well as no correction. 
@@ -419,8 +420,8 @@ The results are in Fig.~\ref{}.
 			the fitted functions $f_n(v)$ from Eq.~\ref{eqn:factors} (solid lines), 
 			and the error bars of the mean of $f_n(v)$ (red vertical lines), 
 			for \numberofreceptors receptors that their response showed significant (p-value $<0.05$) dependence to molecular volume. 
-			Among them, \fdr have FDR corrected p-value $<0.05$ (receptor names in bold or normal) and 
-			\bonferroni have a Bonferroni corrected p-value $<0.05$ (receptor names in bold).
+			Among them, \fdr are significant according to FDR correction (non-italic receptor names) and 
+			\bonferroni are significant considering Bonferroni correction (bold receptor names).
 		}
 	\label{fig:vol-res}
 \end{figure}
