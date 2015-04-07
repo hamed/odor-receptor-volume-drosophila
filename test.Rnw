@@ -1,0 +1,130 @@
+\documentclass[a4paper]{article}
+
+\SweaveOpts{echo=true}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+
+First we define a figure hook:
+
+This simple code provided to test volume sensitivity of Olfactory Receptors.
+Ref article:Olfactory receptors are sensitive to molecular volume of odorants
+Authors: Majid Saberi, Hamed Seyed-allaei
+doi: http://dx.doi.org/10.1101/013516
+January 6, 2015
+
+
+<<>>=
+rm ( list=ls())
+
+#setwd("~/")                                #Path of files location setting
+@
+At first, we extract molecular volumes and responses from supplementary data. 
+<<>>=
+DoOR <- as.matrix( read.csv("proposed_odorants.csv") )
+rownames( DoOR ) <- DoOR[, 1]
+DoOR <- DoOR[, 2:33]
+mode( DoOR ) <- "numeric"
+@
+DoOR represent response of odor receptors(columns) to odorants(rows), for example:
+<<>>=
+
+DoOR[ 1:5 , 1:5 ]
+@
+
+<<>>=
+odorants <- as.matrix( read.csv("odorants.csv") )
+volume <- as.numeric( odorants[, 4] )
+names( volume ) <- odorants[, 1]
+@
+We have vector of molecular volumes:
+<<>>=
+volume[1:10]
+@
+We can plot response of ORs versus molecular volumes for every receptors:
+<<fig=T>>=
+plot(volume, DoOR[ ,"Or35a" ], ylim=c(0,1), xlim=c(0,250), main="Or35a" )
+@
+
+To find out f(v), volume and flexibility of binding packet of ORs we define useful functions.
+Weighted mean and weighted standard deviation functions:
+<<>>=
+wt.mean <- function (x, wt)                   #Weighted mean function
+  {
+    s = which(!is.na(x * wt))
+    wt = wt[s]
+    x = x[s]
+    return(sum(wt * x)/sum(wt))
+  }
+wt.sd <- function (x, wt)                     #Weighted sd function
+  {
+    s = which(!is.na(x + wt))
+    wt = wt[s]
+    x = x[s]
+    xbar = wt.mean(x, wt)
+    return(sqrt( sum(wt * (x^2))/sum(wt) - xbar^2)  )
+  }
+@
+Gaussian function:
+<<>>=
+gauss <- function (x, mu=0, sig=1)            #Gaussian function
+  {
+    return( exp( -(x - mu)^2 / (2 * sig^2) ) )
+  }
+@
+
+\begin{equation}
+  \displaystyle f_n(v) = e^{-\frac{(v-v_n)^2}{2\sigma^2_n}}, 
+	\label{eqn:volume-dependence}
+\end{equation}
+\begin{equation}
+  \frac{1}{\sigma_n^2} = \frac{1}{\sigma^2_{h_n}}  - \frac{1}{\sigma^2_{g_n}}
+\end{equation}•
+\begin{equation}
+  v_n  =    \sigma_n^2(\frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}}).
+\end{equation}•
+
+
+<<>>=
+parameter <- function(OR){
+    response = DoOR[, OR]                            #OR's response selection
+    sig_g = sd(volume, na.rm=T)                      #SD of g(v)
+    mu_g = mean(volume, na.rm=T)                     #MEAN of g(v)
+    sig_h = wt.sd(volume, response)                  #SD of h(v), 10th formula
+    mu_h =  wt.mean(volume, response)                #MEAN of h(v), 9th formual
+
+    sig_f = sqrt( sig_g^2 * sig_h^2 / (sig_g^2 - sig_h^2) )    #SD of f(v)
+    mu_f = sig_f^2 * (mu_h/sig_h^2 - mu_g/sig_g^2)             #MEAN of f(v)
+return(c(mu_f, sig_f))
+}
+@
+
+
+
+
+
+we see volume sensitivity of ORs. 
+Scatterplot shows response versus molecular volume and f(v) lines as volume dependancy or volume profile of OR. 
+
+below we show receptors which their responses significantly are dependent to molecular volume and validated by bootstrapping test.
+<<>>=
+colnames(DoOR)
+@
+
+Everyone can choose one of them and see volume sensitivity of OR. 
+Scatterplot shows response versus molecular volume and f(v) lines as volume dependancy or volume profile of OR. 
+
+<<fig=TRUE>>=
+    OR = "Or35a"
+    para <- parameter(OR)
+    mu_f <- para[1]
+    sig_f <- para[2]
+    f_v = gauss(volume, mu=mu_f, sig=sig_f)     #Making f(v) as a gaussian function
+    plot(volume, DoOR[ ,OR], ylim=c(0,1), xlim=c(0,250) , ylab="response" , main=OR , col="blue" )
+    lines(volume,  f_v )
+@
+
+
+\end{document}
+
