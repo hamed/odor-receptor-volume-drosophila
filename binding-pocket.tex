@@ -79,7 +79,7 @@
 
 %%% The "real" document content comes below...
 
-\title{Olfactory receptors are sensitive to molecular volume of odorants}
+\title{Olfactory receptors of Drosophila are sensitive to molecular volume of odorants}
 %\author{Majid Saberi \and Hamed Seyed-allaei\thanks{hamed@ipm.ir}}
 %\institution{School of Cognitive Science, \\ Institute for Research in Fundamental Sciences (IPM), \\Tehran, Iran}
 
@@ -148,10 +148,10 @@
 \end{figure}
 
 Survival of many species depends on their olfactory system. 
-They use it  to search for food, 
+They use it  to find food, 
 avoid poison, 
 escape from danger, 
-find mate, 
+mate, 
 and bind to their offspring.
 An olfactory system detects volatile chemicals in the surrounding, 
 encodes the results and transmit them to limbic system and cortex.
@@ -197,7 +197,7 @@ directly (inotropic) or indirectly (metabotropic).
 
 The amount of change in the membrane potential of a olfactory receptor neuron depends on the number of activated olfactory receptor proteins and the time that they remain activated,
 which are determined by various physio-chemical properties of the ligand (odorant) and the receptor~\cite{Turin,Araneda2000,Gabler2013,guerrieri2005,uchida2000}, 
-but here we focus only on to properties: the volume and the flexibility of the binding-pocket.
+but here we focus only on two properties: the volume and the flexibility of the binding-pocket.
 The molecular volume of a ligand should match the dimensions of the binding-pocket of the receptor,
 then it fits into the binding-pocket of the receptor and triggers the signal transduction. 
 Any mismatch in the volumes will affect the neural responses (Fig. \ref{fig:pocket-size}), 
@@ -282,7 +282,7 @@ Turner2009,VanderGoesvanNaters2007,Yao2005}.
 We want to study the relation between neural responses and molecular volumes, 
 so we need the respective data. 
 We take the neural data of DoOR database \cite{Galizia2010} and we calculate molecular volume (supplemental file 3) using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
-We used  GNU R to analyse the data~\cite{Rlanguage}.
+We used  GNU R to analyze the data~\cite{Rlanguage}.
 
 DoOR database can be summarized in an $N\times M$ matrix. 
 Its elements, $r_{nm}$, are the response of neuron $n$ to odorant $m$. 
@@ -403,14 +403,14 @@ we use Bonferroni correction.
 The problem with Bonferroni correction is that it may increases false negatives.
 This problem can be addressed using another method -- False Discovery Rate (FDR).
 We used both methods -- Bonferroni and FDR, as well as no correction. 
-The result are labelled accordingly in Fig.\ref{fig:vol-res}.
+The result are labeled accordingly in Fig.\ref{fig:vol-res}.
 
-We also wants to show that the receptors are divers according to their volumes and flexibilities. 
+We also wants to show that the diversity of volume and flexibility of binding pocket among receptors.
 To estimate the p-values, 
 we take any pair of receptors that was sensitive molecular volume (\numberofreceptors receptors),
 calculate their difference, 
 use a permutation test and measure the probability of having them to be that different only by chance.
-The results are in Fig.~\ref{}.
+The results are in Fig.~\ref{fig:p-values}.
 
 %Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
 
@@ -464,6 +464,7 @@ The results are in Fig.~\ref{}.
 	\caption{Pairs of olfactory receptors that differ significantly in their binding-pocket's volume (upper triangle) and flexibility (lower triangle).
 			All blue shades have p-value of less than 0.05, 
 			two darker shades have FDR corrected p-values of less than 0.05 and the darkest shade has Bonferroni corrected p-value of less than 0.05.}
+	\label{fig:p-values}
 \end{figure}
 
 There are two main assumption in this work: 
@@ -488,32 +489,32 @@ which show a significant dependence to molecular volume of odorants in their res
 To address the multiple comparison problem, 
 we also calculated the level of significance according to both Bonferroni (very conservative) and FDR (less conservative) corrections. 
 From the results of \numberofreceptors receptors, 
-\bonferroni of them are significant according to Bonferroni correction (receptor names in bold), 
+\bonferroni of them are significant according to Bonferroni correction (receptor names in italic), 
 \fdr of them are significant according to FDR correction 
-(receptor names in normal typeface plus what was significant according to Bonferroni), 
+(receptor names in bold), 
 and the rest (\nocorrection receptors), 
-only satisfy the criteria of  p-value $<0.05$, without any corrections (receptor names in italic).
+only satisfy the criteria of  p-value $<0.05$, without any corrections.
 Considering the FDR correction, 
 we can conclude that close to half of receptors (\fdr / 60 ) show significant sensitivity toward molecular volumes. 
-The other half could be sensitive to molecular volume as well, but the current the data can not prove that.
-More experiments are necessary.
-\begin{table}
-\begin{center}
-    \begin{tabular}{ | l | l | l |l |}
-    \hline
-     &  $p_{value} < 0.05$ & FDR & Bonferroni \\ \hline
-     $r_{nm} \bot v_m$ &  28 &  26 & 11\\ 
-     $v_{n_1} = v_{n_2}$&  21 & 23 & 38\\ \hline
-    \end{tabular}
-\end{center}
-\caption{Number of times that the null hypothesis has been rejected.}
-\end{table}
-The parameters of $f_n(v)$, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volume} and \ref{fig:volume_flexibility} respectively.
-Figure \ref{fig:preferred_volume} demonstrate that the molecular volume preference of receptors are different. 
-Figure \ref{fig:volume_flexibility} illustrate that the flexibility of receptors are also different.
+The other half could be sensitive to molecular volume as well, but the current evidence are not enough and
+more experiments are necessary.
+%\begin{table}
+%\begin{center}
+%    \begin{tabular}{ | l | l | l |l |}
+%    \hline
+%     &  $p_{value} < 0.05$ & FDR & Bonferroni \\ \hline
+%     {\small Receptors are sensitive to molecular volume} &  28 &  26 & 11\\ 
+%     $v_{n_1} = v_{n_2}$&  21 & 23 & 38\\ \hline
+%    \end{tabular}
+%\end{center}
+%\caption{Times that the null hypothesis has been rejected, according to different method}
+%\end{table}
+The parameters of $f_n(v)$, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volume}.
+Figure \ref{fig:preferred_volume} demonstrate that the molecular volume preference of receptors are different (top). 
+and the flexibility of receptors are also different (bottom).
 To back these claims, 
 we estimated the p-values of having different volume preference and flexibility for each pairs of \numberofreceptors receptors
-(Fig.~\ref{}). 
+(Fig.~\ref{fig:p-value}). 
 From all possible 378 pairs, 
 when comparing the volume preferences, 
 133 have a p-value of less than 0.05, 
@@ -528,10 +529,10 @@ assume that every characteristic of odorant molecules are the same but their mol
 If all olfactory receptors had the same preferred volume and flexibility, 
 any change in the molecular volume would change only the intensity of smell not its quality.
 But olfactory receptors have different preferred volumes and flexibilities, 
-so any change in the molecular volume of an odorant results in a different combinatorial encoding which affects the quality of perceived smell as well. 
-This agrees with the work of M. Zarzo: larger molecules  smell better~\cite{}.
+so any change in the molecular volume of an odorant results in a different combinatorial encoding which affects the quality of perceived smell as well its intensity.
+This agrees with the work of M. Zarzo: larger molecules  smell better~\cite{zarzo2011}.
 That may describe the difference in the smell of methanol, ethanol, propanol and butanol. 
-Methanol smells pungent, ethanol smells pleasant and winy, propanol smells like ethanol while butanol is similar to ethanol with little banana like aroma.
+Methanol smells pungent, ethanol smells pleasant and winy, propanol and butanol smell like ethanol except butanol  has a little banana like aroma.
 The molecular volume affects the combinatorial encoding, 
 and the combinatorial code determines the quality of odorants.
 
@@ -579,7 +580,7 @@ We have suggested the best selection of odorants for each of \numberofreceptors 
 			The hatched area are odorants with molecular volume close to the preferred volume of each receptor
 			($v_n \pm \frac{\sigma}{2}$).
 			We already know the neural response of hatched blue areas, 
-			but the hatched pink odorants could be the target of future experiments.
+			but the hatched pink odorants could be the target of future experiments, we predict the rest give only zeros.
 			}
 	\label{fig:odorant-suggest}
 \end{figure}
@@ -588,6 +589,9 @@ Although this work is on the data of Drosophila,
 we expect that the general principles and methodologies of this work hold for vertebrates as well. 
 But considering the similarities and dissimilarities between insects and vertebrate, 
 this should be verified.
+
+Approximating $f_n(v)$ and $g(v)$ with a Gaussian function makes the mathematical formulation simple and readable. 
+But a semi-infinite function may be a better choice for molecular volumes can not have negative values.
 
 \section*{Acknowledgments}
 We are especially grateful to B. N. Araabi, S. Aghvami and N. Doostani for the careful reading of the manuscript; and P. Carloni for the fruitful discussion.
