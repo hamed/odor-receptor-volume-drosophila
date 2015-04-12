@@ -497,15 +497,17 @@ Considering the FDR correction,
 we can conclude that close to half of receptors (\fdr / 60 ) show significant sensitivity toward molecular volumes. 
 The other half could be sensitive to molecular volume as well, but the current the data can not prove that.
 More experiments are necessary.
+\begin{table}
 \begin{center}
     \begin{tabular}{ | l | l | l |l |}
     \hline
-    Statistically significancy	 &  Bootstrapping test & FDR correction & Bonferroni correction  \\ \hline
-    Significant &  28 &  26 & 11\\ \hline
-    Not significant &  21 & 23 & 38\\ \hline
+     &  $p_{value} < 0.05$ & FDR & Bonferroni \\ \hline
+     $r_{nm} \bot v_m$ &  28 &  26 & 11\\ 
+     $v_{n_1} = v_{n_2}$&  21 & 23 & 38\\ \hline
     \end{tabular}
 \end{center}
-
+\caption{Number of times that the null hypothesis has been rejected.}
+\end{table}
 The parameters of $f_n(v)$, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volume} and \ref{fig:volume_flexibility} respectively.
 Figure \ref{fig:preferred_volume} demonstrate that the molecular volume preference of receptors are different. 
 Figure \ref{fig:volume_flexibility} illustrate that the flexibility of receptors are also different.
