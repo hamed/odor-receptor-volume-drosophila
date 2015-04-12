@@ -5,7 +5,23 @@
 % This is a simple template for a LaTeX document using the "article" class.
 % See "book", "report", "letter" for other types of document.
 
-\documentclass[11pt]{paper} % use larger type; default would be 10pt
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+%sci
+\usepackage{scicite}
+
+\topmargin 0.0cm
+\oddsidemargin 0.2cm
+\textwidth 16cm 
+\textheight 21cm
+\footskip 1.0cm
+
+\newenvironment{sciabstract}{%
+\begin{quote} \bf}
+{\end{quote}}
+
+%sciend
+
 \usepackage{lineno}
 
 \usepackage{setspace}
@@ -64,8 +80,16 @@
 %%% The "real" document content comes below...
 
 \title{Olfactory receptors are sensitive to molecular volume of odorants}
-\author{Majid Saberi \and Hamed Seyed-allaei\thanks{hamed@ipm.ir}}
-\institution{School of Cognitive Science, \\ Institute for Research in Fundamental Sciences (IPM), \\Tehran, Iran}
+%\author{Majid Saberi \and Hamed Seyed-allaei\thanks{hamed@ipm.ir}}
+%\institution{School of Cognitive Science, \\ Institute for Research in Fundamental Sciences (IPM), \\Tehran, Iran}
+
+\author{Majid Saberi,$^1$ \and Hamed Seyed-allaei$^{1\ast}$\\
+\\
+\normalsize{$^1$School of Cognitive Science, Institute for Research in Fundamental Sciences (IPM), Tehran, Iran}\\
+\\
+\normalsize{$^\ast$ To whom correspondence should be addressed; E-mail:  hamed@ipm.ir.}\\
+}
+
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
 
@@ -81,7 +105,8 @@
 
 \maketitle
 
-\begin{abstract}
+%\begin{abstract}
+\begin{sciabstract}
 	Which properties of a molecule define its odor? 
 	This is a basic question of olfaction, 
 	yet to be answered. Human olfactory system has a repertoire of about 350 olfactory receptors. 
@@ -95,9 +120,11 @@
 	and predicted the volume and the structural flexibility of each receptor’s binding-site, 
 	which are significantly different among receptors. 
 	This provides a reason for differences in smell among similar molecules of different sizes. 
-\end{abstract}
+\end{sciabstract}
+%\end{abstract}
 
-\section{Introduction}
+
+\section*{Introduction}
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.45 \textwidth}
@@ -241,7 +268,7 @@ Turner2009,VanderGoesvanNaters2007,Yao2005}.
  
 %Humans can discriminate several million different colors and almost half a million different tones,On the basis of the results of psychophysical testing, we calculated that humans can discriminate at least 1 trillion olfactory stimuli.~\cite{Bushdid2014}
 
-\section{Material and methods}
+\section*{Material and methods}
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5 \textwidth]{fig/hist-volumes}
@@ -388,11 +415,11 @@ The results are in Fig.~\ref{}.
 %Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
 
 
-\section{Results and discussions}
+\section*{Results and discussions}
 \begin{figure}
 	\centering
 %	\begin{subfigure}[b]{\textwidth}
-		\includegraphics[width=\textwidth]{fig/vol-res-}
+		\includegraphics[width=0.8 \textwidth]{fig/vol-res-}
 		%\caption{}
 		\label{fig:vol-res:all}		
 %	\end{subfigure}
@@ -560,7 +587,7 @@ we expect that the general principles and methodologies of this work hold for ve
 But considering the similarities and dissimilarities between insects and vertebrate, 
 this should be verified.
 
-\section{Acknowledgments}
+\section*{Acknowledgments}
 We are especially grateful to B. N. Araabi, S. Aghvami and N. Doostani for the careful reading of the manuscript; and P. Carloni for the fruitful discussion.
 
 \printbibliography
