@@ -543,11 +543,27 @@ It is a topic of ongoing researches,
 there are many works that try to connect the physio-chemical properties of molecules to the evoked neural response or perceived smells.
 But the non-linear volume dependence (Eq. \ref{eqn:factors} and Eq. \ref{eqn:volume-dependence})  
 may mask important relations between molecules and neural responses.
+When $f_n(v)$ is zero or close to zero, 
+the value of $\psi_{nm}$ does not matter. 
 
-By considering the effect of molecular volume on the response of olfactory receptor neurons, 
-one might discover more subtle dependence between other molecular features and neural responses, 
-by investigating $\psi_{nm}$, 
-which otherwise would be masked by this non-linear relation $f_n(v)$.
+We predict odorants with a molecular volume on the tails of $f_n(v)$ goes undetected, 
+regardless of any other physio-chemical properties that they may have. 
+This prediction can be confirmed with more experiments. 
+
+To better study $\psi_{nm}$ of a receptor, 
+it is better to have many data points and those data points are better to be around the preferred volume of the receptor.
+But this is not the case in current data. 
+For many receptors, 
+most data points are on the tails of $f_n(v)$, which is close to zero.
+We have suggested the best selection of odorants for each of \numberofreceptors studied receptors 
+(see Venn diagram in Fig.~\ref{fig:odorant-suggest} and supplemental file 2), 
+saving time and expenses of future experiments. 
+
+%After gathering enough data, 
+%by considering the effect of molecular volume on the response of olfactory receptor neurons, 
+%one might discover more subtle dependence between other molecular features and neural responses, 
+%by investigating $\psi_{nm}$, 
+%which otherwise would be masked by this non-linear relation $f_n(v)$.
 
 We also predict some {\it in-vivo} structural aspects of  the binding-pocket of olfactory receptors:
 the preferred volume of each receptor results from the volume of the binding-pocket,
@@ -562,14 +578,6 @@ then its response to a selection of molecules are measured and finally the prefe
 In this way we can understand which amino acids of the olfactory receptor contribute to the volume and flexibility of the binding-pocket, 
 as well as affecting the function of the receptors.
 
-Our finding can also save time and expenses of experiments by suggesting important odorants for each receptor.
-To study $\psi_{nm}$ of a receptor, 
-it is better to have many data points and those data points are better to be around the preferred volume of the receptor.
-But this is not the case in current data, 
-for many receptors, 
-most data points are on the tails of $f_n(v)$, which is close to zero.
-We have suggested the best selection of odorants for each of \numberofreceptors studied receptors 
-(see Venn diagram in Fig.~\ref{fig:odorant-suggest} and supplemental file 2).
 
 \begin{figure}
 \centering
@@ -586,13 +594,15 @@ We have suggested the best selection of odorants for each of \numberofreceptors 
 	\label{fig:odorant-suggest}
 \end{figure}
 
+
+There is one possible improvment to this work. Approximating $f_n(v)$ and $g(v)$ with a Gaussian function makes the mathematical formulation simple and readable. 
+But a semi-infinite function may be a better choice for molecular volumes can not have negative values.
+
 Although this work is on the data of Drosophila, 
 we expect that the general principles and methodologies of this work hold for vertebrates as well. 
 But considering the similarities and dissimilarities between insects and vertebrate, 
 this should be verified.
 
-Approximating $f_n(v)$ and $g(v)$ with a Gaussian function makes the mathematical formulation simple and readable. 
-But a semi-infinite function may be a better choice for molecular volumes can not have negative values.
 
 \section*{Acknowledgments}
 We are especially grateful to B. N. Araabi, S. Aghvami and N. Doostani for the careful reading of the manuscript; and P. Carloni for the fruitful discussion.
