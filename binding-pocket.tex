@@ -1,5 +1,5 @@
 % !TEX TS-program = pdflatex
-% !TEX encoding = UTF-8 Unicode
+%% !TEX encoding = UTF-8 Unicode
 % !TEX spellcheck = en_US
 
 % This is a simple template for a LaTeX document using the "article" class.
@@ -167,7 +167,7 @@ so that each glomerulus of olfactory bulb receives an amplified signal from only
 The olfactory systems use a combinatorial code: 
 unlike many other receptors which are activated by only specific ligands (eq. neurotransmitters and hormones),
 an olfactory receptor can be triggered by many odorant molecules, 
-and an odorant molecule can excite different olfactory receptors~\cite{Malnic2000},
+and an odorant molecule can interact different olfactory receptors~\cite{Malnic2000},
 
 The combinatorial code helps the olfactory system to discriminates trillion odors~\cite{Bushdid2014}.
 However, it is not clear yet which properties of a molecule contribute to its smell,
@@ -212,10 +212,10 @@ including olfactory receptors.
 It is the topic of ongoing researches, 
 using various methods like Molecular Dynamic (MD) simulations, 
 mutagenesis studies, heterologus expression studies, and homology modeling~\cite{Khafizov2007,Man2004,Lai2005,Vaidehi2002,Floriano2004,Schmiedeberg2007,Katada2005,Kato2008,Rospars2013}.
-In this study, we use neural recording to predict the volume and flexibility of binding-pocket of olfactory receptors, {\it in-vivo}.
+In this study, we use neural recording to predict the {\it in-vivo} volume and flexibility of binding-pocket of olfactory receptors.
 
-In this study we suggest a functional relation between molecular volume and the neural responses, 
-we provide a methodology to estimate {\it chemical range} or {\it tuning function} of olfactory receptors,
+We suggest a functional relation between molecular volume and the neural responses, 
+we provide a methodology to estimate {\it molecular receptive range} or {\it tuning function} of olfactory receptors,
 and then we predict the structural properties of the binding-pocket of olfactory receptor - the volume and the flexibility of binding-pocket.
 Our results may help to select odorants  for new experimental studies, 
 may provide additional information about the structure of olfactory receptors to structural biologists, 
@@ -397,7 +397,7 @@ which require $\sigma_n \rightarrow \infty$,
 so p-value is the probability of having $\sigma'_n\leq\sigma_n$, 
 where $\sigma_n$ is calculated from the original data, but $\sigma'_n$ calculated using permuted version.
 
-We are testing a hypothesis on 60  olfactory receptors simultaneously. 
+We are testing a hypothesis on  $\sim$60 olfactory receptors simultaneously. 
 If we use a simple threshold of 0.05 for the p-value of each receptor, we may have false positives. 
 To address this issue, multiple-comparison problem, 
 we use Bonferroni correction. 
@@ -433,8 +433,8 @@ The results are in Fig.~\ref{fig:p-values}.
 			the fitted functions $f_n(v)$ from Eq.~\ref{eqn:factors} (solid lines), 
 			and the error bars of the mean of $f_n(v)$ (red vertical lines), 
 			for \numberofreceptors receptors that their response showed significant (p-value $<0.05$) dependence to molecular volume. 
-			Among them, \fdr are significant according to FDR correction (non-italic receptor names) and 
-			\bonferroni are significant considering Bonferroni correction (bold receptor names).
+			Among them, \fdr are significant according to FDR correction (receptor names in bold) and 
+			\bonferroni are significant considering Bonferroni correction (receptor names in italic).
 		}
 	\label{fig:vol-res}
 \end{figure}
