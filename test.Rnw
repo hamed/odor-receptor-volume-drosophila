@@ -32,7 +32,6 @@ DoOR represent response of odor receptors(columns) to odorants(rows), for exampl
 
 DoOR[ 1:5 , 1:5 ]
 @
-
 <<>>=
 odorants <- as.matrix( read.csv("odorants.csv") )
 volume <- as.numeric( odorants[, 4] )
@@ -46,9 +45,21 @@ We can plot response of ORs versus molecular volumes for every receptors:
 <<fig=T>>=
 plot(volume, DoOR[ ,"Or35a" ], ylim=c(0,1), xlim=c(0,250), main="Or35a" )
 @
+to find out how odor receptors are sensitive to molecular volume of odorants we try to obtain  $f_n(v)$. 
+\begin{equation}
+  \displaystyle f_n(v) = e^{-\frac{(v-v_n)^2}{2\sigma^2_n}}, 
+  \label{eqn:volume-dependence}
+\end{equation}
 
-To find out f(v), volume and flexibility of binding packet of ORs we define useful functions.
-Weighted mean and weighted standard deviation functions:
+$v_n$ and $\sigma_n$ also represent prefered volume and flexibility of binding packet.
+\begin{equation}
+  \frac{1}{\sigma_n^2} = \frac{1}{\sigma^2_{h_n}}  - \frac{1}{\sigma^2_{g_n}}
+\end{equation}•
+\begin{equation}
+  v_n  =    \sigma_n^2(\frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}}).
+\end{equation}•
+
+require code to 
 <<>>=
 wt.mean <- function (x, wt)                   #Weighted mean function
   {
