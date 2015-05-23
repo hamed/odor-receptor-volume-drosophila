@@ -1,2 +1,2 @@
 #/bin/bash
-rm *.aux *.bbl *.bcf *.blg *.log *.pdf 
+rm *.aux *.bbl *.bcf *.blg *.log *.pdf *.synctex.gz* *.xml
