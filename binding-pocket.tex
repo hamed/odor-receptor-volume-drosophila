@@ -260,7 +260,7 @@ Turner2009,VanderGoesvanNaters2007,Yao2005}.
 
 We want to study the relation between neural responses and molecular volumes, 
 so we need the respective data. 
-We take the neural data of DoOR database \cite{Galizia2010} and we calculate molecular volume (supplemental file 3) using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
+We take the neural data of DoOR database \cite{Galizia2010} and we calculate molecular volume (supplemental file odorants.csv) using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
 We used  GNU R to analyze the data~\cite{Rlanguage}.
 
 DoOR database can be summarized in an $N\times M$ matrix. 
@@ -361,7 +361,7 @@ and then we calculate $v_n$:
 \begin{equation}
 	\frac{v_n}{\sigma_n^2}  =    \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}}.
 \end{equation}•
-The calculated $v_n$ and $\sigma_n$ are in supplemental file 1. 
+The calculated $v_n$ and $\sigma_n$ are in supplemental file volume-profiles.csv. 
 The resulting $f_n(v)$ are plotted over the actual data, for \numberofreceptors receptors (Fig.~\ref{fig:vol-res}),
 in which p-values $<0.05$. 
 
@@ -533,7 +533,7 @@ But this is not the case in current data.
 For many receptors, 
 most data points are on the tails of $f_n(v)$, which is close to zero.
 We have suggested the best selection of odorants for each of \numberofreceptors studied receptors 
-(see Venn diagram in Fig.~\ref{fig:odorant-suggest} and supplemental file 2), 
+(see Venn diagram in Fig.~\ref{fig:odorant-suggest} and supplemental file proposed-odorants.csv), 
 saving time and expenses of future experiments. 
 
 %After gathering enough data, 
