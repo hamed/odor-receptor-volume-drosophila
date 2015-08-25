@@ -86,7 +86,7 @@ linewidth=2pt % Width of the border lines around content boxes
 %
 {\includegraphics[height=4em]{fig/logo.jpg}} % First university/lab logo on the left
 {\bf\textsc{Olfactory receptors are sensitive to molecular volume of odorants}\vspace{0.5em}} % Poster title
-{\textsc{ Majid Saberi, \bf{Hamed Seyed-allaei} \vspace{0.5em} }}
+{\textsc{ Majid Saberi, \bf{Hamed Seyed-allaei} \vspace{0.5em} }(hamed@ipm.ir)}
 {\includegraphics[height=4em]{fig/logo.jpg}} % First university/lab logo on the 
 
 
@@ -209,13 +209,18 @@ The red disks (dark grey in b\&w) are odorant molecule,
 and the blue shapes (light grey in b\&w) are olfactory receptor and binding-pocket.
 
 
-Let assume:
+Let assume the response $r_{nm}$ depends on the molecular volume of the odorant, $v_m$, 
+and other physio-chemical properties of the molecule $m$; 
+We assume that we can separate the response $r_{nm}$ into two terms:
 {\huge
 \begin{equation}
-	r_{nm} = f_n(v_m) \psi_{nm} \nonumber
+	r_{nm} = f_n(v_m) \psi_{nm}.
+	\label{eqn:factors}
 \end{equation}
 }
-
+The first term, $f_n(v_m)$, depends only on the molecular volume of odorants.
+The second term, $\psi_{nm}$ include every other influential properties of molecules, but the molecular volume.
+Both terms are characteristic of each receptor, and they might vary from neuron to neuron.
 }
 
 
@@ -260,16 +265,6 @@ which is slightly different from  the mean.
 %but for simplicity, 
 %we use the former notation. 
 %
-The response $r_{nm}$ depends on the molecular volume of the odorant, $v_m$, 
-and other physio-chemical properties of the molecule $m$; 
-We assume that we can separate the response $r_{nm}$ into two terms:
-\begin{equation}
-	r_{nm} = f_n(v_m) \psi_{nm}.
-	\label{eqn:factors}
-\end{equation}
-The first term, $f_n(v_m)$, depends only on the molecular volume of odorants.
-The second term, $\psi_{nm}$ include every other influential properties of molecules, but the molecular volume.
-Both terms are characteristic of each receptor, and they might vary from neuron to neuron.
 In fact, the first term, $f_n(v)$, is the tuning curve of neuron $n$ in respect to the molecular volumes, 
 it can be approximated with a Gaussian function
 \begin{equation}
@@ -375,15 +370,22 @@ The results are in Fig.~\ref{fig:p-values}.
 
 \headerbox{results and discussions}{name=results and discussions,column=2,span=1,row=0}{
 
-	\centering
-		\includegraphics[width=0.2 \textwidth]{fig/vol-res-}
+\begin{center}
+		\includegraphics[width=\textwidth]{fig/vol-res-}
+\end{center}
 
-		\centering
-		\includegraphics[width=  0.2 \textwidth]{fig/mean-vol}
-		\includegraphics[width=  0.2 \textwidth]{fig/std-vol}
+\begin{center}
+		\includegraphics[width=  0.75 \textwidth]{fig/mean-vol}
+\end{center}
 
-	\centering
-	\includegraphics[width= 0.2 \textwidth]{fig/pair-pval}
+\begin{center}
+		\includegraphics[width=  0.75 \textwidth]{fig/std-vol}
+\end{center}
+
+
+\begin{center}
+\includegraphics[width= \textwidth]{fig/pair-pval}
+\end{center}
 There are two main assumption in this work: 
 First we assumed that the response of an olfactory receptor can be factorized into two terms, 
 according to (\ref{eqn:factors}).
