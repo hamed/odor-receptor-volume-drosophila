@@ -29,7 +29,7 @@
 \usepackage{setspace}
 
 \usepackage{graphicx} % Required for including images
-\graphicspath{{figures/}} % Directory in which figures are stored
+\graphicspath{{fig/}} % Directory in which figures are stored
 
 \usepackage{amsmath} % For typesetting math
 \usepackage{amssymb} % Adds new symbols to be used in math mode
@@ -45,6 +45,10 @@
 
 \usepackage{tikz} % Required for flow chart
 \usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
+\newcommand{\numberofreceptors}{ 28 }
+\newcommand{\bonferroni}{ 11 }
+\newcommand{\fdr}{ 26 }
+\newcommand{\nocorrection}{ 2 }
 
 \newcommand{\compresslist}{ % Define a command to reduce spacing within itemize/enumerate environments, this is used right after \begin{itemize} or \begin{enumerate}
 \setlength{\itemsep}{1pt}
@@ -80,10 +84,10 @@ linewidth=2pt % Width of the border lines around content boxes
 %	TITLE SECTION 
 %----------------------------------------------------------------------------------------
 %
-{\includegraphics[height=4em]{logo.png}} % First university/lab logo on the left
+{\includegraphics[height=4em]{logo.jpg}} % First university/lab logo on the left
 {\bf\textsc{Olfactory receptors are sensitive to molecular volume of odorants}\vspace{0.5em}} % Poster title
 {\textsc{ Majid Saberi, \bf{Hamed Seyed-allaei} \vspace{0.5em} }}
-{\includegraphics[height=4em]{logo.png}} % First university/lab logo on the 
+{\includegraphics[height=4em]{logo.jpg}} % First university/lab logo on the 
 
 
 %----------------------------------------------------------------------------------------
@@ -110,10 +114,18 @@ This provides a reason for differences in smell among similar molecules of diffe
 }
 
 %----------------------------------------------------------------------------------------
-%	INTRODUCTION
+%	MATERIALS AND METHODS
 %----------------------------------------------------------------------------------------
 
 \headerbox{materials and methods}{name=materilas and methods,column=1,row=0}{
+
+	\centering
+	\includegraphics[width=0.5 \textwidth]{fig/hist-volumes}
+We want to study the relation between neural responses and molecular volumes, 
+so we need the respective data. 
+We take the neural data of DoOR database \cite{Galizia2010} and we calculate molecular volume (supplemental file odorants.csv) using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
+We used  GNU R to analyze the data~\cite{Rlanguage}.
+
 DoOR database can be summarized in an $N\times M$ matrix. 
 Its elements, $r_{nm}$, are the response of neuron $n$ to odorant $m$. 
 This matrix is normalized between 0 and 1 so we have $0 \le r_{nm} \le 1$, where 1 is the strongest response.
@@ -162,7 +174,6 @@ It can be moved out of the integral for it is independent of $v$.
 In the above equation, 
 $g(v)$ is the density of states, $g(v) dv$ indicates how many molecules have a molecular volume in the range of $v$ and $v+dv$.
 This function can be approximated by a Gaussian function, Fig.\ref{fig:hist-volumes}, 
-
 \begin{equation}
 	g(v) = e^{-\frac{(v- v_{g})^2}{2 \sigma_{g}^2}},
 	\label{eqn:hist-volumes}
@@ -192,12 +203,12 @@ h_n(v) = e^{-\frac{(v-\mu_{h_n})^2}{2\sigma_{h_n}^2}},
 so the right hand side of equation \ref{eqn:mean} is nothing but $\mu_{h_n}$ and 
 in a similar way, we can calculate $\sigma_{h_n}$ from the neural data
 
+
 \begin{eqnarray}
 	\mu_{h_n} &\approx& \frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} \\
 	\sigma_{h_n}^2 &\approx& \frac{\displaystyle \sum_{m} v_m^2 r_{nm}}{\displaystyle \sum_{m} r_{nm}} - \mu_{h_n}^2
 	\label{eqn:final_h}
 \end{eqnarray}•
-
 
 We knew the mean $v_{g_n}$ and standard deviation $\sigma_{g_n}$ of $g_n(v)$ from the molecular volumes of the ensembles of odorants. 
 We just calculated the mean $\mu_{h_n}$ and standard deviation $\sigma_{h_n}$ of $h_n(v)$ from the neural data.
@@ -208,41 +219,179 @@ first we calculate $\sigma_n$ from
 	\frac{1}{\sigma_n^2} = \frac{1}{\sigma^2_{h_n}}  - \frac{1}{\sigma^2_{g_n}}
 \end{equation}•
 and then we calculate $v_n$: 
-
 \begin{equation}
 	\frac{v_n}{\sigma_n^2}  =    \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}}.
 \end{equation}•
+The calculated $v_n$ and $\sigma_n$ are in supplemental file volume-profiles.csv. 
+The resulting $f_n(v)$ are plotted over the actual data, for \numberofreceptors receptors (Fig.~\ref{fig:vol-res}),
+in which p-values $<0.05$. 
+
+We calculate p-values by permutation test. 
+The alternative hypothesis is 
+``{\it The response of olfactory receptor neurons depend on the molecular volume of odorants.}'', 
+which require  a finite value for $\sigma_n$, 
+then the null hypothesis is 
+``{\it The response of olfactory receptor neurons is independent of molecular volume of odorants.}'',
+which require $\sigma_n \rightarrow \infty$, 
+so p-value is the probability of having $\sigma'_n\leq\sigma_n$, 
+where $\sigma_n$ is calculated from the original data, but $\sigma'_n$ calculated using permuted version.
+
+We are testing a hypothesis on  $\sim$60 olfactory receptors simultaneously. 
+If we use a simple threshold of 0.05 for the p-value of each receptor, we may have false positives. 
+To address this issue, multiple-comparison problem, 
+we use Bonferroni correction. 
+The problem with Bonferroni correction is that it may increases false negatives.
+This problem can be addressed using another method -- False Discovery Rate (FDR).
+We used both methods -- Bonferroni and FDR, as well as no correction. 
+The result are labeled accordingly in Fig.\ref{fig:vol-res}.
+
+We also want to show the diversity of volume and flexibility of binding pocket among receptors.
+To estimate the p-values, 
+we take any pair of receptors that was sensitive to molecular volume (\numberofreceptors receptors),
+calculate their difference, 
+use a permutation test and measure the probability of being different only by chance.
+The results are in Fig.~\ref{fig:p-values}.
+
+%Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
+
+
 
 }
 
 %----------------------------------------------------------------------------------------
-%	RESULTS 1
+%	RESULTS AND DISCUSSIONS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Results 1}{name=results,column=2,span=2,row=0}{
+\headerbox{results and discussions}{name=results and discussions,column=2,span=2,row=0}{
 
-\begin{multicols}{2}
-\vspace{1em}
-\begin{center}
-\includegraphics[width=0.8\linewidth]{binding-pocket}
-\captionof{figure}{Figure caption}
-\end{center}
+	\centering
+		\includegraphics[width=0.2 \textwidth]{fig/vol-res-}
 
-Aliquam auctor, metus id ultrices porta, risus enim cursus sapien, quis iaculis sapien tortor sed odio. Mauris ante orci, euismod vitae tincidunt eu, porta ut neque. Aenean sapien est, viverra vel lacinia nec, venenatis eu nulla. Maecenas ut nunc nibh, et tempus libero. Aenean vitae risus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
-\end{multicols}
+		\centering
+		\includegraphics[width=  0.2 \textwidth]{fig/mean-vol}
+		\includegraphics[width=  0.2 \textwidth]{fig/std-vol}
 
-%------------------------------------------------
+	\centering
+	\includegraphics[width= 0.2 \textwidth]{fig/pair-pval}
+There are two main assumption in this work: 
+First we assumed that the response of an olfactory receptor can be factorized into two terms, 
+according to (\ref{eqn:factors}).
+Second, we assumed that the volume dependence factor $f_n(v_m)$ in (\ref{eqn:factors}) 
+have a Gaussian form (Eq. \ref{eqn:volume-dependence}).
+Considering the physics and chemistry behind the binding-process (Fig. \ref{fig:binding-pocket}), 
+and the neural responses (Fig. \ref{fig:vol-res}), 
+these assumptions are logical. 
 
-\begin{multicols}{2}
-\vspace{1em}
-Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam ut elit sit amet metus lobortis consequat sit amet in libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel sem magna. Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu.
+%but, to be sure, we also put them in a test. 
+%After calculating function $f_n(v)$ for each olfactory receptor, we can calculate $\psi_{nm}$ of the equation \ref{eqn:factors}.
+%If $\psi_{nm}$ is independent of molecular volumes, it means that the assumptions where justified.
 
-\begin{center}
-\includegraphics[width=0.8\linewidth]{binding-pocket}
-\captionof{figure}{Figure caption}
-\end{center}
+The function $f_n(v)$ can be considered as the tuning curve of olfactory receptor $n$ in response to molecular volume (Fig.~\ref{fig:vol-res}). 
+Each receptor has a preferred molecular volume $v_n$ and shows some flexibility $\sigma_n$. 
+The calculated $f_n(v)$ are in  Fig.~\ref{fig:vol-res}. 
+It includes \numberofreceptors receptors, 
+which show a significant dependence to molecular volume of odorants in their response (p-value $<0.05$).
 
-\end{multicols}
+To address the multiple comparison problem, 
+we also calculated the level of significance according to both Bonferroni (very conservative) and FDR (less conservative) corrections. 
+From the results of \numberofreceptors receptors, 
+\bonferroni of them are significant according to Bonferroni correction (receptor names in italic), 
+\fdr of them are significant according to FDR correction 
+(receptor names in bold), 
+and the rest (\nocorrection receptors), 
+only satisfy the criteria of  p-value $<0.05$, without any corrections.
+Considering the FDR correction, 
+we can conclude that nearly half of receptors (\fdr / 60 ) show significant sensitivity toward molecular volumes. 
+The other half could be sensitive to molecular volume as well, but the current evidence are not enough and
+more experiments are necessary.
+%\begin{table}
+%\begin{center}
+%    \begin{tabular}{ | l | l | l |l |}
+%    \hline
+%     &  $p_{value} < 0.05$ & FDR & Bonferroni \\ \hline
+%     {\small Receptors are sensitive to molecular volume} &  28 &  26 & 11\\ 
+%     $v_{n_1} = v_{n_2}$&  21 & 23 & 38\\ \hline
+%    \end{tabular}
+%\end{center}
+%\caption{Times that the null hypothesis has been rejected, according to different method}
+%\end{table}
+The parameters of $f_n(v)$, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volume}.
+Figure \ref{fig:preferred_volume} demonstrate that the molecular volume preference of receptors are different (top). 
+and the flexibility of receptors are also different (bottom).
+To backup these claims, 
+we estimated the p-values of having different volume preference and flexibility for each pairs of \numberofreceptors receptors
+(Fig.~\ref{fig:p-values}). 
+From all possible 378 pairs, 
+when comparing the volume preferences, 
+133 have a p-value of less than 0.05, 
+this number reduces to 89 after using FDR and further reduces to 32 using Bonferroni correction.
+When comparing flexibilities, 
+the numbers become 168, 134 and 77 respectively. 
+The union of these two set says that 226 (p-value $<0.05$), 171 (FDR corrected), and 91 (Bonferroni corrected) pairs of receptors showed distinct differences in their binding-pocket characteristics.
+
+This diversity is important in perceiving the quality of smells. 
+In a hypothetical experiment, 
+assume that every characteristic of odorant molecules are the same but their molecular volume.
+If all olfactory receptors had the same preferred volume and flexibility, 
+any change in the molecular volume would change only the intensity of smell not its quality.
+But olfactory receptors have different preferred volumes and flexibilities, 
+so any change in the molecular volume of an odorant results in a different combinatorial encoding which affects the quality of perceived smell as well its intensity.
+This agrees with the work of M. Zarzo: larger molecules  smell better~\cite{zarzo2011}.
+That may describe the difference in the smell of methanol, ethanol, propanol and butanol. 
+Methanol smells pungent, ethanol smells pleasant and winy, propanol and butanol smell like ethanol except butanol  has a little banana like aroma.
+The molecular volume affects the combinatorial encoding, 
+and the combinatorial code determines the quality of odorants.
+
+Here we showed that the responses of olfactory receptor neurons are related to the molecular volume of odorants, 
+apart from that, it is not clear which other features of molecules are measured by olfactory receptors. 
+There are many works that try to connect the physio-chemical properties of molecules to the evoked neural response or perceived smells.
+But the non-linear volume dependence (Eq. \ref{eqn:factors} and Eq. \ref{eqn:volume-dependence})  
+may mask important relations between molecules and neural responses.
+When $f_n(v)$ is zero or close to zero, 
+the value of $\psi_{nm}$ does not matter. 
+
+We predict odorants with a molecular volume on the tails of $f_n(v)$ goes undetected, 
+regardless of any other physio-chemical properties that they may have. 
+This prediction can be confirmed in furthur experiments. 
+
+To better study $\psi_{nm}$ of a receptor, 
+it is better to have many data points and those data points are better to be around the preferred volume of the receptor.
+But this is not the case in current data. 
+For many receptors, 
+most data points are on the tails of $f_n(v)$, which is close to zero.
+We have suggested the best selection of odorants for each of \numberofreceptors studied receptors 
+(see Venn diagram in Fig.~\ref{fig:odorant-suggest} and supplemental file proposed-odorants.csv), 
+saving time and expenses of future experiments. 
+
+%After gathering enough data, 
+%by considering the effect of molecular volume on the response of olfactory receptor neurons, 
+%one might discover more subtle dependence between other molecular features and neural responses, 
+%by investigating $\psi_{nm}$, 
+%which otherwise would be masked by this non-linear relation $f_n(v)$.
+
+We also predict some {\it in-vivo} structural aspects of  the binding-pocket of olfactory receptors:
+the preferred volume of each receptor results from the volume of the binding-pocket,
+the flexibility of a receptor results from the rigidity or flexibility of the binding-pocket; 
+%Therefore, our results provides information about both structural and dynamical properties of olfactory receptors in Drosophila. 
+These data add some constrains over the 3d structure of olfactory receptors, 
+which may help the prediction and calculation of 3d structure of these proteins. 
+
+The method of this work can be combined with mutagenesis as well. 
+Some genes of an olfactory receptor are mutated, 
+then its response to a selection of molecules are measured and finally the preferred volume and flexibility are calculated.
+In this way we can understand which amino acids of the olfactory receptor contribute to the volume and flexibility of the binding-pocket, 
+as well as affecting the function of the receptors.
+
+\centering
+		\includegraphics[width=0.2 \textwidth]{fig/odorant-suggest}
+There is one possible improvment to this work. Approximating $f_n(v)$ and $g(v)$ with a Gaussian function makes the mathematical formulation simple and readable. 
+But a semi-infinite function may be a better choice for molecular volumes which can not have negative values.
+
+Although this work is on the data of Drosophila, 
+we expect that the general principles and methodologies of this work hold for vertebrates as well. 
+But considering the similarities and dissimilarities between insects and vertebrate, 
+this should be verified.
+
 }
 
 %----------------------------------------------------------------------------------------
@@ -259,19 +408,6 @@ Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci lu
 }}
 
 %----------------------------------------------------------------------------------------
-%	FUTURE RESEARCH
-%----------------------------------------------------------------------------------------
-
-\headerbox{Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
-
-\begin{multicols}{2}
-Integer sed lectus vel mauris euismod suscipit. Praesent a est a est ultricies pellentesque. Donec tincidunt, nunc in feugiat varius, lectus lectus auctor lorem, egestas molestie risus erat ut nibh.
-
-Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendisse mollis iaculis sem, in \emph{imperdiet} orci porta vitae. Quisque id dui sed ante sollicitudin sagittis.
-\end{multicols}
-}
-
-%----------------------------------------------------------------------------------------
 %	CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
 
@@ -284,49 +420,12 @@ Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendiss
 \end{description}
 }
 
-%----------------------------------------------------------------------------------------
-%	CONCLUSION
-%----------------------------------------------------------------------------------------
-
-\headerbox{Conclusion}{name=conclusion,column=2,span=2,row=0,below=results,above=references}{
-
-\begin{multicols}{2}
-
-\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=4.5em, text badly centered, node distance=2cm, inner sep=0pt]
-\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=4em]
-\tikzstyle{line} = [draw, -latex']
-\tikzstyle{cloud} = [draw, ellipse, fill=red!20, node distance=3cm, minimum height=2em]
-
-\begin{tikzpicture}[node distance = 2cm, auto]
-\node [block] (init) {Initialize Model};
-\node [cloud, left of=init] (Start) {Start};
-\node [cloud, right of=init] (Start2) {Start Two};
-\node [block, below of=init] (init2) {Initialize Two};
-\node [decision, below of=init2] (End) {End};
-\path [line] (init) -- (init2);
-\path [line] (init2) -- (End);
-\path [line, dashed] (Start) -- (init);
-\path [line, dashed] (Start2) -- (init);
-\path [line, dashed] (Start2) |- (init2);
-\end{tikzpicture}
-
-%------------------------------------------------
-
-\begin{itemize}\compresslist
-\item Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh. Phasellus fermentum rutrum elementum. Nam quis justo lectus.
-\item Vestibulum sem ante, hendrerit a gravida ac, blandit quis magna.
-\item Donec sem metus, facilisis at condimentum eget, vehicula ut massa. Morbi consequat, diam sed convallis tincidunt, arcu nunc.
-\item Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
-\end{itemize}
-
-\end{multicols}
-}
 
 %----------------------------------------------------------------------------------------
 %	Introduction
 %----------------------------------------------------------------------------------------
 
-\headerbox{introduction}{name=method,column=0,below=objectives,bottomaligned=}{ % This block's bottom aligns with the bottom of the conclusion block
+\headerbox{introduction}{name=method,column=0,below=objectives}{ % This block's bottom aligns with the bottom of the conclusion block
 
 %Survival of many species depends on their olfactory system. 
 %They use it  to find food, 
@@ -402,27 +501,9 @@ that includes the neural responses of most olfactory receptors (OR) of Drosophil
 %Kreher2005,Kreher2008,Kwon2007,Pelz2006,Pelz2006,Schmuker2007,Stensmyr2003,
 %Turner2009,VanderGoesvanNaters2007,Yao2005}.
 
-%\begin{figure}
-	\centering
-%	\begin{subfigure}[b]{0.45 \textwidth}
+ 	\centering
 		\includegraphics[width=10em]{binding-pocket}
-%		\caption{Binding-pocket volume}
-%		\label{fig:pocket-size}
-%	\end{subfigure}
-%	\hfill
-%	\begin{subfigure}[b]{0.45 \textwidth}
-		\includegraphics[width=10em]{binding-pocket-flex}
-%		\caption{Binding-pocket flexibility}
-%		\label{fig:pocket-flex}
-%	\end{subfigure}
-%	\caption{This figure shows different scenarios that may happen when an odorant molecule (ligand) binds to a receptor. 
-%		Fig. \ref{fig:pocket-size} shows the effect of binding-pocket volume. 
-%	From left to right, misfit because of small volume of molecule, perfect m%atch and misfit because of large molecular volume.
-%		Fig. \ref{fig:pocket-flex} demonstrates that the flexibility of a receptor may compensate for the volume mismatches. 
-%		The red disks (dark grey in b\&w) are odorant molecule, 
-%		and the blue shapes (light grey in b\&w) are olfactory receptor and %binding-pocket.}
-	\label{fig:binding-pocket}
-%\end{figure}
+    	\includegraphics[width=10em]{binding-pocket-flex}
 
 
 
