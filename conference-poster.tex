@@ -371,22 +371,46 @@ The results are in Fig.~\ref{fig:p-values}.
 \headerbox{Results}{name=results,column=2,span=1,row=0}{
 
 \begin{center}
-		\includegraphics[width=\textwidth]{fig/vol-res-}
+		\includegraphics[width= 0.9 \textwidth]{fig/vol-res-}
 \end{center}
+Response of olfactory receptors  versus molecular volume of odorants (circles), 
+the fitted functions $f_n(v)$ from Eq.~\ref{eqn:factors} (solid lines), 
+and the error bars of the mean of $f_n(v)$ (red vertical lines), 
+for \numberofreceptors receptors that their response showed significant (p-value $<0.05$) dependence to molecular volume. 
+Among them, \fdr are significant according to FDR correction (receptor names in bold) and 
+\bonferroni are significant considering Bonferroni correction (receptor names in italic).
+%\vspace{1em}
 
 \begin{center}
-		\includegraphics[width=  0.75 \textwidth]{fig/mean-vol}
-		\includegraphics[width=   0.75 \textwidth]{fig/std-vol}
+		\includegraphics[width=  0.49 \textwidth]{fig/mean-vol}
+		\includegraphics[width=  0.49 \textwidth]{fig/std-vol}
 \end{center}
+The preferred volumes of \numberofreceptors receptors $v_n$ (top). 
+and their flexibilities $\sigma_n$ (down). 
+The error bars are calculated using Jack-Knife method. 
+%\vspace{1em}
 
 \begin{center}
 \includegraphics[width= 0.75 \textwidth]{fig/pair-pval}
 \end{center}
+Pairs of olfactory receptors that differ significantly in their binding-pocket's volume (upper triangle) and flexibility (lower triangle).
+			All blue shades have p-value of less than 0.05, 
+			two darker shades have FDR corrected p-values of less than 0.05 and the darkest shade has Bonferroni corrected p-value of less than 0.05.
+%\vspace{1em}
 
 \begin{center}
 \includegraphics[width= 0.75 \textwidth]{fig/odorant-suggest}
-\end{center}		
-		
+\end{center}	
+Venn diagram of DoOR database and our suggested important odorants of each receptor.
+The database includes 240 molecules, 
+some are used to study an olfactory receptor (blue areas), 
+and data for the rests are not available (pink).
+The hatched area are odorants with molecular volume close to the preferred volume of each receptor
+($v_n \pm \frac{\sigma}{2}$).
+We already know the neural response of hatched blue areas, 
+but the hatched pink odorants could be the target of future experiments, we predict the rest give only zeros.
+
+
 %There are two main assumption in this work: 
 %First we assumed that the response of an olfactory receptor can be factorized into two terms, 
 %according to (\ref{eqn:factors}).
