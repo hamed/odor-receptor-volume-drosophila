@@ -321,11 +321,11 @@ h_n(v) = e^{-\frac{(v-\mu_{h_n})^2}{2\sigma_{h_n}^2}},
 \end{equation}
 so the right hand side of equation \ref{eqn:mean} is nothing but $\mu_{h_n}$ and 
 in a similar way, we can calculate $\sigma_{h_n}$ from the neural data
-\begin{eqnarray}
-	\mu_{h_n} &\approx& \frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} \\
-	\sigma_{h_n}^2 &\approx& \frac{\displaystyle \sum_{m} v_m^2 r_{nm}}{\displaystyle \sum_{m} r_{nm}} - \mu_{h_n}^2
+\begin{equation}
+	\mu_{h_n} \approx \frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}}, 
+	\sigma_{h_n}^2 \approx \frac{\displaystyle \sum_{m} v_m^2 r_{nm}}{\displaystyle \sum_{m} r_{nm}} - \mu_{h_n}^2
 	\label{eqn:final_h}
-\end{eqnarray}
+\end{equation}
 We knew the mean $v_{g_n}$ and standard deviation $\sigma_{g_n}$ of $g_n(v)$ from the molecular volumes of the ensembles of odorants. 
 We just calculated the mean $\mu_{h_n}$ and standard deviation $\sigma_{h_n}$ of $h_n(v)$ from the neural data.
 Now calculating the mean $v_n$ and the standard deviation $\sigma_n$ of $f_n(v)$ is trivial,
