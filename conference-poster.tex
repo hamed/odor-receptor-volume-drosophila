@@ -272,7 +272,7 @@ it can be approximated with a Gaussian function
 	\label{eqn:volume-dependence}
 \end{equation}
 where, $v_n$ is the preferred molecular volume of receptor $n$ and $\sigma_n$ represents its flexibility. 
-In this work we want to estimate $v_n$ and $\sigma_n$. 
+Here we want to estimate $v_n$ and $\sigma_n$. 
 To do so, first we calculate the response weighted average of molecular volumes, 
 $\frac{\sum_{m} v_m r_{nm}}{\sum_{m} r_{nm}}$ and then we use (\ref{eqn:factors}):
 \begin{equation}
@@ -289,7 +289,7 @@ $\langle \psi_{nm} \rangle_m$ denotes the average of $\psi_{nm}$ over all $m: r_
 It can be moved out of the integral for it is independent of $v$.
 In the above equation, 
 $g(v)$ is the density of states, $g(v) dv$ indicates how many molecules have a molecular volume in the range of $v$ and $v+dv$.
-This function can be approximated by a Gaussian function, Fig.\ref{fig:hist-volumes}, 
+This function can be approximated by a Gaussian function:  
 \begin{equation}
 	g(v) = e^{-\frac{(v- v_{g})^2}{2 \sigma_{g}^2}},
 	\label{eqn:hist-volumes}
@@ -319,29 +319,35 @@ in a similar way, we can calculate $\sigma_{h_n}$ from the neural data
 	\mu_{h_n} &\approx& \frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} \\
 	\sigma_{h_n}^2 &\approx& \frac{\displaystyle \sum_{m} v_m^2 r_{nm}}{\displaystyle \sum_{m} r_{nm}} - \mu_{h_n}^2
 	\label{eqn:final_h}
-\end{eqnarray}•
+\end{eqnarray}
 We knew the mean $v_{g_n}$ and standard deviation $\sigma_{g_n}$ of $g_n(v)$ from the molecular volumes of the ensembles of odorants. 
 We just calculated the mean $\mu_{h_n}$ and standard deviation $\sigma_{h_n}$ of $h_n(v)$ from the neural data.
 Now calculating the mean $v_n$ and the standard deviation $\sigma_n$ of $f_n(v)$ is trivial,
 first we calculate $\sigma_n$ from 
 \begin{equation}
+\large
 	\frac{1}{\sigma_n^2} = \frac{1}{\sigma^2_{h_n}}  - \frac{1}{\sigma^2_{g_n}}
-\end{equation}•
+\end{equation}
 and then we calculate $v_n$: 
 \begin{equation}
+\large
 	\frac{v_n}{\sigma_n^2}  =    \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}}.
-\end{equation}•
-The calculated $v_n$ and $\sigma_n$ are in supplemental file volume-profiles.csv. 
-The resulting $f_n(v)$ are plotted over the actual data, for \numberofreceptors receptors (Fig.~\ref{fig:vol-res}),
-in which p-values $<0.05$. 
+\end{equation}
 
-We calculate p-values by permutation test. 
-The alternative hypothesis is 
-``{\it The response of olfactory receptor neurons depend on the molecular volume of odorants.}'', 
-which require  a finite value for $\sigma_n$, 
-then the null hypothesis is 
-``{\it The response of olfactory receptor neurons is independent of molecular volume of odorants.}'',
-which require $\sigma_n \rightarrow \infty$, 
+%Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
+}
+
+%----------------------------------------------------------------------------------------
+%	TESTS
+%----------------------------------------------------------------------------------------
+
+\headerbox{Tests}{name=tests,column=1,below=methods}{
+
+We calculate p-values by permutation test.
+\begin{align}
+Alternative:& \sigma_n  \neq \infty \\
+Null:& \sigma_n \rightarrow \infty 
+\end{align}
 so p-value is the probability of having $\sigma'_n\leq\sigma_n$, 
 where $\sigma_n$ is calculated from the original data, but $\sigma'_n$ calculated using permuted version.
 
@@ -352,17 +358,18 @@ we use Bonferroni correction.
 The problem with Bonferroni correction is that it may increases false negatives.
 This problem can be addressed using another method -- False Discovery Rate (FDR).
 We used both methods -- Bonferroni and FDR, as well as no correction. 
-The result are labeled accordingly in Fig.\ref{fig:vol-res}.
 
 We also want to show the diversity of volume and flexibility of binding pocket among receptors.
 To estimate the p-values, 
 we take any pair of receptors that was sensitive to molecular volume (\numberofreceptors receptors),
 calculate their difference, 
 use a permutation test and measure the probability of being different only by chance.
-The results are in Fig.~\ref{fig:p-values}.
 
-%Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
+
+
 }
+
+
 
 %----------------------------------------------------------------------------------------
 %	RESULTS AND DISCUSSIONS
@@ -540,9 +547,9 @@ but the hatched pink odorants could be the target of future experiments, we pred
 \headerbox{Contact Information}{name=contact,column=0,above=bottom}{ % This block is as tall as the references block
 
 \begin{description}\compresslist
-\item[Web] www.university.edu/smithlab
-\item[Email] john@smith.com
-\item[Phone] +1 (000) 111 1111
+%\item[Web] www.university.edu/smithlab
+\item[Email] hamed@ipm.ir
+%\item[Phone] +1 (000) 111 1111
 \end{description}
 }
 
