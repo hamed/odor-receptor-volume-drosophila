@@ -56,7 +56,13 @@
 \setlength{\parsep}{0pt}
 }
 
-\definecolor{lightblue}{rgb}{0.145,0.6666,1} % Defines the color used for content box headers
+\definecolor{shade}{rgb}{0.667, 0.475, 0.224} 
+\definecolor{shadelighter}{rgb}{0.831, 0.655, 0.416} 
+\definecolor{shadelightest}{rgb}{1, 0.859, 0.667} 
+
+\definecolor{shadedarker}{rgb}{0.502, 0.322, 0.082} 
+\definecolor{shadedarkest}{rgb}{0.23, 0.1, 0.0} 
+
 
 \usepackage{graphicx}
 \begin{document}
@@ -67,15 +73,15 @@ headerborder=closed, % Adds a border around the header of content boxes
 colspacing=1em, % Column spacing
 bgColorOne=white, % Background color for the gradient on the left side of the poster
 bgColorTwo=white, % Background color for the gradient on the right side of the poster
-borderColor=lightblue, % Border color
-headerColorOne=black, % Background color for the header in the content boxes (left side)
-headerColorTwo=lightblue, % Background color for the header in the content boxes (right side)
-headerFontColor=white, % Text color for the header text in the content boxes
+borderColor=shade, % Border color
+headerColorOne=shadelightest, % Background color for the header in the content boxes (left side)
+headerColorTwo=shadelightest, % Background color for the header in the content boxes (right side)
+headerFontColor=shadedarkest, % Text color for the header text in the content boxes
 boxColorOne=white, % Background color of the content boxes
-textborder=roundedleft, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
+textborder=rectangle, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
 eyecatcher=true, % Set to false for ignoring the left logo in the title and move the title left
 headerheight=0.1\textheight, % Height of the header
-headershape=roundedright, % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
+headershape=rectangle, % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
 headerfont=\Large\bf\textsc, % Large, bold and sans serif font in the headers of content boxes
 %textfont={\setlength{\parindent}{1.5em}}, % Uncomment for paragraph indentation
 linewidth=2pt % Width of the border lines around content boxes
@@ -104,7 +110,7 @@ The affinity can reaches its maximum if molecular volume of an odorant matches v
 and it reach zero if the sizes are too different, 
 obscuring the effect of other molecular properties. 
 We formulated this hypothesis mathematically and verified it on Data of Drosophila, 
-and predicted the volume and the structural flexibility of each receptor’s binding-site, 
+and predicted the volume and the structural flexibility of each receptor's binding-site, 
 which are significantly different among receptors. 
 This provides a reason for differences in smell among similar molecules of different sizes. 
 
