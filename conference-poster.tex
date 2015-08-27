@@ -127,11 +127,21 @@ This provides a reason for differences in smell among similar molecules of diffe
 \headerbox{References}{name=references,column=0,above=bottom}{
 
 \renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
-\nocite{*} % Insert publications even if they are not cited in the poster
-\small{ % Reduce the font size in this block
-\bibliographystyle{unsrt}
-\bibliography{sample} % Use sample.bib as the bibliography file
-}}
+%\nocite{} % Insert publications even if they are not cited in the poster
+%\small{ % Reduce the font size in this block
+%\bibliographystyle{unsrt}
+%\bibliography{sample} % Use sample.bib as the bibliography file
+ \begin{thebibliography}{1}
+
+  \bibitem{galizia} Galizia CG {\em et al.}, {\em Integrating heterogeneous odor response data into a common response model: A DoOR to the complete olfactome.}, 2010, Chemical Senses, DOI:10.1093/chemse/bjq042
+
+  \bibitem{zarzo} Manuel Zarzo, {\em Hedonic judgments of chemical compounds are correlated with molecular size.}, 2011, Sensors, DOI:10.3390/s110403667
+
+  \bibitem{Pedretti} Pedretti {\em et al.}, {\em VEGA - An open platform to develop chemo-bio-informatics applications, using plug-in architecture and script programming.}, 2004, Journal of Computer-Aided Molecular Design, DOI:10.1023/B:JCAM.0000035186.90683.f2
+
+  \end{thebibliography}
+%}
+}
 
 %----------------------------------------------------------------------------------------
 %	CONTACT INFORMATION
@@ -261,7 +271,7 @@ Both terms are characteristic of each receptor, and they might vary from neuron 
 %	THE MATERIALS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Materials}{name=materials,column=0,below=assumptions,above=contact}{
+\headerbox{Materials}{name=materials,column=0,below=assumptions,above=references}{
 
 Majid:
 DoORs logo, Vega zz logo.
