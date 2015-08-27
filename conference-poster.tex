@@ -120,6 +120,31 @@ This provides a reason for differences in smell among similar molecules of diffe
 \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
 }
 
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\headerbox{References}{name=references,column=0,above=bottom}{
+
+\renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
+\nocite{*} % Insert publications even if they are not cited in the poster
+\small{ % Reduce the font size in this block
+\bibliographystyle{unsrt}
+\bibliography{sample} % Use sample.bib as the bibliography file
+}}
+
+%----------------------------------------------------------------------------------------
+%	CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\headerbox{Contact Information}{name=contact,column=1,above=bottom}{ % This block is as tall as the references block
+
+\begin{description}\compresslist
+%\item[Web] www.university.edu/smithlab
+\item[Email] hamed@ipm.ir
+%\item[Phone] +1 (000) 111 1111
+\end{description}
+}
 
 %----------------------------------------------------------------------------------------
 %	Introduction
@@ -236,7 +261,7 @@ Both terms are characteristic of each receptor, and they might vary from neuron 
 %	THE MATERIALS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Materials}{name=materials,column=0,below=assumptions}{
+\headerbox{Materials}{name=materials,column=0,below=assumptions,above=contact}{
 
 Majid:
 DoORs logo, Vega zz logo.
@@ -344,11 +369,12 @@ and then we calculate $v_n$:
 %Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
 }
 
+
 %----------------------------------------------------------------------------------------
 %	TESTS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Tests}{name=tests,column=1,below=methods}{
+\headerbox{Tests}{name=tests,column=1,below=methods,above=references}{
 
 We calculate p-values by permutation test.
 \begin{align}
@@ -382,7 +408,7 @@ use a permutation test and measure the probability of being different only by ch
 %	RESULTS AND DISCUSSIONS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Results}{name=results,column=2,span=1,row=0}{
+\headerbox{Results}{name=results,column=2,row=0}{
 
 \begin{center}
 		\includegraphics[width= 0.9 \textwidth]{fig/vol-res-}
@@ -533,33 +559,6 @@ but the hatched pink odorants could be the target of future experiments, we pred
 %this should be verified.
 
 }
-
-%----------------------------------------------------------------------------------------
-%	REFERENCES
-%----------------------------------------------------------------------------------------
-
-\headerbox{References}{name=references,column=1,above=bottom}{
-
-\renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
-\nocite{*} % Insert publications even if they are not cited in the poster
-\small{ % Reduce the font size in this block
-\bibliographystyle{unsrt}
-\bibliography{sample} % Use sample.bib as the bibliography file
-}}
-
-%----------------------------------------------------------------------------------------
-%	CONTACT INFORMATION
-%----------------------------------------------------------------------------------------
-
-\headerbox{Contact Information}{name=contact,column=0,above=bottom}{ % This block is as tall as the references block
-
-\begin{description}\compresslist
-%\item[Web] www.university.edu/smithlab
-\item[Email] hamed@ipm.ir
-%\item[Phone] +1 (000) 111 1111
-\end{description}
-}
-
 
 
 \end{poster}
