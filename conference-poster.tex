@@ -91,10 +91,10 @@ linewidth=2pt % Width of the border lines around content boxes
 %	TITLE SECTION 
 %----------------------------------------------------------------------------------------
 %
-{\includegraphics[height=4em]{fig/logo.jpg}} % First university/lab logo on the left
+{\includegraphics[height=5em]{fig/ecro2015_logo.jpg}} % First university/lab logo on the left
 {\bf\textsc{Olfactory receptors of Drosophila are sensitive to molecular volume of odorants}\vspace{0.5em}} % Poster title
 {\textsc{ Majid Saberi, \bf{Hamed Seyed-allaei} \vspace{0.5em} }(hamed@ipm.ir)}
-{\includegraphics[height=4em]{fig/logo.jpg}} % First university/lab logo on the 
+{\includegraphics[height=5em]{fig/logo.jpg}} % First university/lab logo on the 
 %\affiliation{G. Mill\'an Institute of Fluid Dynamics, Nanoscience and Industrial
 %Mathematics, Universidad Carlos III de Madrid, Spain}
 %----------------------------------------------------------------------------------------
@@ -277,9 +277,15 @@ Both terms are characteristic of each receptor, and they might vary from neuron 
 
 \headerbox{Materials}{name=materials,column=0,below=assumptions,above=contact}{
 
+\begin{center}
+\includegraphics[width=0.1 \textwidth]{fig/DoOR-logo}
+\hfill
+\includegraphics[height=0.1 \textwidth]{fig/VEGAZZ-logo}
+\hfill
+\includegraphics[height=0.1 \textwidth]{fig/R_logo}
+\end{center}
 We take the neural data of DoOR database \cite{galizia} and we calculate molecular volume using a computational chemistry software -- VEGA ZZ~\cite{Pedretti}. 
 We used  GNU R to analyze the data.
-
 DoOR database can be summarized in an $N\times M$($55\times 251$) matrix. 
 Its elements, $r_{nm}$, are the response of neuron $n$ to odorant $m$. 
 This matrix is normalized between 0 and 1 so we have $0 \le r_{nm} \le 1$, where 1 is the strongest response.
@@ -292,13 +298,6 @@ and different neurons are excited by different set of odorants.
 Density function of molecular volumes $g(v)$, considering all molecules of DoOR database. 
 The solid line is a Gaussian fit (Eq. \ref{eqn:hist-volumes}) and the dashed line shows the median, 
 which is slightly different from  the mean.
-\begin{center}
-\includegraphics[width=0.1 \textwidth]{fig/DoOR-logo}
-\hspace{10mm}
-\includegraphics[height=0.1 \textwidth]{fig/VEGAZZ-logo}
-
-\end{center}
-
 
 }
 
