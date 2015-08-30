@@ -135,9 +135,9 @@ This provides a reason for differences in smell among similar molecules of diffe
 
   \bibitem{galizia} Galizia CG {\em et al.}, {\em Integrating heterogeneous odor response data into a common response model: A DoOR to the complete olfactome.}, 2010, Chemical Senses, DOI:10.1093/chemse/bjq042
 
-  \bibitem{zarzo} Manuel Zarzo, {\em Hedonic judgments of chemical compounds are correlated with molecular size.}, 2011, Sensors, DOI:10.3390/s110403667
-
   \bibitem{Pedretti} Pedretti {\em et al.}, {\em VEGA - An open platform to develop chemo-bio-informatics applications, using plug-in architecture and script programming.}, 2004, Journal of Computer-Aided Molecular Design, DOI:10.1023/B:JCAM.0000035186.90683.f2
+
+  \bibitem{zarzo} Manuel Zarzo, {\em Hedonic judgments of chemical compounds are correlated with molecular size.}, 2011, Sensors, DOI:10.3390/s110403667
 
   \end{thebibliography}
 %}
@@ -275,9 +275,15 @@ Both terms are characteristic of each receptor, and they might vary from neuron 
 
 \headerbox{Materials}{name=materials,column=0,below=assumptions,above=references}{
 
-Majid:
-DoORs logo, Vega zz logo.
-some numbers, receptors, dodors ... 
+We take the neural data of DoOR database \cite{galizia} and we calculate molecular volume using a computational chemistry software -- VEGA ZZ~\cite{Pedretti}. 
+We used  GNU R to analyze the data.
+
+DoOR database can be summarized in an $N\times M$($55\times 251$) matrix. 
+Its elements, $r_{nm}$, are the response of neuron $n$ to odorant $m$. 
+This matrix is normalized between 0 and 1 so we have $0 \le r_{nm} \le 1$, where 1 is the strongest response.
+The only problem is that this matrix has many {\it Not Available} (NA) values, ~71\%,   
+and different neurons are excited by different set of odorants. 
+
 \begin{center}
 \includegraphics[width=0.5 \textwidth]{fig/hist-volumes}
 \end{center}
