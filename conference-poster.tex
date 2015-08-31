@@ -18,7 +18,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[a1paper,fontscale=0.5956]{baposter} % Adjust the font scale/size here
+\documentclass[a1paper,fontscale=0.6]{baposter} % Adjust the font scale/size here
 \usepackage{mathtools}
 \usepackage{graphicx} % support the \includegraphics command and options
 \usepackage{caption}
@@ -124,7 +124,7 @@ This provides a reason for differences in smell among similar molecules of diffe
 %	REFERENCES
 %----------------------------------------------------------------------------------------
 
-\headerbox{References}{name=references,column=0,above=bottom}{
+\headerbox{References}{name=references,column=1,above=bottom}{
 
 \renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
 %\nocite{} % Insert publications even if they are not cited in the poster
@@ -149,7 +149,7 @@ This provides a reason for differences in smell among similar molecules of diffe
 %	CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\headerbox{Contact Information}{name=contact,column=1,above=bottom}{ % This block is as tall as the references block
+\headerbox{Contact Information}{name=contact,column=0,above=bottom}{ % This block is as tall as the references block
 
 \begin{description}\compresslist
 \item[Address] School of Cognitive Science,  Institute for Research in Fundamental Sciences (IPM),  Tehran, Iran
@@ -242,12 +242,12 @@ This provides a reason for differences in smell among similar molecules of diffe
 
 Different scenarios that may happen when an odorant molecule meets a receptor:
 \begin{center}
-\includegraphics[width=0.75 \textwidth]{fig/binding-pocket} \\
+\includegraphics[width=0.65 \textwidth]{fig/binding-pocket} \\
 \end{center}
 From left to right, misfit because of small volume of molecule, perfect match and misfit because of large molecular volume.
 
 \begin{center}
-\includegraphics[width=0.75 \textwidth]{fig/binding-pocket-flex}
+\includegraphics[width=0.65 \textwidth]{fig/binding-pocket-flex}
 \end{center}
 
 The flexibility of a receptor may compensate for the volume mismatches. 
@@ -275,7 +275,7 @@ Both terms are characteristic of each receptor, and they might vary from neuron 
 %	THE MATERIALS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Materials}{name=materials,column=0,below=assumptions,above=references}{
+\headerbox{Materials}{name=materials,column=0,below=assumptions,above=contact}{
 
 We take the neural data of DoOR database \cite{galizia} and we calculate molecular volume using a computational chemistry software -- VEGA ZZ~\cite{Pedretti}. 
 We used  GNU R to analyze the data.
@@ -287,15 +287,16 @@ The only problem is that this matrix has many {\it Not Available} (NA) values, ~
 and different neurons are excited by different set of odorants. 
 
 \begin{center}
-\includegraphics[width=0.5 \textwidth]{fig/hist-volumes}
+\includegraphics[width=0.45 \textwidth]{fig/hist-volumes}
 \end{center}
 Density function of molecular volumes $g(v)$, considering all molecules of DoOR database. 
 The solid line is a Gaussian fit (Eq. \ref{eqn:hist-volumes}) and the dashed line shows the median, 
 which is slightly different from  the mean.
 \begin{center}
-\includegraphics[width=0.15 \textwidth]{fig/DoOR-logo}
+\includegraphics[width=0.1 \textwidth]{fig/DoOR-logo}
 \hspace{10mm}
-\includegraphics[height=0.15 \textwidth]{fig/VEGAZZ-logo}
+\includegraphics[height=0.1 \textwidth]{fig/VEGAZZ-logo}
+
 \end{center}
 
 
@@ -305,7 +306,9 @@ which is slightly different from  the mean.
 %	THE METHODS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Methods}{name=methods,column=1,row=0, bottomaligned=assumptions}{
+\headerbox{Methods}{name=methods,column=1
+%,row=0, bottomaligned=assumptions
+}{
 \small
 
 %We want to study the relation between neural responses and molecular volumes, 
@@ -399,7 +402,7 @@ and then we calculate $v_n$:
 %	TESTS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Tests}{name=tests,column=1,below=methods,above=contact}{
+\headerbox{Tests}{name=tests,column=1,below=methods,above=references}{
 
 We calculate p-values by permutation test.
 \begin{align}
@@ -433,10 +436,12 @@ use a permutation test and measure the probability of being different only by ch
 %	RESULTS AND DISCUSSIONS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Results}{name=results,column=2,row=0}{
+\headerbox{Results}{name=results,column=2
+,row=0
+}{
 
 \begin{center}
-		\includegraphics[width= 0.9 \textwidth]{fig/vol-res-}
+		\includegraphics[width= 1 \textwidth]{fig/vol-res-}
 \end{center}
 Response of olfactory receptors  versus molecular volume of odorants (circles), 
 the fitted functions $f_n(v)$ from Eq.~\ref{eqn:factors} (solid lines), 
@@ -456,7 +461,7 @@ The error bars are calculated using Jack-Knife method.
 %\vspace{1em}
 
 \begin{center}
-\includegraphics[width= 0.75 \textwidth]{fig/pair-pval}
+\includegraphics[width= 0.825 \textwidth]{fig/pair-pval}
 \end{center}
 Pairs of olfactory receptors that differ significantly in their binding-pocket's volume (upper triangle) and flexibility (lower triangle).
 			All blue shades have p-value of less than 0.05, 
@@ -464,7 +469,7 @@ Pairs of olfactory receptors that differ significantly in their binding-pocket's
 %\vspace{1em}
 
 \begin{center}
-\includegraphics[width= 0.75 \textwidth]{fig/odorant-suggest}
+\includegraphics[width= 0.8 \textwidth]{fig/odorant-suggest}
 \end{center}	
 Venn diagram of DoOR database and our suggested important odorants of each receptor.
 The database includes 240 molecules, 
