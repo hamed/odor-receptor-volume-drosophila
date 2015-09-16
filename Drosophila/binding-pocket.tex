@@ -29,6 +29,8 @@
 \usepackage{wrapfig}
 \usepackage[leftcaption]{sidecap}
 
+\graphicspath{{./}{./fig/}}
+
 \usepackage[style=numeric-comp, sorting=none, url=false, isbn=false]{biblatex}
 \addbibresource{binding-pocket.bib}
 
@@ -98,7 +100,7 @@ The affinity can reaches its maximum if molecular volume of an odorant matches v
 and it reach zero if the sizes are too different, 
 obscuring the effect of other molecular properties. 
 We formulated this hypothesis mathematically and verified it on Data of Drosophila, 
-and predicted the volume and the structural flexibility of each receptor’s binding-site, 
+and predicted the volume and the structural flexibility of each receptor's binding-site, 
 which are significantly different among receptors. 
 This provides a reason for differences in smell among similar molecules of different sizes. 
 \end{abstract}
@@ -112,13 +114,13 @@ This provides a reason for differences in smell among similar molecules of diffe
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.45 \textwidth}
-		\includegraphics[width=\textwidth]{fig/binding-pocket}
+		\includegraphics[width=\textwidth]{binding-pocket-size}
 		\caption{Binding-pocket volume}
 		\label{fig:pocket-size}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.45 \textwidth}
-		\includegraphics[width=\textwidth]{fig/binding-pocket-flex}
+		\includegraphics[width=\textwidth]{binding-pocket-flex}
 		\caption{Binding-pocket flexibility}
 		\label{fig:pocket-flex}
 	\end{subfigure}
@@ -254,7 +256,7 @@ Turner2009,VanderGoesvanNaters2007,Yao2005}.
 \section*{Material and methods}
 \begin{figure}
 	\centering
-	\includegraphics[width=0.5 \textwidth]{fig/hist-volumes}
+	\includegraphics[width=0.5 \textwidth]{hist-volumes}
 	\caption{Density function of molecular volumes $g(v)$, considering all molecules of DoOR database. 
 		%The actual density function of molecular of volumes in each experiment, $g(v)$, might be slightly different  because each experiment uses a different subset of molecules. 
 		The solid line is a Gaussian fit (Eq. \ref{eqn:hist-volumes}) and the dashed line shows the median, 
@@ -402,7 +404,7 @@ The results are in Fig.~\ref{fig:p-values}.
 \begin{figure}
 	\centering
 %	\begin{subfigure}[b]{\textwidth}
-		\includegraphics[width=0.8 \textwidth]{fig/vol-res-}
+		\includegraphics[width=0.8 \textwidth]{vol-res-}
 		%\caption{}
 		\label{fig:vol-res:all}		
 %	\end{subfigure}
@@ -424,8 +426,8 @@ The results are in Fig.~\ref{fig:p-values}.
 \begin{figure}
 %	\begin{subfigure}[b]{\textwidth}
 		\centering
-		\includegraphics[width=  0.85 \textwidth]{fig/mean-vol}
-		\includegraphics[width=  0.85 \textwidth]{fig/std-vol}
+		\includegraphics[width=  0.85 \textwidth]{mean-vol}
+		\includegraphics[width=  0.85 \textwidth]{std-vol}
 %	\end{subfigure}
 	\caption{The preferred volumes of \numberofreceptors receptors $v_n$ (top). 
 		and their flexibilities $\sigma_n$ (down). 
@@ -443,7 +445,7 @@ The results are in Fig.~\ref{fig:p-values}.
 \begin{figure}
 % do not touch this fig.
 	\centering
-	\includegraphics[width= 0.5 \textwidth]{fig/pair-pval}
+	\includegraphics[width= 0.5 \textwidth]{pair-pval}
 	\caption{Pairs of olfactory receptors that differ significantly in their binding-pocket's volume (upper triangle) and flexibility (lower triangle).
 			All blue shades have p-value of less than 0.05, 
 			two darker shades have FDR corrected p-values of less than 0.05 and the darkest shade has Bonferroni corrected p-value of less than 0.05.}
@@ -562,7 +564,7 @@ as well as affecting the function of the receptors.
 
 \begin{figure}
 \centering
-	\includegraphics[width=\textwidth]{fig/odorant-suggest}
+	\includegraphics[width=\textwidth]{odorant-suggest}
 	\caption{Venn diagram of DoOR database and our suggested important odorants of each receptor.
 			The database includes 240 molecules, 
 			some are used to study an olfactory receptor (blue areas), 
