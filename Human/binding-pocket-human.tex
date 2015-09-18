@@ -29,6 +29,8 @@
 \usepackage{wrapfig}
 \usepackage[leftcaption]{sidecap}
 
+\graphicspath{{./}{./fig/}}
+
 \usepackage[style=numeric-comp, sorting=none, url=false, isbn=false]{biblatex}
 \addbibresource{binding-pocket.bib}
 
@@ -98,7 +100,7 @@ The affinity can reaches its maximum if molecular volume of an odorant matches v
 and it reach zero if the sizes are too different, 
 obscuring the effect of other molecular properties. 
 We formulated this hypothesis mathematically and verified it on Data of Drosophila, 
-and predicted the volume and the structural flexibility of each receptor’s binding-site, 
+and predicted the volume and the structural flexibility of each receptor's binding-site, 
 which are significantly different among receptors. 
 This provides a reason for differences in smell among similar molecules of different sizes. 
 \end{abstract}
@@ -136,4 +138,49 @@ sig= 0, fdr= 0, bon= 0.
 test well = (36,48,60)(12,24,36,48) , data = data1 \&\ data2 , dens = 0 , ORs = 512:
 
 sig= 123, fdr= 42, bon= 19.
+
+
+
+\begin{figure}
+	\centering
+%	\begin{subfigure}[b]{\textwidth}
+		\includegraphics[width=1 \textwidth]{vol-res-human-fdr}
+		%\caption{}
+		\label{fig:vol-res:all}		
+%	\end{subfigure}
+%	\begin{subfigure}[b]{0.75 \textwidth}
+%		\includegraphics[width= \textwidth]{fig/vol-res-Or35a}
+%		\caption{}	
+%		\label{fig:vol-res:one}	
+%	\end{subfigure}
+	\caption{Response of olfactory receptors  versus molecular volume of odorants (circles),  
+			the fitted functions $f_n(v)$ from Eq.~\ref{eqn:factors} (solid lines), 
+			and the error bars of the mean of $f_n(v)$ (red vertical lines), 
+			for \numberofreceptors receptors that their response showed significant FDR correction (p-value $<0.05$) dependence to molecular volume. 
+			Among them, \fdr are significant according to FDR correction (receptor names in bold) and 
+			\bonferroni are significant considering Bonferroni correction (receptor names in italic).
+		}
+	\label{fig:vol-res-human}
+\end{figure}
+
+
+\begin{figure}
+%	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=  1 \textwidth]{mean-vol}
+		\includegraphics[width=  1 \textwidth]{std-vol}
+%	\end{subfigure}
+	\caption{The preferred volumes of \numberofreceptors receptors $v_n$ (top). 
+		and their flexibilities $\sigma_n$ (down). 
+		The error bars are calculated using Jack-Knife method. 
+		Some receptors like Or59b, Or67a and  Or85a prefer smaller molecules, 
+		but some others like Or19a,  Or1a and  Or49a prefer larger molecules.
+		Some receptors like Or46a,  Or22b and Or30a are volume  selective, 
+		but some others like Or19a,  Or67b and  Or22a respond to broader range of molecular volumes.
+		}
+		\label{fig:preferred_volume}
+		\label{fig:volume_flexibility}
+\end{figure}
+ 
+
 \end{document}
