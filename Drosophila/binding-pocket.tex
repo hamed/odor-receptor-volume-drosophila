@@ -113,13 +113,13 @@ This provides a reason for differences in smell among similar molecules of diffe
 \section*{Introduction}
 \begin{figure}
 	\centering
-	\includegraphics[width=0.5 \textwidth]{binding-pocket-size-flex}
+	\includegraphics[width=0.4 \textwidth]{binding-pocket-size-flex}
 	\caption{This figure shows different scenarios that may happen when an odorant molecule (ligand) binds to a receptor. 
 		The red disks  are odorant molecule, 
 		and the blue shapes are olfactory receptor and binding-pocket.	
 		(top) From left to right, misfit because of small volume of molecule, 
 		perfect match and misfit because of large molecular volume.
-		(button) The flexibility of a receptor may compensate for the volume mismatches.
+		(down) The flexibility of a receptor may compensate for the volume mismatches.
 		}
 	\label{fig:binding-pocket}
 \end{figure}
@@ -176,8 +176,8 @@ which are determined by various physio-chemical properties of the ligand (odoran
 But here we focus on two properties: the volume and the flexibility of the binding-pocket.
 The molecular volume of a ligand should match the dimensions of the binding-pocket of the receptor,
 then it fits into the binding-pocket of the receptor and triggers the signal transduction. 
-Any mismatch in the volumes will affect the neural responses (Fig. \ref{fig:pocket-size}), 
-on the other hand the flexibility of the binding-pocket can compensate for the volume mismatch (Fig. \ref{fig:pocket-flex}).
+Any mismatch in the volumes will affect the neural responses, 
+on the other hand the flexibility of the binding-pocket can compensate for the volume mismatch (Fig. \ref{fig:binding-pocket}).
 
 We could know the volume and flexibility of the binding-pocket, 
 if we knew its three dimensional structure.
@@ -415,11 +415,8 @@ The results are in Fig.~\ref{fig:p-values}.
 \end{figure}
 
 \begin{figure}
-%	\begin{subfigure}[b]{\textwidth}
 		\centering
-		\includegraphics[width=  0.85 \textwidth]{mean-vol}
-		\includegraphics[width=  0.85 \textwidth]{std-vol}
-%	\end{subfigure}
+		\includegraphics[width= 0.85  \textwidth]{vol-mean-std}
 	\caption{The preferred volumes of \numberofreceptors receptors $v_n$ (top). 
 		and their flexibilities $\sigma_n$ (down). 
 		The error bars are calculated using Jack-Knife method. 
@@ -429,14 +426,13 @@ The results are in Fig.~\ref{fig:p-values}.
 		but some others like Or19a,  Or67b and  Or22a respond to broader range of molecular volumes.
 		}
 		\label{fig:preferred_volume}
-		\label{fig:volume_flexibility}
 \end{figure}
 
 
 \begin{figure}
 % do not touch this fig.
 	\centering
-	\includegraphics[width= 0.5 \textwidth]{pair-pval}
+	\includegraphics[width= 0.75 \textwidth]{pair-pval}
 	\caption{Pairs of olfactory receptors that differ significantly in their binding-pocket's volume (upper triangle) and flexibility (lower triangle).
 			All blue shades have p-value of less than 0.05, 
 			two darker shades have FDR corrected p-values of less than 0.05 and the darkest shade has Bonferroni corrected p-value of less than 0.05.}
