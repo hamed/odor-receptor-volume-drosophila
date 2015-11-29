@@ -265,12 +265,12 @@ Its elements, $r_{nm}$, are the response of neuron $n$ to odorant $m$.
 This matrix is normalized between 0 and 1 so $0 \le r_{nm} \le 1$, where 1 is the strongest response.
 This matrix has many {\it Not Available} (NA) values, 
 and different neurons are excited by different set of odorants, 
-We took care of this by removing NAs from the summations and calculating $\sum_{m: r_{nm} \neq \text{NA}}$, 
+we took care of this by removing NAs from the summations and calculating $\sum_{m: r_{nm} \neq \text{NA}}$, 
 but for brevity, we used the usual notation $\sum_m$.
 
-The response $r_{nm}$ depends on the molecular volume of the odorant, $v_m$, 
+The response $r_{nm}$ may depends on the molecular volume of the odorant, $v_m$, 
 and other physio-chemical properties of the molecule $m$; 
-We separated the response $r_{nm}$ into two terms:
+we separated the response $r_{nm}$ into two terms:
 
 \begin{equation}
 	r_{nm} = f_n(v_m) \psi_{nm}.
@@ -279,8 +279,8 @@ We separated the response $r_{nm}$ into two terms:
 The first term, $f_n(v_m)$, depended only on the molecular volume of odorants.
 The second term, $\psi_{nm}$ included every other influential properties of molecules, but the molecular volume or any other properties that depends on the molecular volume.
 Both terms were characteristic of each OR, and they varied from OR to OR.
-In fact, the first term, $f_n(v)$, was the tuning curve of neuron $n$ in respect to the molecular volumes, 
-it could be approximated with a Gaussian function
+In fact, the first term, $f_n(v)$, can be considered as the tuning curve of neuron $n$ in respect to the molecular volumes. 
+To keep the calculation simple, we approximated it with a Gaussian function,  
 
 \begin{equation}
 	\displaystyle f_n(v) = e^{-\frac{(v-v_n)^2}{2\sigma^2_n}}, 
@@ -304,16 +304,15 @@ Here we could approximate $\sum$ with $\int$, which is common in statistical phy
 In which, 
 $\langle \psi_{nm} \rangle_m$ denoted the average of $\psi_{nm}$ over all $m: r_{nm} \neq \text{NA}$. 
 It could be moved out of the integral for it was independent of $v$.
-In the above equation, 
-$g(v)$ was the density of states, $g(v) dv$ indicated how many molecules have a molecular volume in the range of $v$ and $v+dv$.
-This function was approximated by a Gaussian function, Fig.\ref{fig:hist-volumes}, 
+Here $g(v)$ was the density of states, $g(v) dv$ indicated how many molecules have a molecular volume in the range of $v$ and $v+dv$.
+This function was approximated by a Gaussian function (Fig.~\ref{fig:hist-volumes}), 
 
 \begin{equation}
 	g(v) = e^{-\frac{(v- v_{g})^2}{2 \sigma_{g}^2}},
 	\label{eqn:hist-volumes}
 \end{equation}
 ideally, $g(v)$ must not depend on the OR $n$ for it is the property of ensemble of odorant molecules, not ORs. 
-But here, we had many missing values ($r_{nm} = NA$), 
+But here, we had many missing values ($r_{nm} = NA$) that were not overlapping, 
 so we had to calculate $g(v)$ for each neuron separately; 
 Therefore, $v_{g_n}$ and $\sigma_{g_n}$ were the average and standard deviation of molecular volume while $r_{nm} \neq \text{NA}$.
 We rewritten equation (\ref{eqn:sta}) using equation (\ref{eqn:sigma_to_int}):
@@ -346,12 +345,12 @@ in a similar way, we calculated $\sigma_{h_n}$ from the neural data
 We knew the mean $v_{g_n}$ and standard deviation $\sigma_{g_n}$ of $g_n(v)$ from the molecular volumes of the ensembles of odorants. 
 We calculated the mean $\mu_{h_n}$ and standard deviation $\sigma_{h_n}$ of $h_n(v)$ from the neural data.
 Using them, we calculated the mean $v_n$ and the standard deviation $\sigma_n$ of $f_n(v)$:
-first we calculate $\sigma_n$ from 
+first we calculated $\sigma_n$ from 
 
 \begin{equation}
 	\frac{1}{\sigma_n^2} = \frac{1}{\sigma^2_{h_n}}  - \frac{1}{\sigma^2_{g_n}}
 \end{equation}
-and then we calculate $v_n$: 
+and then we calculated $v_n$: 
 
 \begin{equation}
 	\frac{v_n}{\sigma_n^2}  =    \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}}.
@@ -360,9 +359,9 @@ The calculated $v_n$ and $\sigma_n$ were put in supplemental file volume-profile
 The resulting $f_n(v)$ were plotted over the actual data, for \numberofreceptors ORs (Fig.~\ref{fig:vol-res}),
 in which p-values $<0.05$. 
 
-We calculated p-values by permutation test, 
-we shuffle the association between rodorants and responses of a given OR $10^5$ times, 
-an then check the null and alternative hypothesis. 
+We calculated p-values by permutation test, shuffling the data $10^5$ times. 
+We shuffled the association between rodorants and responses of a given OR,  
+and then check the null and alternative hypothesis. 
 The alternative hypothesis was
 ``{\it The response of ORN depend on the molecular volume of odorants.}'', 
 which required  a finite value for $\sigma_n$, 
@@ -370,10 +369,10 @@ then the null hypothesis was
 ``{\it The response of ORN is independent of molecular volume of odorants.}'',
 which required $\sigma_n \rightarrow \infty$, 
 so p-value was the probability of having $\sigma'_n\leq\sigma_n$, 
-where $\sigma_n$ was calculated from the original data, but $\sigma'_n$ calculated using permuted version.
+where $\sigma_n$ was calculated from the original data, but $\sigma'_n$ was calculated using permuted version. 
 
 We were testing a hypothesis on $\sim$60 ORs simultaneously. 
-If we used a simple threshold of 0.05 for the p-value of each OR, we could have false positives. 
+If we had used a simple threshold of 0.05 for the p-value of each OR, we could had have many false positives. 
 To address this issue, multiple-comparison problem, 
 we used Bonferroni correction (we multiply p-values by 60). 
 The problem with Bonferroni correction is that it may increases false negatives.
