@@ -382,12 +382,11 @@ The result were labeled accordingly in Fig.\ref{fig:vol-res}.
 
 We also wanted to show the diversity of volume and flexibility of binding pocket among ORs.
 To estimate the p-values, 
-we took any pair of ORs that was sensitive to molecular volume (\numberofreceptors ORs),
+we took any pair of ORs that were sensitive to molecular volume (\numberofreceptors ORs),
 calculate their difference, 
-used a permutation test and measured the probability of being different only by chance (Fig.~\ref{fig:p-values}).
+used a permutation test ($6\times10^4$ shuffles) and measured the probability of being different only by chance (Fig.~\ref{fig:p-values}).
 
 %Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
-
 
 \section*{Results and discussions}
 \begin{figure}
@@ -450,10 +449,10 @@ these assumptions were logical.
 %After calculating function $f_n(v)$ for each odorant receptor, we can calculate $\psi_{nm}$ of the equation \ref{eqn:factors}.
 %If $\psi_{nm}$ is independent of molecular volumes, it means that the assumptions where justified.
 
-The function $f_n(v)$ was considered as the tuning curve of OR $n$ in response to molecular volume (Fig.~\ref{fig:vol-res}). 
+The function $f_n(v)$ can be considered as the tuning curve of OR $n$ in response to molecular volumes (Fig.~\ref{fig:vol-res}). 
 Each OR had a preferred molecular volume $v_n$ and shows some flexibility $\sigma_n$. 
-The calculated $f_n(v)$s were demonstrated in  Fig.~\ref{fig:vol-res}. 
-It included \numberofreceptors ORs, 
+The calculated $f_n(v)$s are in  Fig.~\ref{fig:vol-res}. 
+It includes \numberofreceptors ORs, 
 which showed a significant dependence to molecular volume of odorants in their response (p-value $<0.05$).
 
 To address the multiple comparison problem, 
@@ -463,11 +462,12 @@ From the results of \numberofreceptors ORs,
 \fdr of them were significant according to FDR correction 
 (OR name in bold), 
 and the rest (\nocorrection ORs), 
-only satisfied the criteria of  p-value $<0.05$, without any corrections.
+only satisfied the criteria of p-value $<0.05$, without any corrections.
 Considering the FDR correction, 
-we concluded that nearly half of ORs (\fdr / 60 ) showed significant sensitivity toward molecular volumes. 
-The other half could be sensitive to molecular volume as well, but the current evidence are not enough and
-more experiments are necessary.
+nearly half of ORs (\fdr / 60 ) showed significant sensitivity toward molecular volumes. 
+The other half could be sensitive to molecular volume as well, 
+but the current evidence are not enough and more experiments are necessary. 
+
 %\begin{table}
 %\begin{center}
 %    \begin{tabular}{ | l | l | l |l |}
