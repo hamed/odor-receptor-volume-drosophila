@@ -575,8 +575,16 @@ as well as affecting the function of the ORs.
 	\label{fig:odorant-suggest}
 \end{figure}
 
+Our work can be improved in many ways, we can consider the anisotropy of molecular shape, and we can improve the approximation of $f_n(v)$. 
 
-There is one possible improvment to this work. Approximating $f_n(v)$ and $g(v)$ with a Gaussian function makes the mathematical formulation simple and readable. 
+Molecules have complex shapes, 
+in this work we have used the simplest possible approximation, 
+we approximated a molecule with a sphere, 
+kept only its volume and discarded any other spatial complexity. 
+This can be improved by approximating a molecule with an ellipsoid, 
+In this way more spatial details will be taken into account. 
+
+Approximating $f_n(v)$ and $g(v)$ with a Gaussian function makes the mathematical formulation simple and readable. 
 But a semi-infinite function may be a better choice for molecular volumes which can not have negative values.
 
 Although this work was on the data of \textit{Drosophila}, 
