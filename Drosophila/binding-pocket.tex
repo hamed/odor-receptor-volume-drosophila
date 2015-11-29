@@ -360,12 +360,14 @@ The calculated $v_n$ and $\sigma_n$ were put in supplemental file volume-profile
 The resulting $f_n(v)$ were plotted over the actual data, for \numberofreceptors ORs (Fig.~\ref{fig:vol-res}),
 in which p-values $<0.05$. 
 
-We calculated p-values by permutation test. 
+We calculated p-values by permutation test, 
+we shuffle the association between rodorants and responses of a given OR $10^5$ times, 
+an then check the null and alternative hypothesis. 
 The alternative hypothesis was
-``{\it The response of ORNs depend on the molecular volume of odorants.}'', 
+``{\it The response of ORN depend on the molecular volume of odorants.}'', 
 which required  a finite value for $\sigma_n$, 
 then the null hypothesis was 
-``{\it The response of ORNs is independent of molecular volume of odorants.}'',
+``{\it The response of ORN is independent of molecular volume of odorants.}'',
 which required $\sigma_n \rightarrow \infty$, 
 so p-value was the probability of having $\sigma'_n\leq\sigma_n$, 
 where $\sigma_n$ was calculated from the original data, but $\sigma'_n$ calculated using permuted version.
@@ -373,10 +375,10 @@ where $\sigma_n$ was calculated from the original data, but $\sigma'_n$ calculat
 We were testing a hypothesis on $\sim$60 ORs simultaneously. 
 If we used a simple threshold of 0.05 for the p-value of each OR, we could have false positives. 
 To address this issue, multiple-comparison problem, 
-we used Bonferroni correction. 
+we used Bonferroni correction (we multiply p-values by 60). 
 The problem with Bonferroni correction is that it may increases false negatives.
-This problem can be addressed using another method -- False Discovery Rate (FDR).
-We used both methods -- Bonferroni and FDR, as well as no correction. 
+This problem can be addressed using another method -- False Discovery Rate (FDR)--  that keeps the rate of false positive below a threshold \cite{}.
+We used both methods -- Bonferroni and FDR, as well as no correction. We used the function p.adjust of GNU R to calculate the corrected p-values. 
 The result were labeled accordingly in Fig.\ref{fig:vol-res}.
 
 We also wanted to show the diversity of volume and flexibility of binding pocket among ORs.
