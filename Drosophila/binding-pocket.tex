@@ -377,7 +377,7 @@ If we used a simple threshold of 0.05 for the p-value of each OR, we could have 
 To address this issue, multiple-comparison problem, 
 we used Bonferroni correction (we multiply p-values by 60). 
 The problem with Bonferroni correction is that it may increases false negatives.
-This problem can be addressed using another method -- False Discovery Rate (FDR)--  that keeps the rate of false positive below a threshold \cite{}.
+This problem can be addressed using another method -- False Discovery Rate (FDR)--  that keeps the rate of false positive below a threshold \cite{benjamini1995controlling,shaffer1995multiple}.
 We used both methods -- Bonferroni and FDR, as well as no correction. We used the function p.adjust of GNU R to calculate the corrected p-values. 
 The result were labeled accordingly in Fig.\ref{fig:vol-res}.
 
