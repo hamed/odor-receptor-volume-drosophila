@@ -133,10 +133,21 @@ This provides a reason for differences in smell among similar molecules of diffe
 %An olfactory system detects volatile chemicals in the surrounding, 
 %encodes the results and transmit them to limbic system and cortex.
 
-The front end of the olfactory system are olfactory receptor neurons (ORNs).  
+We know that which properties of light are measured by our eyes and how our eyes do that. 
+That knowledge assisted the production of cameras and displays. 
+Unfortunately we do not have the same knowledge in olfaction, 
+we do not know the relation between the stimuli --molecular properties-- and sensory experiences --the quality of smells.  
+
+Molecules of a volatile material evaporates into air, 
+the concentration of the vapor depends on the vapor pressure of the material and its temperature, 
+the vapor reaches sensilla of the insect (epithelium in human), 
+depending on their solubility in water, they enter sensillum lymph (mucosa in human), 
+and the odorant binding protein may also help them to reach odorant receptor neurons (ORNs) and bind to their odorant receptors (ORs). 
+
+%The front end of the olfactory system are olfactory receptor neurons (ORNs).  
 Each ORN expresses only one kind of odorant receptor (OR). 
 % (in insects many are co-expressed with Orco \cite{Larsson2004}).
-ORN of the same kind converge into the same glomeruli of antennal lobe  in insects (or olfactory bulb in vertebrates), 
+ORN of the same kind converge into the same glomeruli of antennal lobe in insects (or olfactory bulb in human), 
 so that each glomerulus of antennal lobe (or olfactory bulb) receives an amplified signal from only one type of OR~\cite{root2007,Carey2011,Vosshall2000,Couto2005,fishilevich2005,gao2000,wang1998,mombaerts1996,vassar1994}.
 %That makes the olfactory bulb (or antennal lobe in insects) the target of methods like calcium imaging (eg. ~\cite{Silbering2012}), 
 %whereas electro-physiological studies directly target olfactory receptor neurons (eg.~\cite{Benton2010}). 
@@ -162,13 +173,16 @@ all ORs have the same function, they have a binding-pocket (also known as bindin
 where odorants (ligands) bind to. 
 Binding to an odorant activates an OR and 
 the activated OR changes the potential of the cell, 
-directly (ionotropic in insects) or indirectly (metabotropic in vertebrates).
+directly (ionotropic in insects) or indirectly (metabotropic in vertebrates);
+Therefore, what we learn from olfactory system of \textit{Drosophila} can help us to decode human olfaction. 
 
 %and it was assumed that insects use the same kind of signal transduction~\cite{Brody2000,Hill04102002}. 
 
 The amount of change in the membrane potential of an ORN depends on the number of activated ORs and the time that they remain activated,
-which are determined by various physio-chemical properties of the odorant and the OR~\cite{Turin,Araneda2000,Gabler2013,guerrieri2005,uchida2000}. 
-But here we focus on two properties: the volume and the flexibility of the binding-pocket.
+which are determined by various physio-chemical properties of the odorant and the OR~\cite{Turin,Araneda2000,Gabler2013,guerrieri2005,uchida2000}.
+One important factor is the relative size of the ligand and the OR's binding pocket, 
+and another is their structural flexibilities~\cite{Anatomy of protein pockets and cavities: measurement of binding site geometry and implications for ligand design.}. 
+Therefore, here we focused on the volume and the flexibility of the binding-pocket.
 The molecular volume of a ligand should match the dimensions of the binding-pocket of the OR,
 then it fits into the binding-pocket of the OR and triggers the signal transduction. 
 Any mismatch in the volume will decrease the neural responses, 
@@ -184,25 +198,25 @@ using various methods like Molecular Dynamic (MD) simulations,
 mutagenesis studies, heterologus expression studies, and homology modeling~\cite{Khafizov2007,Man2004,Lai2005,Vaidehi2002,Floriano2004,Schmiedeberg2007,Katada2005,Kato2008,Rospars2013}.
 
 In this study, 
-we investigated the relation between molecular volumes of odorants and the responses of ORNs. 
+we develop a mathematical framework to put the available experimental data in the best use and
+investigated the relation between molecular volumes of odorants and the responses of ORNs. 
 Our results suggest that molecular volume is a considerable factor, 
 but not the only factor that determines the neural response of the ORNs.
 We predicted the {\it in-vivo} volume and flexibility of binding-pocket of ORs (supplemental file volume-profiles.csv), 
 by applying our mathematical method to neural data from DoOR database~\cite{Galizia2010}. 
+it is a well structured database that includes the neural responses of most ORs of \textit{Drosophila} to many odorants~\cite{Galizia2010}. 
+This database aggregated data from many sources~\cite{Bruyne1999,Bruyne2001,Dobritsa2003,Goldman2005,Hallem2004,Hallem2006,
+Kreher2005,Kreher2008,Kwon2007,Pelz2006,Pelz2006,Schmuker2007,Stensmyr2003,
+Turner2009,VanderGoesvanNaters2007,Yao2005}.
 
-We suggested a functional relation between molecular volume and the neural responses, 
+By applying our method to these data, 
+we suggested a functional relation between molecular volume and the neural responses, 
 we provided a methodology to estimate {\it molecular receptive range} or {\it tuning function} of ORs,
 and then we predicted the structural properties of the binding-pocket of OR - the volume and the flexibility of binding-pocket.
 Our results may help to select odorants  for new experimental studies (supplemental file proposed-odorants.csv), 
 %may provide additional information about the structure of ORs to structural biologists, 
 and may contribute to the study of olfactory coding by unmasking the effect of other possible factors.
 
-To perform this study we use a public domain, 
-well structured database -- DoOR -- 
-that includes the neural responses of most ORs of \textit{Drosophila} to many odorants~\cite{Galizia2010}. 
-This database aggregated data from many sources~\cite{Bruyne1999,Bruyne2001,Dobritsa2003,Goldman2005,Hallem2004,Hallem2006,
-Kreher2005,Kreher2008,Kwon2007,Pelz2006,Pelz2006,Schmuker2007,Stensmyr2003,
-Turner2009,VanderGoesvanNaters2007,Yao2005}.
 
 %%
 %There are many studies that tries to connect physio-chemical properties of molecules to their perceived smells, like the current work, which studies the effect of molecular volume of odorants on the response of odorant receptors.
@@ -436,7 +450,7 @@ used a permutation test ($6\times10^4$ shuffles) and measured the probability of
 	\label{fig:p-values}
 \end{figure}
 
-There were two main assumption in this work: 
+There are two main assumption in this work: 
 First we assumed that the response of an OR could be factorized into two terms, 
 according to (\ref{eqn:factors}).
 Second, we assumed that the volume dependence factor $f_n(v_m)$ in (\ref{eqn:factors}) 
