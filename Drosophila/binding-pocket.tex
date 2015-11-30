@@ -268,8 +268,7 @@ and may contribute to the study of olfactory coding by unmasking the effect of o
 		which is slightly different from  the mean.}
 	\label{fig:hist-volumes}
 \end{figure}
-
-We studied the relation between neural responses and molecular volumes, 
+%We studied the relation between neural responses and molecular volumes, 
 We took the neural data of DoOR database \cite{Galizia2010} and we calculated molecular volume (supplemental file odorants.csv) using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
 We used  GNU R to analyze the data~\cite{Rlanguage}.
 
@@ -308,7 +307,7 @@ $\frac{\sum_{m} v_m r_{nm}}{\sum_{m} r_{nm}}$ and then we use (\ref{eqn:factors}
 	\frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} = \frac{\displaystyle \sum_{m} v_m f_n(v_m) \psi_{nm}}{\displaystyle \sum_{m} f_n(v_m) \psi_{nm}}.
 	\label{eqn:sta}
 \end{equation}
-Here we could approximate $\sum$ with $\int$, which is common in statistical physics:
+We approximated $\sum$ with $\int$, which is common in statistical physics:
 
 \begin{equation}
 	\sum_{m} \dots f_n(v_m) \psi_{nm} \approx  \langle \psi_{nm} \rangle_m \int_0^\infty \dots f_n(v) g(v)  dv. 
@@ -316,7 +315,7 @@ Here we could approximate $\sum$ with $\int$, which is common in statistical phy
 \end{equation}
 In which, 
 $\langle \psi_{nm} \rangle_m$ denoted the average of $\psi_{nm}$ over all $m: r_{nm} \neq \text{NA}$. 
-It could be moved out of the integral for it was independent of $v$.
+We moved out of the integral for it was independent of $v$.
 Here $g(v)$ was the density of states, $g(v) dv$ indicated how many molecules have a molecular volume in the range of $v$ and $v+dv$.
 This function was approximated by a Gaussian function (Fig.~\ref{fig:hist-volumes}), 
 
@@ -340,7 +339,7 @@ We replaced the product of $f_n(v)$ and $g_n(v)$ in the above equation with $h_n
 	\frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} \approx \frac{\displaystyle \int_v v h_n(v) dv}{ \displaystyle \int_v  h_n(v) dv }.
 	\label{eqn:mean}
 \end{equation}
-The function $h_n(v)$ was a Gaussian function because it was the product of two Gaussian functions, 
+The function $h_n(v)$ was a Gaussian function for it was the product of two Gaussian functions, 
 
 \begin{equation}
 h_n(v) = e^{-\frac{(v-\mu_{h_n})^2}{2\sigma_{h_n}^2}}, 
@@ -355,7 +354,7 @@ in a similar way, we calculated $\sigma_{h_n}$ from the neural data
 \end{eqnarray}
 
 
-We knew the mean $v_{g_n}$ and standard deviation $\sigma_{g_n}$ of $g_n(v)$ from the molecular volumes of the ensembles of odorants. 
+We knew the mean, $v_{g_n}$, and standard deviation, $\sigma_{g_n}$, of $g_n(v)$ from the molecular volumes of the ensembles of odorants. 
 We calculated the mean $\mu_{h_n}$ and standard deviation $\sigma_{h_n}$ of $h_n(v)$ from the neural data.
 Using them, we calculated the mean $v_n$ and the standard deviation $\sigma_n$ of $f_n(v)$:
 first we calculated $\sigma_n$ from 
@@ -391,7 +390,7 @@ we used Bonferroni correction (we multiply p-values by 60).
 The problem with Bonferroni correction is that it may increases false negatives.
 This problem can be addressed using another method -- False Discovery Rate (FDR)--  that keeps the rate of false positive below a threshold \cite{benjamini1995controlling,shaffer1995multiple}.
 We used both methods -- Bonferroni and FDR, as well as no correction. We used the function p.adjust of GNU R to calculate the corrected p-values. 
-The result were labeled accordingly in Fig.\ref{fig:vol-res}.
+The result were labeled accordingly in Fig.~\ref{fig:vol-res}.
 
 We also wanted to show the diversity of volume and flexibility of binding pocket among ORs.
 To estimate the p-values, 
