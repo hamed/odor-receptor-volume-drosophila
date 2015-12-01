@@ -294,7 +294,11 @@ we separated the response $r_{nm}$ into two terms:
 	\label{eqn:factors}
 \end{equation}
 The first term, $f_n(v_m)$, depended only on the molecular volume of odorants.
-The second term, $\psi_{nm}$ included every other influential properties of molecules, but the molecular volume or any other properties that depends on the molecular volume.
+The second term, the volume independent term $\psi_{nm}$, included every other influential properties of molecules, 
+but the molecular volume or any other properties that correlates to molecular volume (eg, molecular weight).
+Among all the molecular parameter that correlate with molecular volume, 
+we used molecular volume because it  fits to the acceptable picture of protein-ligand interaction \cite{fig:binding-pocket}.
+
 Both terms were characteristic of each OR, and they varied from OR to OR.
 In fact, the first term, $f_n(v)$, can be considered as the tuning curve of neuron $n$ in respect to the molecular volumes. 
 To keep the calculation simple, we approximated it with a Gaussian function,  
@@ -595,20 +599,30 @@ the results are in supplemental file volume-profiles.csv and they can be verifie
 or more experiment are done. 
 
 Now that we know how much of the variance in the response of ORN was resulted from molecular volume, 
-it is possible to study the effect of other parameters, we hope this advances the field of olfaction. 
+it is possible to study the effect of other parameters.
 
-Both the model and the data can be improved in many days. 
-For example, 
-the data can benefit from more controls on parameters like concentration, 
-vapor pressure and solubility in water, 
-also the effect of sensillum lymph and its odor binding-proteins might be important which are not addressed in the current experimental methods. 
+Here we have overlooked many facts, 
+because the nature of the problem is inherently complex and otherwise would not be feasible to study. 
+There are many factors that affects the concentration of odorant molecules at the close to the receptors, 
+like molecular mass, vapor pressure, solubility in water, sensillum lymph and its odorant binding proteins. 
+It is difficult to control them in the current experimental apparatus and they make the model very complex with many sets of parameters. 
 Using experimental paradigm like Luciferase Assay as used to study human olfactory systems \cite{human olf}, 
-may provide valuable complementary information. 
+may provide valuable complementary information to our simple model. 
 
-Also many improvement can be made on the model.
-Here we did not consider anisotropy of molecules
+We approximated a molecule with a rigid isotropic sphere of given volume, 
+so our model does not say anything about shape \cite{}, vibrational mode \cite{}, chirality \cite{some and this: Dissipative Vibrational Model for Chiral Recognition in Olfaction} or many other interestig properties of a molecule.
+Actually our method and results are a starting point to other factors. 
+A simple improvement that can be made on the model is to include anisotropy of the molecules, 
+simply by modeling  them as ellipsoids.
 
-There are two main assumption in this work: 
+Approximating $f_n(v)$ and $g(v)$ with a Gaussian function makes the mathematical formulation simple and readable. 
+But a semi-infinite function may be a better choice for molecular volumes which can not have negative values.
+
+Although this work was on the data of \textit{Drosophila}, 
+we expect that the general principles and methodologies of this work hold for vertebrates as well, 
+we are working to apply the same method to data of human olfactory receptors \cite{}.
+
+%There are two main assumption in this work: 
 %First we assumed that the response of an OR could be factorized into two terms, 
 %according to (\ref{eqn:factors}).
 %Second, we assumed that the volume dependence factor $f_n(v_m)$ in (\ref{eqn:factors}) 
@@ -618,24 +632,14 @@ There are two main assumption in this work:
 %these assumptions were logical. n
 
 
-Our work can be improved in many ways, we can consider the anisotropy of molecular shape, and we can improve the approximation of $f_n(v)$. 
+%Our work can be improved in many ways, we can consider the anisotropy of molecular shape, and we can improve the approximation of $f_n(v)$. 
 
-Molecules have complex shapes, 
-in this work we have used the simplest possible approximation, 
-we approximated a molecule with a sphere, 
-kept only its volume and discarded any other spatial complexity. 
-This can be improved by approximating a molecule with an ellipsoid, 
-In this way more spatial details will be taken into account. 
-
-Approximating $f_n(v)$ and $g(v)$ with a Gaussian function makes the mathematical formulation simple and readable. 
-But a semi-infinite function may be a better choice for molecular volumes which can not have negative values.
-
-Although this work was on the data of \textit{Drosophila}, 
-we expect that the general principles and methodologies of this work hold for vertebrates as well. 
-But considering the similarities and dissimilarities between insects and vertebrate, 
-this should be verified.
-
-
+%Molecules have complex shapes, 
+%in this work we have used the simplest possible approximation, 
+%we approximated a molecule with a sphere, 
+%kept only its volume and discarded any other spatial complexity. 
+%This can be improved by approximating a molecule with an ellipsoid, 
+%In this way more spatial details will be taken into account. 
 
 \section*{Acknowledgments}
 We are especially grateful to B. N. Araabi, S. Aghvami, N. Doostani and Shima Seyed-allaei for the careful reading of the manuscript.
