@@ -159,13 +159,14 @@ an OR can be triggered by many odorant molecules,
 and an odorant molecule can interact with different OR types~\cite{Malnic2000},
 The combinatorial code enables humans to discriminate many odors~\cite{Bushdid2014} by using a repertoire of only about 350 ORs.
 However, it is not clear yet which properties of a molecule contribute to its smell. 
-It is a topic of ongoing researches and there are many theories~\cite{Turin,Keller2004,Araneda2000,Brookes2007,Franco2011,Pelz2006,Gabler2013,Schmuker2007,Haddad2008,Snitz2013,Yablonka2012,gane2013}.
+It is a topic of ongoing researches and there are many theories~\cite{Turin,Keller2004,Araneda2000,Brookes2007,Franco2011,Pelz2006,Gabler2013,Schmuker2007,Haddad2008,Snitz2013,Yablonka2012,gane2013,
+turin2015plausibility,block2015implausibility,vosshall2015laying}.
 
 The ORs are transmembrane proteins, 
 in insects they are ionotropic~\cite{Sato2008,Wicher2008,Nagel2011,Rong2011}, 
 their topology is different from vertebrates~\cite{Benton2006,Smart2008},
 and most of them function in presence of another common receptor, called Orco~\cite{Larsson2004}.
-In vertebrates, they are metabotropic receptors, they belong to the family of g-protein coupled receptor (GPCR). 
+In vertebrates, they are metabotropic receptors, they belong to the family of g-protein coupled receptor (GPCR)~\cite{Buck1991,niimura2009evolutionary}. 
 
 There are many similarities between the olfactory system of insects and vertebrates~\cite{Wilson2014,Kaupp2010}.
 Regardless of the signal transduction, 
@@ -181,11 +182,11 @@ Therefore, what we learn from olfactory system of \textit{Drosophila} can help u
 The amount of change in the membrane potential of an ORN depends on the number of activated ORs and the time that they remain activated,
 which are determined by various physio-chemical properties of the odorant and the OR~\cite{Turin,Araneda2000,Gabler2013,guerrieri2005,uchida2000}.
 One important factor is the relative size of the ligand and the OR's binding pocket, 
-it has been used in computational drug design as predictor of binding pocket for a given ligand~\cite{liang1998anatomy,apostolakis1998docking,gunasekaran2007different}. 
+it has been used in computational drug design as predictor of binding pocket for a given ligand~\cite{liang1998anatomy}. 
 Another factor is the flexibility of the binding pocket, 
 proteins are not rigid bodies,  
 and they can change shape, 
-depending on the amino acids involved~\cite{Stereochemistry of polypeptide chain configurations GN Ramachandran}.
+depending on the amino acids involved~\cite{Ramachandran,apostolakis1998docking,gunasekaran2007different}.
 
 Therefore, here we focused on the volume and the flexibility of the binding-pocket.
 The molecular volume of a ligand should match the dimensions of the binding-pocket of the OR,
@@ -273,7 +274,7 @@ and may contribute to the study of olfactory coding by unmasking the effect of o
 	\label{fig:hist-volumes}
 \end{figure}
 %We studied the relation between neural responses and molecular volumes, 
-We took the neural data of DoOR 1.0 database \cite{Galizia2010}, hold out  the additional data of DoOR 2.0 as a test set \cite{}. 
+We took the neural data of DoOR 1.0 database \cite{Galizia2010}, hold out  the additional data of DoOR 2.0 as a test set \cite{muench2015door}. 
 We calculated molecular volume (supplemental file odorants.csv) using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
 We used  GNU R to analyze the data~\cite{Rlanguage}.
 
@@ -469,9 +470,11 @@ Each OR had a preferred molecular volume $v_n$ and shows some flexibility $\sigm
 The calculated $f_n(v)$s are in  Fig.~\ref{fig:vol-res}. 
 It includes \numberofreceptors ORs, 
 which showed a significant dependence to molecular volume of odorants in their response (p-value $<0.05$). 
-The flexibility of a receptor may affect the broadness of its tuning curve, 
+
+The flexibility of a receptor may affect the broadness of it tuning curve, 
 but we did not see any significant relation, 
-using three definition of broadness: depth of selectivity, breadth of selectivity and kurtosis.
+using three definition of broadness: depth of selectivity, breadth of selectivity and kurtosis \cite{moody1998model,freedman2006experience,muench2015door}.
+
 
 From the results of \numberofreceptors ORs, 
 \bonferroni of them were significant according to Bonferroni correction (OR name in black), 
@@ -577,10 +580,10 @@ as well as affecting the function of the ORs.
 In this work, we have overlooked many facts, 
 because the nature of the problem is inherently complex and otherwise would not be feasible to study. 
 There are many factors that affects the concentration of odorant molecules at the close to the receptors, 
-like molecular mass, vapor pressure, solubility in water, sensillum lymph and its odorant binding proteins (lush) \cite{}. 
+like molecular mass, vapor pressure, solubility in water, sensillum lymph and its odorant binding proteins (lush) \cite{xu2005drosophila,gomez2013ligands}. 
 It is difficult to control them in the current experimental apparatus and they make the model very complex with many sets of parameters. 
-Using experimental paradigm like Luciferase Assay as used to study human olfactory systems \cite{human olf}, 
-may provide valuable complementary information to our simple model. 
+Using experimental paradigm like Luciferase Assay as used to study human olfactory systems \cite{mainland2015human}, 
+may provide valuable complementary information to our simple model. human
 We expect these factors have minimal effect on smaller molecules, 
 because they evaporate easily and solve in water well and they might not need the help of odorant binding protein, 
 so we can be confident about the lack of response to small molecules more than what we can say about larger molecules. 
@@ -614,7 +617,7 @@ Now that we know how much of the variance in the response of ORN was resulted fr
 it is possible to study the effect of other parameters.
 
 We approximated a molecule with a rigid isotropic sphere of given volume, 
-so our model does not say anything about shape \cite{}, vibrational mode \cite{}, chirality \cite{some and this: Dissipative Vibrational Model for Chiral Recognition in Olfaction} or many other properties of a molecule.
+so our model does not say anything about shape \cite{Keller2004,Araneda,uchida2000}, vibrational mode \cite{Turin,Franco2011,turin2015plausibility}, chirality \cite{tirandaz2015dissipative} or many other interesting properties of a molecule.
 Actually our method and results are a starting point to other factors. 
 A simple improvement that can be made on the model is to include anisotropy of the molecules, 
 simply by modeling  them as ellipsoids. 
@@ -625,7 +628,7 @@ But a semi-infinite function may be a better choice for molecular volumes which 
 
 Although this work was on the data of \textit{Drosophila}, 
 we expect that the general principles and methodologies of this work hold for vertebrates as well, 
-we are working to apply the same method to data of human olfactory receptors \cite{}.
+we are working to apply the same method to data of human olfactory receptors \cite{mainland2015human}.
 
 %There are two main assumption in this work: 
 %First we assumed that the response of an OR could be factorized into two terms, 
