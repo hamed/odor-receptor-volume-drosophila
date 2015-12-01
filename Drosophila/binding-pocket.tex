@@ -138,12 +138,13 @@ That knowledge assisted the production of cameras and displays.
 Unfortunately we do not have the same knowledge in olfaction, 
 we do not know the relation between the stimuli --molecular properties-- and sensory experiences --the quality of smells.  
 
-Molecules of a volatile material evaporates into air, 
-the concentration of the vapor depends on the vapor pressure of the material and its temperature, 
-the vapor reaches sensilla of the insect (epithelium in human), 
-depending on their solubility in water, they enter sensillum lymph (mucosa in human), 
-and the odorant binding protein may also help them to reach odorant receptor neurons (ORNs) and bind to their odorant receptors (ORs). 
-%The front end of the olfactory system are olfactory receptor neurons (ORNs).  
+%Molecules of a volatile material evaporates into air, 
+%the concentration of the vapor depends on the vapor pressure of the material and its temperature, 
+%the vapor reaches sensilla of the insect (epithelium in human), 
+%depending on their solubility in water, they enter sensillum lymph (mucosa in human), 
+%and the odorant binding protein may also help them to reach odorant receptor neurons (ORNs) and bind to their odorant receptors (ORs). 
+
+The front end of the olfactory system are olfactory receptor neurons (ORNs).  
 Each ORN expresses only one kind of OR. 
 % (in insects many are co-expressed with Orco \cite{Larsson2004}).
 ORN of the same kind converge into the same glomeruli of antennal lobe in insects (or olfactory bulb in human)
@@ -180,7 +181,12 @@ Therefore, what we learn from olfactory system of \textit{Drosophila} can help u
 The amount of change in the membrane potential of an ORN depends on the number of activated ORs and the time that they remain activated,
 which are determined by various physio-chemical properties of the odorant and the OR~\cite{Turin,Araneda2000,Gabler2013,guerrieri2005,uchida2000}.
 One important factor is the relative size of the ligand and the OR's binding pocket, 
-and another is their structural flexibilities~\cite{liang1998anatomy,apostolakis1998docking,gunasekaran2007different}. 
+it has been used in computational drug design as predictor of binding pocket for a given ligand~\cite{liang1998anatomy,apostolakis1998docking,gunasekaran2007different}. 
+Another factor is the flexibility of the binding pocket, 
+proteins are not rigid bodies,  
+and they can change shape, 
+depending on the amino acids involved~\cite{Stereochemistry of polypeptide chain configurations GN Ramachandran}.
+
 Therefore, here we focused on the volume and the flexibility of the binding-pocket.
 The molecular volume of a ligand should match the dimensions of the binding-pocket of the OR,
 then it fits into the binding-pocket of the OR and triggers the signal transduction. 
@@ -188,7 +194,7 @@ Any mismatch in the volume will decrease the neural responses,
 on the other hand the flexibility of the binding-pocket can compensate for the volume mismatch (Fig. \ref{fig:binding-pocket}).
 
 We could know the volume and flexibility of the binding-pocket, 
-if we knew its three dimensional structure.
+if we knew its three dimensional structure. 
 But this is not the case here, 
 as it is not easy to know the structure of integral proteins~\cite{Zhang2008,Lupieri2009}, 
 including ORs. 
@@ -208,14 +214,12 @@ This database aggregated data from many sources~\cite{Bruyne1999,Bruyne2001,Dobr
 Kreher2005,Kreher2008,Kwon2007,Pelz2006,Pelz2006,Schmuker2007,Stensmyr2003,
 Turner2009,VanderGoesvanNaters2007,Yao2005}.
 
-By applying our method to these data, 
-we suggested a functional relation between molecular volume and the neural responses, 
+We suggested a functional relation between molecular volume and the neural responses, 
 we provided a methodology to estimate {\it molecular receptive range} or {\it tuning function} of ORs,
 and then we predicted the structural properties of the binding-pocket of OR - the volume and the flexibility of binding-pocket.
 Our results may help to select odorants  for new experimental studies (supplemental file proposed-odorants.csv), 
 %may provide additional information about the structure of ORs to structural biologists, 
 and may contribute to the study of olfactory coding by unmasking the effect of other possible factors.
-
 
 %%
 %There are many studies that tries to connect physio-chemical properties of molecules to their perceived smells, like the current work, which studies the effect of molecular volume of odorants on the response of odorant receptors.
@@ -269,7 +273,8 @@ and may contribute to the study of olfactory coding by unmasking the effect of o
 	\label{fig:hist-volumes}
 \end{figure}
 %We studied the relation between neural responses and molecular volumes, 
-We took the neural data of DoOR database \cite{Galizia2010} and we calculated molecular volume (supplemental file odorants.csv) using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
+We took the neural data of DoOR 1.0 database \cite{Galizia2010}, hold out  the additional data of DoOR 2.0 as a test set \cite{}. 
+We calculated molecular volume (supplemental file odorants.csv) using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
 We used  GNU R to analyze the data~\cite{Rlanguage}.
 
 DoOR database includes an $N\times M$ matrix. 
@@ -448,15 +453,6 @@ used a permutation test ($6\times10^4$ shuffles) and measured the probability of
 	\label{fig:p-values}
 \end{figure}
 
-There are two main assumption in this work: 
-First we assumed that the response of an OR could be factorized into two terms, 
-according to (\ref{eqn:factors}).
-Second, we assumed that the volume dependence factor $f_n(v_m)$ in (\ref{eqn:factors}) 
-had a Gaussian form (Eq. \ref{eqn:volume-dependence}).
-Considering the physics and chemistry behind the binding-process (Fig. \ref{fig:binding-pocket}), 
-and the neural responses (Fig. \ref{fig:vol-res}), 
-these assumptions were logical. 
-
 %but, to be sure, we also put them in a test. 
 %After calculating function $f_n(v)$ for each odorant receptor, we can calculate $\psi_{nm}$ of the equation \ref{eqn:factors}.
 %If $\psi_{nm}$ is independent of molecular volumes, it means that the assumptions where justified.
@@ -605,6 +601,7 @@ Although this work was on the data of \textit{Drosophila},
 we expect that the general principles and methodologies of this work hold for vertebrates as well. 
 But considering the similarities and dissimilarities between insects and vertebrate, 
 this should be verified.
+
 
 
 \section*{Acknowledgments}
