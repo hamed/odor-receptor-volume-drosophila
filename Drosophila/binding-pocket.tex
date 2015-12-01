@@ -97,7 +97,7 @@ Molecules bind to them with different affinities and activate them with differen
 resulting in a combinatorial code that identifies odorants. 
 We hypothesized that the binding affinity between a pair of odorant-receptor is affected by their relative sizes. 
 The affinity can reaches its maximum if molecular volume of an odorant matches volume of a receptor's binding-pocket 
-and it reach zero if the sizes are too different, 
+and it drops to zero if the sizes are too different, 
 obscuring the effect of other molecular properties. 
 We formulated this hypothesis mathematically and verified it on data of \textit{Drosophila}, 
 and predicted the volume and the structural flexibility of each receptor's binding-site, 
@@ -147,7 +147,7 @@ we do not know the relation between the stimuli --molecular properties-- and sen
 The front end of the olfactory system are olfactory receptor neurons (ORNs).  
 Each ORN expresses only one kind of OR. 
 % (in insects many are co-expressed with Orco \cite{Larsson2004}).
-ORN of the same kind converge into the same glomeruli of antennal lobe in insects (or olfactory bulb in human)
+ORNs of the same type converge into the same glomeruli of antennal lobe in insects (or olfactory bulb in human)
 %so that each glomerulus receives an amplified signal from only one type of OR
 ~\cite{root2007,Carey2011,Vosshall2000,Couto2005,fishilevich2005,gao2000,wang1998,mombaerts1996,vassar1994}.
 %That makes the olfactory bulb (or antennal lobe in insects) the target of methods like calcium imaging (eg. ~\cite{Silbering2012}), 
@@ -469,8 +469,9 @@ Each OR had a preferred molecular volume $v_n$ and shows some flexibility $\sigm
 The calculated $f_n(v)$s are in  Fig.~\ref{fig:vol-res}. 
 It includes \numberofreceptors ORs, 
 which showed a significant dependence to molecular volume of odorants in their response (p-value $<0.05$). 
-The flexibility of a receptor may affect the narrowness or broadness of it tuning curve, 
-but we did not see any significant relation.
+The flexibility of a receptor may affect the broadness of its tuning curve, 
+but we did not see any significant relation, 
+using three definition of broadness: depth of selectivity, breadth of selectivity and kurtosis.
 
 From the results of \numberofreceptors ORs, 
 \bonferroni of them were significant according to Bonferroni correction (OR name in black), 
@@ -478,8 +479,8 @@ From the results of \numberofreceptors ORs,
 and the rest (\nocorrection ORs, name in light gray), 
 only satisfied the criteria of p-value $<0.05$, without any corrections.
 Considering the FDR correction, 
-nearly half of ORs (\fdr / 60 ) showed significant sensitivity toward molecular volumes. 
-The other half could be sensitive to molecular volume as well, 
+more than half of available ORs in DoOR 1.0 (\fdr / 44) showed significant sensitivity toward molecular volumes. 
+The remain could be sensitive to molecular volume as well, 
 but the current evidence are not enough and more experiments are necessary. 
 
 \begin{figure}
@@ -613,10 +614,11 @@ Now that we know how much of the variance in the response of ORN was resulted fr
 it is possible to study the effect of other parameters.
 
 We approximated a molecule with a rigid isotropic sphere of given volume, 
-so our model does not say anything about shape \cite{}, vibrational mode \cite{}, chirality \cite{some and this: Dissipative Vibrational Model for Chiral Recognition in Olfaction} or many other interestig properties of a molecule.
+so our model does not say anything about shape \cite{}, vibrational mode \cite{}, chirality \cite{some and this: Dissipative Vibrational Model for Chiral Recognition in Olfaction} or many other properties of a molecule.
 Actually our method and results are a starting point to other factors. 
 A simple improvement that can be made on the model is to include anisotropy of the molecules, 
-simply by modeling  them as ellipsoids.
+simply by modeling  them as ellipsoids. 
+This will capture some more aspects of the molecular shape and may help the inclusion of constitutional isomers. 
 
 Approximating $f_n(v)$ and $g(v)$ with a Gaussian function makes the mathematical formulation simple and readable. 
 But a semi-infinite function may be a better choice for molecular volumes which can not have negative values.
