@@ -422,8 +422,8 @@ used a permutation test ($6\times10^4$ shuffles) and measured the probability of
 			the fitted functions $f_n(v)$ from Eq.~\ref{eqn:factors} (solid lines), 
 			and the error bars of the mean of $f_n(v)$ (red vertical lines), 
 			for \numberofreceptors ORs that their response showed significant (p-value $<0.05$) dependence to molecular volume. 
-			Among them, \fdr are significant according to FDR correction (OR names in bold) and 
-			\bonferroni are significant considering Bonferroni correction (OR names in italic).
+			Except one (OR name in light gray), \fdr were significant according to FDR correction (OR names in gray) and 
+			\bonferroni were significant considering Bonferroni correction (OR names black).
 			The function $f_n(v)$ was calculated based on data from DoOR 1.0 (blue circles), 
 			The red circles are additional data of DoOR 2.0. 
 		}
@@ -435,11 +435,11 @@ used a permutation test ($6\times10^4$ shuffles) and measured the probability of
 		\includegraphics[width= 0.85  \textwidth]{vol-mean-std}
 	\caption{The preferred volumes of \numberofreceptors OR, $v_n$ (top). 
 		and their flexibilities $\sigma_n$ (down). 
-		The error bars are calculated using Jack-Knife method. 
-		Some ORs like Or59b, Or67a and  Or85a prefer smaller molecules, 
-		but some others like Or19a,  Or1a and  Or49a prefer larger molecules.
-		Some ORs like Or46a,  Or22b and Or30a are volume  selective, 
-		but some others like Or19a,  Or67b and  Or22a respond to broader range of molecular volumes.
+		The error bars were calculated using Jack-Knife method. 
+		Some ORs like Or59b, Or67a and  Or85a preferred smaller molecules, 
+		but some others like Or19a,  Or1a and  Or49a preferred larger molecules.
+		Some ORs like Or46a,  Or22b and Or30a were volume  selective, 
+		but some others like Or19a,  Or67b and  Or22a responded to broader range of molecular volumes.
 		}
 		\label{fig:preferred_volume}
 \end{figure}
@@ -449,7 +449,7 @@ used a permutation test ($6\times10^4$ shuffles) and measured the probability of
 % do not touch this fig.
 	\centering
 	\includegraphics[width= 0.75 \textwidth]{pair-pval}
-	\caption{Pairs of ORs that differ significantly in their binding-pocket's volume (upper triangle) and flexibility (lower triangle).
+	\caption{Pairs of ORs that differed significantly in their binding-pocket's volume (upper triangle) and flexibility (lower triangle).
 			All blue shades have p-value of less than 0.05, 
 			two darker shades have FDR corrected p-values of less than 0.05 and the darkest shade has Bonferroni corrected p-value of less than 0.05.}
 	\label{fig:p-values}
@@ -465,12 +465,13 @@ Each OR had a preferred molecular volume $v_n$ and shows some flexibility $\sigm
 The calculated $f_n(v)$s are in  Fig.~\ref{fig:vol-res}. 
 It includes \numberofreceptors ORs, 
 which showed a significant dependence to molecular volume of odorants in their response (p-value $<0.05$). 
-The flexibility of a receptor may affect the narrowness or broadness of it tuning curve, but we did not see any significant relation.
+The flexibility of a receptor may affect the narrowness or broadness of it tuning curve, 
+but we did not see any significant relation.
 
 From the results of \numberofreceptors ORs, 
-\bonferroni of them were significant according to Bonferroni correction (OR name in italic), 
-\fdr of them were significant according to FDR correction (OR name in bold), 
-and the rest (\nocorrection ORs), 
+\bonferroni of them were significant according to Bonferroni correction (OR name in black), 
+\fdr of them were significant according to FDR correction (OR name in gray), 
+and the rest (\nocorrection ORs, name in light gray), 
 only satisfied the criteria of p-value $<0.05$, without any corrections.
 Considering the FDR correction, 
 nearly half of ORs (\fdr / 60 ) showed significant sensitivity toward molecular volumes. 
@@ -585,19 +586,36 @@ as well as affecting the function of the ORs.
 
 \section*{Conclusion}
 
-This work was done on the older version of DoOR database (DoOR 1.0). 
-Recently, a newer version become available to the public that includes more data points (DoOR 2.0). 
-The new data confirms our predictions. 
+We showed that molecular volume was an important factor, 
+but not the only one that determined the response of olfactory receptor neurons (ORNs). 
 
+We hypothesized that this was resulted from the volume of binding-pocket of odorant receptors (ORs) and its flexibility. 
+Following this fact, we predicted the actual \textit{in-vivo} volume and flexibility of the binding-pockets of ORs, 
+the results are in supplemental file volume-profiles.csv and they can be verified when the 3D structure is resolved, 
+or more experiment are done. 
+
+Now that we know how much of the variance in the response of ORN was resulted from molecular volume, 
+it is possible to study the effect of other parameters, we hope this advances the field of olfaction. 
+
+Both the model and the data can be improved in many days. 
+For example, 
+the data can benefit from more controls on parameters like concentration, 
+vapor pressure and solubility in water, 
+also the effect of sensillum lymph and its odor binding-proteins might be important which are not addressed in the current experimental methods. 
+Using experimental paradigm like Luciferase Assay as used to study human olfactory systems \cite{human olf}, 
+may provide valuable complementary information. 
+
+Also many improvement can be made on the model.
+Here we did not consider anisotropy of molecules
 
 There are two main assumption in this work: 
-First we assumed that the response of an OR could be factorized into two terms, 
-according to (\ref{eqn:factors}).
-Second, we assumed that the volume dependence factor $f_n(v_m)$ in (\ref{eqn:factors}) 
-had a Gaussian form (Eq. \ref{eqn:volume-dependence}).
-Considering the physics and chemistry behind the binding-process (Fig. \ref{fig:binding-pocket}), 
-and the neural responses (Fig. \ref{fig:vol-res}), 
-these assumptions were logical. 
+%First we assumed that the response of an OR could be factorized into two terms, 
+%according to (\ref{eqn:factors}).
+%Second, we assumed that the volume dependence factor $f_n(v_m)$ in (\ref{eqn:factors}) 
+%had a Gaussian form (Eq. \ref{eqn:volume-dependence}).
+%Considering the physics and chemistry behind the binding-process (Fig. \ref{fig:binding-pocket}), 
+%and the neural responses (Fig. \ref{fig:vol-res}), 
+%these assumptions were logical. n
 
 
 Our work can be improved in many ways, we can consider the anisotropy of molecular shape, and we can improve the approximation of $f_n(v)$. 
