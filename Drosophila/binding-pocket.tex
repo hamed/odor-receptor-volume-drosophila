@@ -92,17 +92,17 @@
 
 \begin{abstract} 
 Which properties of a molecule define its odor? This is a basic question of olfaction, 
-yet to be answered. \textit{Drosophila}'s olfactory system has a repertoire of about 60 odorant receptors. 
+yet to be answered. Olfactory system of \textit{Drosophila} has a repertoire of about 60 odorant receptors. 
 Molecules bind to them with different affinities and activate them with different efficacies, 
-resulting in a combinatorial code that identifies odorants. 
+resulting in a combinatorial code that identifies the odorants. 
 We hypothesized that the binding affinity between a pair of odorant-receptor is affected by their relative sizes. 
-The affinity can reaches its maximum if molecular volume of an odorant matches volume of a receptor's binding-pocket 
+The affinity can reach its maximum if the molecular volume of an odorant matches the volume of a binding-pocket 
 and it drops to zero if the sizes are too different, 
 obscuring the effect of other molecular properties. 
-We formulated this hypothesis mathematically and verified it on data of \textit{Drosophila}, 
-and predicted the volume and the structural flexibility of each receptor's binding-site, 
+We formulated this hypothesis mathematically and verified it on the data of \textit{Drosophila}, 
+and predicted the volume and the structural flexibility of the binding-site of each receptor, 
 which are significantly different among receptors. 
-This provides a reason for differences in smell among similar molecules of different sizes. 
+This provides a reason for the smell differences of similar molecules with different sizes. 
 \end{abstract}
 
 
@@ -116,8 +116,8 @@ This provides a reason for differences in smell among similar molecules of diffe
 	\caption{This figure shows different scenarios that may happen when an odorant molecule (ligand) binds to a receptor. 
 		The red disks  are odorant molecule, 
 		and the blue shapes are OR and binding-pocket.	
-		(top) From left to right, misfit because of small volume of molecule, 
-		perfect match and misfit because of large molecular volume.
+		(top) From left to right, a mismatch because of small molecular volume, 
+		a perfect match and a mismatch because of large molecular volume.
 		(down) The flexibility of a receptor may compensate for the volume mismatches.
 		}
 	\label{fig:binding-pocket}
@@ -132,7 +132,7 @@ This provides a reason for differences in smell among similar molecules of diffe
 %An olfactory system detects volatile chemicals in the surrounding, 
 %encodes the results and transmit them to limbic system and cortex.
 
-We know that which properties of light are measured by our eyes and how our eyes do that. 
+We know that which properties of the light are measured by our eyes and how our eyes do that. 
 That knowledge assisted the production of cameras and displays. 
 Unfortunately we do not have the same knowledge in olfaction, 
 we do not know the relation between the stimuli --molecular properties-- and sensory experiences --the quality of smells.  
@@ -146,7 +146,7 @@ we do not know the relation between the stimuli --molecular properties-- and sen
 The front end of the olfactory system are olfactory receptor neurons (ORNs).  
 Each ORN expresses only one kind of OR. 
 % (in insects many are co-expressed with Orco \cite{Larsson2004}).
-ORNs of the same type converge into the same glomeruli of antennal lobe in insects (or olfactory bulb in human)
+ORNs of the same type converge into the same glomeruli of antennal lobe in insects (or the olfactory bulb in human)
 %so that each glomerulus receives an amplified signal from only one type of OR
 ~\cite{root2007,Carey2011,Vosshall2000,Couto2005,fishilevich2005,gao2000,wang1998,mombaerts1996,vassar1994}.
 %That makes the olfactory bulb (or antennal lobe in insects) the target of methods like calcium imaging (eg. ~\cite{Silbering2012}), 
@@ -164,26 +164,26 @@ turin2015plausibility,block2015implausibility,vosshall2015laying}.
 The ORs are transmembrane proteins, 
 in insects they are ionotropic~\cite{Sato2008,Wicher2008,Nagel2011,Rong2011}, 
 their topology is different from vertebrates~\cite{Benton2006,Smart2008},
-and most of them function in presence of another common receptor, called Orco~\cite{Larsson2004}.
-In vertebrates, they are metabotropic receptors, they belong to the family of g-protein coupled receptor (GPCR)~\cite{Buck1991,niimura2009evolutionary}. 
+and most of them function in the presence of another common receptor, called Orco~\cite{Larsson2004}.
+Whereas in vertebrates, they are metabotropic receptors, that belong to the family of g-protein coupled receptor (GPCR)~\cite{Buck1991,niimura2009evolutionary}. 
 
 There are many similarities between the olfactory system of insects and vertebrates~\cite{Wilson2014,Kaupp2010}.
 Regardless of the signal transduction, 
-all ORs have the same function, they have a binding-pocket (also known as binding-cavity and binding-site),
+all ORs have the same function: they have a binding-pocket (also known as binding-cavity and binding-site),
 where odorants (ligands) bind to. 
 Binding to an odorant activates an OR and 
 the activated OR changes the potential of the cell, 
 directly (ionotropic in insects) or indirectly (metabotropic in vertebrates);
-Therefore, what we learn from olfactory system of \textit{Drosophila} can help us to decode human olfaction. 
+Therefore, what we learn from olfactory system of \textit{Drosophila} could help us to decode human olfaction. 
 
 %and it was assumed that insects use the same kind of signal transduction~\cite{Brody2000,Hill04102002}. 
 
 The amount of change in the membrane potential of an ORN depends on the number of activated ORs and the time that they remain activated,
 which are determined by various physio-chemical properties of the odorant and the OR~\cite{Turin,Araneda2000,Gabler2013,guerrieri2005,uchida2000}.
-One important factor is the relative size of the ligand and the OR's binding pocket, 
-it has been used in computational drug design as predictor of binding pocket for a given ligand~\cite{liang1998anatomy}. 
-Another factor is the flexibility of the binding pocket, 
-proteins are not rigid bodies,  
+One important factor is the relative size of the ligand and the OR's binding pocket. 
+This has been used in the computational drug design as a predictor of binding pocket for a given ligand~\cite{liang1998anatomy}. 
+Another factor is the flexibility of the binding pocket. 
+Proteins are not rigid bodies,  
 and they can change shape, 
 depending on the amino acids involved~\cite{Ramachandran,apostolakis1998docking,gunasekaran2007different}.
 
@@ -204,18 +204,18 @@ mutagenesis studies, heterologus expression studies, and homology modeling~\cite
 
 In this study, 
 we develop a mathematical framework to put the available experimental data in the best use and
-investigated the relation between molecular volumes of odorants and the responses of ORNs. 
+investigated the relation between molecular volume of odorants and the responses of ORNs. 
 Our results suggest that molecular volume is a considerable factor, 
 but not the only factor that determines the neural response of the ORNs.
 We predicted the {\it in-vivo} volume and flexibility of binding-pocket of ORs (supplemental file volume-profiles.csv), 
-by applying our mathematical method to neural data from DoOR database~\cite{Galizia2010}. 
-it is a well structured database that includes the neural responses of most ORs of \textit{Drosophila} to many odorants~\cite{Galizia2010}. 
+by applying our mathematical method to neural data from DoOR database~\cite{Galizia2010}, 
+which is a well structured database that includes the neural responses of most ORs of \textit{Drosophila} to many odorants~\cite{Galizia2010}. 
 This database aggregated data from many sources~\cite{Bruyne1999,Bruyne2001,Dobritsa2003,Goldman2005,Hallem2004,Hallem2006,
 Kreher2005,Kreher2008,Kwon2007,Pelz2006,Pelz2006,Schmuker2007,Stensmyr2003,
 Turner2009,VanderGoesvanNaters2007,Yao2005}.
 
 We suggested a functional relation between molecular volume and the neural responses, 
-we provided a methodology to estimate {\it molecular receptive range} or {\it tuning function} of ORs,
+we provided a methodology to estimate the {\it molecular receptive range} or {\it tuning function} of ORs,
 and then we predicted the structural properties of the binding-pocket of OR - the volume and the flexibility of binding-pocket.
 Our results may help to select odorants  for new experimental studies (supplemental file proposed-odorants.csv), 
 %may provide additional information about the structure of ORs to structural biologists, 
@@ -273,7 +273,7 @@ and may contribute to the study of olfactory coding by unmasking the effect of o
 	\label{fig:hist-volumes}
 \end{figure}
 %We studied the relation between neural responses and molecular volumes, 
-We took the neural data of DoOR 1.0 database \cite{Galizia2010}, hold out  the additional data of DoOR 2.0 as a test set \cite{muench2015door}. 
+We took the neural data of DoOR 1.0 database \cite{Galizia2010}, hold out the additional data of DoOR 2.0 as a test set \cite{muench2015door}. 
 We calculated molecular volume (supplemental file odorants.csv) using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
 We used  GNU R to analyze the data~\cite{Rlanguage}.
 
@@ -281,80 +281,80 @@ DoOR database includes an $N\times M$ matrix.
 Its elements, $r_{nm}$, are the response of neuron $n$ to odorant $m$. 
 This matrix is normalized between 0 and 1 so $0 \le r_{nm} \le 1$, where 1 is the strongest response.
 This matrix has many {\it Not Available} (NA) values, 
-and different neurons are excited by different set of odorants, 
-we took care of this by removing NAs from the summations and calculating $\sum_{m: r_{nm} \neq \text{NA}}$, 
+and different neurons are excited by different set of odorants. 
+We took care of this by removing NAs from the summations and calculating $\sum_{m: r_{nm} \neq \text{NA}}$, 
 but for brevity, we used the usual notation $\sum_m$.
 
-The response $r_{nm}$ may depends on the molecular volume of the odorant, $v_m$, 
+The response $r_{nm}$ may depend on the molecular volume of the odorant, $v_m$, 
 and other physio-chemical properties of the molecule $m$; 
-we separated the response $r_{nm}$ into two terms:
+thus we separated the response $r_{nm}$ into two terms:
 
 \begin{equation}
 	r_{nm} = f_n(v_m) \psi_{nm}.
 	\label{eqn:factors}
 \end{equation}
-The first term, $f_n(v_m)$, depended only on the molecular volume of odorants.
+The first term, $f_n(v_m)$, depends only on the molecular volume of odorants.
 The second term, the volume independent term $\psi_{nm}$, included every other influential properties of molecules, 
 but the molecular volume or any other properties that correlates to molecular volume (eg, molecular weight).
 Among all the molecular parameter that correlate with molecular volume, 
-we used molecular volume because it  fits to the acceptable picture of protein-ligand interaction (Fig. \ref{fig:binding-pocket}).
+we used molecular volume because it fits to the acceptable picture of protein-ligand interaction (Fig. \ref{fig:binding-pocket}).
 
 Both terms were characteristic of each OR, and they varied from OR to OR.
-In fact, the first term, $f_n(v)$, can be considered as the tuning curve of neuron $n$ in respect to the molecular volumes. 
-To keep the calculation simple, we approximated it with a Gaussian function,  
+In fact, the first term, $f_n(v)$, can be considered as the tuning curve of neuron $n$ with respect to the molecular volumes. 
+To keep the calculation simple, we approximate it with a Gaussian function,  
 
 \begin{equation}
 	\displaystyle f_n(v) = e^{-\frac{(v-v_n)^2}{2\sigma^2_n}}, 
 	\label{eqn:volume-dependence}
 \end{equation}
-where, $v_n$ was the preferred molecular volume of OR $n$ and $\sigma_n$ represented its flexibility. 
+where, $v_n$ is the preferred molecular volume of OR $n$ and $\sigma_n$ represents its flexibility. 
 In this work we wanted to estimate $v_n$ and $\sigma_n$. 
-To do so, first we calculated the response weighted average of molecular volumes, 
+To do so, first we calculate the response weighted average of molecular volumes, 
 $\frac{\sum_{m} v_m r_{nm}}{\sum_{m} r_{nm}}$ and then we use (\ref{eqn:factors}):
 
 \begin{equation}
 	\frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} = \frac{\displaystyle \sum_{m} v_m f_n(v_m) \psi_{nm}}{\displaystyle \sum_{m} f_n(v_m) \psi_{nm}}.
 	\label{eqn:sta}
 \end{equation}
-We approximated $\sum$ with $\int$, which is common in statistical physics:
+We approximate $\sum$ with $\int$, which is common in statistical physics:
 
 \begin{equation}
 	\sum_{m} \dots f_n(v_m) \psi_{nm} \approx  \langle \psi_{nm} \rangle_m \int_0^\infty \dots f_n(v) g(v)  dv. 
 	\label{eqn:sigma_to_int}
 \end{equation}
 In which, 
-$\langle \psi_{nm} \rangle_m$ denoted the average of $\psi_{nm}$ over all $m: r_{nm} \neq \text{NA}$. 
-We moved out of the integral for it was independent of $v$.
-Here $g(v)$ was the density of states, $g(v) dv$ indicated how many molecules have a molecular volume in the range of $v$ and $v+dv$.
+$\langle \psi_{nm} \rangle_m$ denotes the average of $\psi_{nm}$ over all $m: r_{nm} \neq \text{NA}$. 
+We moved it out of the integral as it is independent of $v$.
+Here $g(v)$ was the density of states, $g(v) dv$ indicate how many molecules have a molecular volume in the range of $v$ and $v+dv$.
 This function was approximated by a Gaussian function (Fig.~\ref{fig:hist-volumes}), 
 
 \begin{equation}
 	g(v) = e^{-\frac{(v- v_{g})^2}{2 \sigma_{g}^2}},
 	\label{eqn:hist-volumes}
 \end{equation}
-ideally, $g(v)$ must not depend on the OR $n$ for it is the property of ensemble of odorant molecules, not ORs. 
-But here, we had many missing values ($r_{nm} = NA$) that were not overlapping, 
-so we had to calculate $g(v)$ for each neuron separately; 
-Therefore, $v_{g_n}$ and $\sigma_{g_n}$ were the average and standard deviation of molecular volume while $r_{nm} \neq \text{NA}$.
-We rewritten equation (\ref{eqn:sta}) using equation (\ref{eqn:sigma_to_int}):
+ideally, $g(v)$ must not depend on the OR $n$ as it is the property of the ensemble of odorant molecules, not ORs. 
+But here, we have many missing values ($r_{nm} = NA$) that are not overlapping, 
+so we have to calculate $g(v)$ for each neuron separately; 
+Therefore, $v_{g_n}$ and $\sigma_{g_n}$ are the average and standard deviation of molecular volume while $r_{nm} \neq \text{NA}$.
+We have rewritten equation (\ref{eqn:sta}) using equation (\ref{eqn:sigma_to_int}):
 
 \begin{equation}
 	\frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} \approx \frac{\displaystyle \int v f_n(v) g_n(v) dv}{\displaystyle \int f_n(v) g_n(v) dv}.
 	\label{eqn:sta_int}
 \end{equation}
-We replaced the product of $f_n(v)$ and $g_n(v)$ in the above equation with $h_n(v) = f_n(v) g_n(v)$, to make a simpler form
+To make a simpler form we replace the product of $f_n(v)$ and $g_n(v)$ in the above equation with $h_n(v) = f_n(v) g_n(v)$.
 
 \begin{equation}
 	\frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} \approx \frac{\displaystyle \int_v v h_n(v) dv}{ \displaystyle \int_v  h_n(v) dv }.
 	\label{eqn:mean}
 \end{equation}
-The function $h_n(v)$ was a Gaussian function for it was the product of two Gaussian functions, 
+The function $h_n(v)$ is a Gaussian function as it is the product of two Gaussian functions, 
 
 \begin{equation}
 h_n(v) = e^{-\frac{(v-\mu_{h_n})^2}{2\sigma_{h_n}^2}}, 
 \end{equation}
-so the right hand side of equation \ref{eqn:mean} was nothing but $\mu_{h_n}$ and 
-in a similar way, we calculated $\sigma_{h_n}$ from the neural data
+so the right side of equation \ref{eqn:mean} was nothing but $\mu_{h_n}$ and 
+in a similar way, we calculate $\sigma_{h_n}$ from the neural data
 
 \begin{eqnarray}
 	\mu_{h_n} &\approx& \frac{\displaystyle \sum_{m} v_m r_{nm}}{\displaystyle \sum_{m} r_{nm}} \\
@@ -363,10 +363,10 @@ in a similar way, we calculated $\sigma_{h_n}$ from the neural data
 \end{eqnarray}
 
 
-We knew the mean, $v_{g_n}$, and standard deviation, $\sigma_{g_n}$, of $g_n(v)$ from the molecular volumes of the ensembles of odorants. 
-We calculated the mean $\mu_{h_n}$ and standard deviation $\sigma_{h_n}$ of $h_n(v)$ from the neural data.
-Using them, we calculated the mean $v_n$ and the standard deviation $\sigma_n$ of $f_n(v)$:
-first we calculated $\sigma_n$ from 
+We know the mean, $v_{g_n}$, and standard deviation, $\sigma_{g_n}$, of $g_n(v)$ from the molecular volumes of the ensembles of odorants. 
+We calculate the mean $\mu_{h_n}$ and standard deviation $\sigma_{h_n}$ of $h_n(v)$ from the neural data.
+Using them, we calculate the mean $v_n$ and the standard deviation $\sigma_n$ of $f_n(v)$:
+first we calculate $\sigma_n$ from 
 
 \begin{equation}
 	\frac{1}{\sigma_n^2} = \frac{1}{\sigma^2_{h_n}}  - \frac{1}{\sigma^2_{g_n}}
@@ -376,26 +376,26 @@ and then we calculated $v_n$:
 \begin{equation}
 	\frac{v_n}{\sigma_n^2}  =    \frac{\mu_{h_n}}{\sigma^2_{h_n}} - \frac{v_{g_n}}{\sigma^2_{g_n}}.
 \end{equation}
-The calculated $v_n$ and $\sigma_n$ were put in supplemental file volume-profiles.csv. 
-The resulting $f_n(v)$ were plotted over the actual data, for \numberofreceptors ORs (Fig.~\ref{fig:vol-res}),
+The calculated $v_n$ and $\sigma_n$ are in the supplemental file volume-profiles.csv. 
+The resulting $f_n(v)$ are plotted over the actual data, for \numberofreceptors ORs (Fig.~\ref{fig:vol-res}),
 in which p-values $<0.05$. 
 
 We calculated p-values by permutation test, shuffling the data $10^5$ times. 
 We shuffled the association between odorants and responses of a given OR,  
-and then check the null and alternative hypothesis. 
-The alternative hypothesis was
+and then checked the null and alternative hypothesis. 
+The alternative hypothesis is
 ``{\it The response of ORN depend on the molecular volume of odorants.}'', 
-which required  a finite value for $\sigma_n$, 
-then the null hypothesis was 
+which requires  a finite value for $\sigma_n$, 
+and the null hypothesis is 
 ``{\it The response of ORN is independent of molecular volume of odorants.}'',
-which required $\sigma_n \rightarrow \infty$, 
-so p-value was the probability of having $\sigma'_n\leq\sigma_n$, 
-where $\sigma_n$ was calculated from the original data, but $\sigma'_n$ was calculated using permuted version. 
+which requires $\sigma_n \rightarrow \infty$, 
+so p-value is the probability of having $\sigma'_n\leq\sigma_n$, 
+where $\sigma_n$ is calculated from the original data, but $\sigma'_n$ is calculated using permuted version. 
 
-We were testing a hypothesis on $\sim$60 ORs simultaneously (just 44 were present in DoOR 1.0). 
-If we had used a simple threshold of 0.05 for the p-value of each OR, we could had have many false positives. 
-To address this issue, multiple-comparison problem, 
-we used Bonferroni correction (we multiply p-values by 60). 
+We are testing a hypothesis on $\sim$60 ORs simultaneously (just 44 were present in DoOR 1.0). 
+If we had used a simple threshold of 0.05 for the p-value of each OR, we could have had many false positives. 
+To address this issue of multiple-comparison problem 
+we used Bonferroni correction (by multipling p-values by 60). 
 The problem with Bonferroni correction is that it may increases false negatives.
 This problem can be addressed using another method -- False Discovery Rate (FDR)--  that keeps the rate of false positive below a threshold \cite{benjamini1995controlling,shaffer1995multiple}.
 We used both methods -- Bonferroni and FDR, as well as no correction. We used the function p.adjust of GNU R to calculate the corrected p-values. 
@@ -403,9 +403,9 @@ The result were labeled accordingly in Fig.~\ref{fig:vol-res}.
 
 We also wanted to show the diversity of volume and flexibility of binding pocket among ORs.
 To estimate the p-values, 
-we took any pair of ORs that were sensitive to molecular volume (\numberofreceptors ORs),
+we took any pair of ORs that are sensitive to molecular volume (\numberofreceptors ORs),
 calculate their difference, 
-used a permutation test ($6\times10^4$ shuffles) and measured the probability of being different only by chance (Fig.~\ref{fig:p-values}).
+use a permutation test ($6\times10^4$ shuffles) and measure the probability of being different only by chance (Fig.~\ref{fig:p-values}).
 
 %Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
 
@@ -425,7 +425,7 @@ used a permutation test ($6\times10^4$ shuffles) and measured the probability of
 	\caption{Response of ORs  versus molecular volume of odorants (circles),  
 			the fitted functions $f_n(v)$ from Eq.~\ref{eqn:factors} (solid lines), 
 			and the error bars of the mean of $f_n(v)$ (red vertical lines), 
-			for \numberofreceptors ORs that their response showed significant (p-value $<0.05$) dependence to molecular volume. 
+			for \numberofreceptors ORs that their response showed significant (p-value $<0.05$) dependence to the molecular volume. 
 			Except \nocorrection (OR name in light gray), \fdr were significant according to FDR correction (OR names in gray) and 
 			\bonferroni were significant considering Bonferroni correction (OR names black).
 			The function $f_n(v)$ was calculated based on data from DoOR 1.0 (blue circles), 
@@ -455,7 +455,7 @@ used a permutation test ($6\times10^4$ shuffles) and measured the probability of
 	\includegraphics[width= 0.75 \textwidth]{pair-pval}
 	\caption{Pairs of ORs that differed significantly in their binding-pocket's volume (upper triangle) and flexibility (lower triangle).
 			All blue shades have p-value of less than 0.05, 
-			two darker shades have FDR corrected p-values of less than 0.05 and the darkest shade has Bonferroni corrected p-value of less than 0.05.}
+			two darker shades have FDR corrected p-values less than 0.05 and the darkest shade has Bonferroni corrected p-value less than 0.05.}
 	\label{fig:p-values}
 \end{figure}
 
@@ -463,7 +463,7 @@ used a permutation test ($6\times10^4$ shuffles) and measured the probability of
 %After calculating function $f_n(v)$ for each odorant receptor, we can calculate $\psi_{nm}$ of the equation \ref{eqn:factors}.
 %If $\psi_{nm}$ is independent of molecular volumes, it means that the assumptions where justified.
 
-The relation between molecular volumes and response of ORNs was evident (Fig.~\ref{fig:vol-res}). 
+The relation between the molecular volumes and the response of ORNs was evident (Fig.~\ref{fig:vol-res}). 
 The function $f_n(v)$ could be considered as the tuning curve of OR $n$ in response to molecular volumes (Fig.~\ref{fig:vol-res}). 
 Each OR had a preferred molecular volume $v_n$ and shows some flexibility $\sigma_n$. 
 The calculated $f_n(v)$s are in  Fig.~\ref{fig:vol-res}. 
@@ -482,8 +482,8 @@ and the rest (\nocorrection ORs, name in light gray),
 only satisfied the criteria of p-value $<0.05$, without any corrections.
 Considering the FDR correction, 
 more than half of available ORs in DoOR 1.0 (\fdr / 44) showed significant sensitivity toward molecular volumes. 
-The remain could be sensitive to molecular volume as well, 
-but the current evidence are not enough and more experiments are necessary. 
+The rest could be sensitive to molecular volume as well, 
+but the current evidence is not enough and more experiments are necessary. 
 
 \begin{figure}
 % do not touch this fig.
@@ -494,7 +494,7 @@ but the current evidence are not enough and more experiments are necessary.
 	Or82a confirmed our model with a Bonfrreni corrected p-value of 0.03 (right).}
 	\label{fig:Or82a}
 \end{figure}
-One interesting case in this regard was Or82a, that did not fit to our theory. 
+One interesting case in this regard was Or82a, that did not fit to our hypothesis. 
 It binds to Geranyl acetate much better than any other molecule. 
 When we removed Geranyl acetate from the data, suddenly Or82a became a perfect fit with a Bonferroni corrected p-value of 0.03 (Fig. \ref{fig:Or82a}). 
 This makes the underlying interaction between Geranyl acetate and Or82a, a special case that needs more investigations.
@@ -526,13 +526,13 @@ The union of these two set confirmed that 226 (p-value $<0.05$), 171 (FDR correc
 
 The diversity of ORs is important in perceiving the quality of smells. 
 In a hypothetical experiment, 
-assume that every characteristic of odorant molecules are the same but their molecular volume.
+assume that every characteristic of odorant molecules are the same except their molecular volume.
 If all ORs  have the same preferred volume and flexibility, 
-any change in the molecular volume will change only the intensity of smell not its quality.
+any change in the molecular volume will change only the intensity of smell and not its quality.
 Here we showed that ORs  had different preferred volumes and flexibilities, 
 so any change in the molecular volume of an odorant results in a different combinatorial encoding which affects the quality of perceived smell as well its intensity.
-This agreed with the work of M. Zarzo: larger molecules  smell better~\cite{zarzo2011}.
-That might describe the difference in the smell of methanol, ethanol, propanol and butanol. 
+This is in agreement with the work of M. Zarzo: larger molecules  smell better~\cite{zarzo2011},
+and might describe the differences in the smell of methanol, ethanol, propanol and butanol. 
 Methanol smells pungent, ethanol smells pleasant and winy, propanol and butanol smell like ethanol except butanol has a little banana like aroma.
 We suggested that the molecular volume affects the combinatorial encoding, 
 and the combinatorial code determines the quality of odorants.
@@ -545,13 +545,13 @@ may mask important relations between molecules and neural responses.
 When $f_n(v)$ is close to zero, 
 the value of $\psi_{nm}$ does not matter. 
 
-We predicted odorants with a molecular volume on the tails of $f_n(v)$ goes undetected, 
+We predicted that odorants with a molecular volume on the tails of $f_n(v)$ goes undetected, 
 regardless of any other physio-chemical properties that they may have. 
 This prediction can be confirmed in further experiments. 
 
 To better study $\psi_{nm}$ of an OR, 
 it is better to have many data points and those data points are better to be around the preferred volume of the OR.
-But this is not the case in current data. 
+But this is not the case in the current data. 
 For many ORs, 
 most data points are on the tails of $f_n(v)$, which is close to zero.
 We suggested the best selection of odorants for each of \numberofreceptors studied ORs 
@@ -567,23 +567,23 @@ saving time and expenses of future experiments.
 We also predicted some {\it in-vivo} structural aspects of  the binding-pocket of ORs:
 the preferred volume of each OR results from the volume of the binding-pocket,
 the flexibility of an OR results from the rigidity or flexibility of the binding-pocket; 
-%Therefore, our results provides information about both structural and dynamical properties of odorant receptors in Drosophila. 
+%Therefore, our results provide information about both structural and dynamical properties of odorant receptors in Drosophila. 
 These data added some constrains over the 3d structure of ORs, 
 which might help the prediction and calculation of 3d structure of these proteins. 
 
 The method of this work can be combined with mutagenesis as well. 
 Some genes of an OR are mutated, 
-then its response to a selection of molecules are measured and finally the preferred volume and flexibility are calculated.
+then their response to a selection of molecules are measured and finally the preferred volume and flexibility are calculated.
 In this way we can understand which amino acids of the OR contribute to the volume and flexibility of the binding-pocket, 
 as well as affecting the function of the ORs.
 
 In this work, we have overlooked many facts, 
 because the nature of the problem is inherently complex and otherwise would not be feasible to study. 
-There are many factors that affects the concentration of odorant molecules at the close to the receptors, 
+There are many factors that affects the concentration of odorant molecules close to the receptors, 
 like molecular mass, vapor pressure, solubility in water, sensillum lymph and its odorant binding proteins (lush) \cite{xu2005drosophila,gomez2013ligands}. 
 It is difficult to control them in the current experimental apparatus and they make the model very complex with many sets of parameters. 
-Using experimental paradigm like Luciferase Assay as used to study human olfactory systems \cite{mainland2015human}, 
-may provide valuable complementary information to our simple model. human
+Using experimental paradigm like Luciferase Assay has used to study human olfactory systems \cite{mainland2015human}, 
+may provide valuable complementary information to our simple model.
 We expect these factors have minimal effect on smaller molecules, 
 because they evaporate easily and solve in water well and they might not need the help of odorant binding protein, 
 so we can be confident about the lack of response to small molecules more than what we can say about larger molecules. 
