@@ -100,8 +100,8 @@ The affinity can reach its maximum if the molecular volume of an odorant matches
 and it drops to zero if the sizes are too different, 
 obscuring the effect of other molecular properties. 
 We formulated this hypothesis mathematically and verified it on the data of \textit{Drosophila}, 
-and predicted the volume and the structural flexibility of the binding-site of each receptor, 
-which are significantly different among receptors. 
+and predicted the volume and the structural flexibility of the binding-site of each odorant receptor, 
+which are significantly different among odorant receptors. 
 This provides a reason for the smell differences of similar molecules with different sizes. 
 \end{abstract}
 
@@ -113,12 +113,12 @@ This provides a reason for the smell differences of similar molecules with diffe
 \begin{figure}
 	\centering
 	\includegraphics[width=0.4 \textwidth]{binding-pocket-size-flex}
-	\caption{This figure shows different scenarios that may happen when an odorant molecule (ligand) binds to a receptor. 
+	\caption{This figure shows different scenarios that may happen when an odorant molecule (ligand) binds to an odorant receptor according to a coarse-grained model. 
 		The red disks  are odorant molecule, 
 		and the blue shapes are OR and binding-pocket.	
 		(top) From left to right, a mismatch because of small molecular volume, 
 		a perfect match and a mismatch because of large molecular volume.
-		(down) The flexibility of a receptor may compensate for the volume mismatches.
+		(down) The flexibility of an OR may compensate for the volume mismatches.
 		}
 	\label{fig:binding-pocket}
 \end{figure}
@@ -279,10 +279,10 @@ We calculated molecular volume (supplemental file odorants.csv) using a computat
 We used  GNU R to analyze the data~\cite{Rlanguage}.
 
 DoOR database includes an $N\times M$ matrix. 
-Its elements, $r_{nm}$, are the response of neuron $n$ to odorant $m$. 
+Its elements, $r_{nm}$, are the response of olfactory receptor neuron $n$ to odorant $m$. 
 This matrix is normalized between 0 and 1 so $0 \le r_{nm} \le 1$, where 1 is the strongest response.
 This matrix has many {\it Not Available} (NA) values, 
-and different neurons are excited by different set of odorants. 
+and different ORNs are excited by different set of odorants. 
 We took care of this by removing NAs from the summations and calculating $\sum_{m: r_{nm} \neq \text{NA}}$, 
 but for brevity, we used the usual notation $\sum_m$.
 
@@ -301,7 +301,7 @@ Among all the molecular parameter that correlate with molecular volume,
 we used molecular volume because it fits to the acceptable picture of protein-ligand interaction (Fig. \ref{fig:binding-pocket}).
 
 Both terms were characteristic of each OR, and they varied from OR to OR.
-In fact, the first term, $f_n(v)$, can be considered as the tuning curve of neuron $n$ with respect to the molecular volumes. 
+In fact, the first term, $f_n(v)$, can be considered as the tuning curve of olfactory receptor neuron $n$ with respect to the molecular volumes. 
 To keep the calculation simple, we approximate it with a Gaussian function,  
 
 \begin{equation}
@@ -335,7 +335,7 @@ This function was approximated by a Gaussian function (Fig.~\ref{fig:hist-volume
 \end{equation}
 ideally, $g(v)$ must not depend on the OR $n$ as it is the property of the ensemble of odorant molecules, not ORs. 
 But here, we have many missing values ($r_{nm} = NA$) that are not overlapping, 
-so we have to calculate $g(v)$ for each neuron separately; 
+so we have to calculate $g(v)$ for each ORN separately; 
 Therefore, $v_{g_n}$ and $\sigma_{g_n}$ are the average and standard deviation of molecular volume while $r_{nm} \neq \text{NA}$.
 We have rewritten equation (\ref{eqn:sta}) using equation (\ref{eqn:sigma_to_int}):
 
@@ -437,19 +437,20 @@ use a permutation test ($6\times10^4$ shuffles) and measure the probability of b
 
 \begin{figure}
 		\centering
-		\includegraphics[width= 0.85  \textwidth , angle=-90]{mean-std-vol-}
+		\includegraphics[height= 1  \textwidth , angle=-90]{mean-std-vol-}
 % ORs sort in preferd volumes
 % bracketed numbers show percent of odorants in DoOR2 to total of odorants which are tested for that OR in DoORs.
 %Stares Show obtained OR profile in DoOR2
 %there isnt any relation between flexibilty and preferd volume
 
-	\caption{The preferred volumes of \numberofreceptors OR, $v_n$ (top). 
-		and their flexibilities $\sigma_n$ (down). 
+	\caption{The preferred volumes of \numberofreceptors OR, $v_n$ (right). 
+		and their flexibilities $\sigma_n$ (left). 
 		The error bars were calculated using Jack-Knife method. 
 		Some ORs like Or59b, Or67a and  Or85a preferred smaller molecules, 
 		but some others like Or19a,  Or1a and  Or49a preferred larger molecules.
 		Some ORs like Or46a,  Or22b and Or30a were volume  selective, 
 		but some others like Or19a,  Or67b and  Or22a responded to broader range of molecular volumes.
+		Asterisks are updated results using DoOR 2.0.
 		}
 		\label{fig:preferred_volume}
 \end{figure}
