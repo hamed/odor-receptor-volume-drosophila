@@ -5,7 +5,7 @@
 % This is a simple template for a LaTeX document using the "article" class.
 % See "book", "report", "letter" for other types of document.
 
-\documentclass[11pt]{paper} % use larger type; default would be 10pt
+\documentclass[fleqn,10pt]{wlscirep} % use larger type; default would be 10pt
 
 \usepackage{lineno}
 
@@ -22,17 +22,17 @@
 % \geometry{margin=2in} % for example, change the margins to 2 inches all round
 % \geometry{landscape} % set up the page for landscape
 %   read geometry.pdf for detailed page layout information
-\usepackage{mathtools}
+%\usepackage{mathtools}
 \usepackage{graphicx} % support the \includegraphics command and options
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{wrapfig}
-\usepackage[leftcaption]{sidecap}
+%\usepackage{caption}
+%\usepackage{subcaption}
+%\usepackage{wrapfig}
+%\usepackage[leftcaption]{sidecap}
 
 \graphicspath{{./}{./fig/}}
 
-\usepackage[style=numeric-comp, sorting=none, url=false, isbn=false]{biblatex}
-\addbibresource{binding-pocket.bib}
+%\usepackage[style=numeric-comp, sorting=none, url=false, isbn=false]{biblatex}
+%\addbibresource{binding-pocket.bib}
 
 % \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
@@ -67,8 +67,20 @@
 %%% The "real" document content comes below...
 
 \title{Odorant receptors of \textit{Drosophila} are sensitive to molecular volume of odorants}
-\author{Majid Saberi \and Hamed Seyed-allaei\thanks{hamed@ipm.ir}}
-\institution{School of Cognitive Sciences, \\ Institute for Research in Fundamental Sciences (IPM), \\Tehran, Iran}
+
+
+\author[1]{Majid Saberi}
+\author[1,*]{Hamed Seyed-allaei}
+
+\affil[1]{School of Cognitive Sciences, Institute for Research in Fundamental Sciences (IPM), Tehran, Iran}
+
+\affil[*]{hamed@ipm.ir}
+
+
+
+
+%\author{Majid Saberi \and Hamed Seyed-allaei\thanks{hamed@ipm.ir}}
+%\institution{School of Cognitive Sciences, \\ Institute for Research in Fundamental Sciences (IPM), \\Tehran, Iran}
 %Olfactory System; Odorant Receptor; Chemical Range; G Protein-Coupled Receptors; Odor-Structure Relation;
 %Majid Saberi <majidsaberi048@gmail.com>
 %leslie.vosshall@rockefeller.edu
@@ -88,8 +100,6 @@
 
 %\linenumbers
 
-\maketitle
-
 \begin{abstract} 
 Which properties of a molecule define its odor? This is a basic question of olfaction, 
 yet to be answered. Olfactory system of \textit{Drosophila} has a repertoire of about 60 odorant receptors. 
@@ -105,6 +115,7 @@ which are significantly different among odorant receptors.
 This provides a reason for the smell differences of similar molecules with different sizes. 
 \end{abstract}
 
+\maketitle
 
 %\section*{Significance Statement}
 %We perceive wavelength of light as its colors and frequency of sound as its pitch. But we don’t know yet what properties of molecules are perceived as smell. In this work, for the first time, we showed that molecular volume of an odorant is an important factor in the fruit fly. It affects two dimensions of smell: its intensity (weak or strong) and its quality (sweet, floral, fruity or etc). The molecular volume could describe the difference in the smell of methanol and butanol. Methanol smells pungent while butanol smells winy with a tad of banana like aroma.
@@ -663,9 +674,9 @@ we are working to apply the same method to data of human olfactory receptors \ci
 We are especially grateful to B. N. Araabi, S. Aghvami, N. Doostani and Shima Seyed-allaei for the careful reading of the manuscript.
 %; and P. Carloni for the fruitful discussion.
 
-\printbibliography
+%\printbibliography
 
-%\bibliography{binding-pocket}
+\bibliography{binding-pocket}
 
 %\bibliographystyle{Science}
 
