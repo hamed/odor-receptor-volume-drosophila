@@ -58,6 +58,7 @@ ENTRY
     number
     organization
     pages
+    doi
     publisher
     school
     series
@@ -135,7 +136,9 @@ FUNCTION {new.sentence}
 FUNCTION {add.blank}
 {  " " * before.all 'output.state :=
 }
-
+FUNCTION {add.semicolon}
+{  "; " * before.all 'output.state :=
+}
 FUNCTION {date.block}
 {
   new.block
@@ -634,6 +637,12 @@ FUNCTION {format.url}
     { "" }
     { "\urlprefix\url{" url * "}" * }
   if$
+}
+FUNCTION {format.doi}
+{ doi empty$
+    { "" }
+    { add.semicolon "doi: " doi * "" * }
+  if$ 
 }
 
 STRINGS  { bibinfo}
@@ -1142,8 +1151,9 @@ FUNCTION {article}
       "journal" bibinfo.check
       emphasize
       "journal" output.check
-      add.blank
+      add.blank 
       format.vol.num.pages output
+      format.doi output
       format.date "year" output.check
     }
     { format.article.crossref output.nonnull
