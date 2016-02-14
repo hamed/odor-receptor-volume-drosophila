@@ -329,13 +329,15 @@ we used molecular volume because it fits to the acceptable picture of protein-li
 %% This can be changed. %%  https://bitbucket.org/allaei/odor-receptor-volume/issues/36/
 Both terms were characteristic of each OR, and they varied from OR to OR.
 In fact, the first term, $f_n(v)$, can be considered as the tuning curve of olfactory receptor neuron $n$ with respect to the molecular volumes. 
-To keep the calculation simple, we approximate it with a Gaussian function,  
-
+We approximate it with a Gaussian function,  
 \begin{equation}
 	\displaystyle f_n(v) = e^{-\frac{(v-v_n)^2}{2\sigma^2_n}}, 
 	\label{eqn:volume-dependence}
 \end{equation}
 where, $v_n$ is the preferred molecular volume of OR $n$ and $\sigma_n$ represents its flexibility. 
+We used a Gaussian function for the tuning curve, because (a) it is among the simplest form that can describe a preferred  volume and a flexibility, 
+(b) the mathematics is easy to follow and the final solution is simple.
+
 In this work we wanted to estimate $v_n$ and $\sigma_n$. 
 To do so, first we calculate the response weighted average of molecular volumes, 
 $\frac{\sum_{m} v_m r_{nm}}{\sum_{m} r_{nm}}$ and then we use (\ref{eqn:factors}):
@@ -612,6 +614,7 @@ then their response to a selection of molecules are measured and finally the pre
 In this way we can understand which amino acids of the OR contribute to the volume and flexibility of the binding-pocket, 
 as well as affecting the function of the ORs.
 
+%% This can be changed. %%  https://bitbucket.org/allaei/odor-receptor-volume/issues/36/
 In this work, we have excluded many factors, 
 because the nature of the problem is inherently complex and otherwise would not be feasible to study. 
 There are many factors that affects the concentration of odorant molecules close to the receptors, 
@@ -640,6 +643,7 @@ so we can be confident about the lack of response to small molecules more than w
 
 \section*{Conclusion}
 
+%%% 
 We showed that molecular volume was an important factor, 
 but not the only one that determined the response of olfactory receptor neurons (ORNs). 
 
