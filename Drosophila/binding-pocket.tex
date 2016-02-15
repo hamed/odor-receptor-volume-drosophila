@@ -1,75 +1,23 @@
 % !TEX TS-program = pdflatex
-%% !TEX encoding = UTF-8 Unicode
+% !TEX encoding = UTF-8 Unicode
 % !TEX spellcheck = en_US
-
-% This is a simple template for a LaTeX document using the "article" class.
-% See "book", "report", "letter" for other types of document.
 
 \documentclass[fleqn,10pt]{wlscirep} % use larger type; default would be 10pt
 
 \usepackage{lineno}
-%\usepackage{natbib,hyperref}
 \usepackage{doi}
 
 \usepackage{setspace}
-%\doublespacing
+\doublespacing
 
-%%% Examples of Article customizations
-% These packages are optional, depending whether you want the features they provide.
-% See the LaTeX Companion or other references for full information.
-
-%%% PAGE DIMENSIONS
-%\usepackage{geometry} % to change the page dimensions
-%\geometry{a4paper} % or letterpaper (US) or a5paper or....
-% \geometry{margin=2in} % for example, change the margins to 2 inches all round
-% \geometry{landscape} % set up the page for landscape
-%   read geometry.pdf for detailed page layout information
-%\usepackage{mathtools}
-\usepackage{graphicx} % support the \includegraphics command and options
-%\usepackage{caption}
-%\usepackage{subcaption}
-%\usepackage{wrapfig}
-%\usepackage[leftcaption]{sidecap}
+\usepackage{graphicx}
 
 \graphicspath{{./}{./fig/}}
 
 %\usepackage[style=numeric-comp, sorting=none, url=false, isbn=false]{biblatex}
 %\addbibresource{binding-pocket.bib}
 
-% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
-
-%%% PACKAGES
-%\usepackage{booktabs} % for much better looking tables
-%\usepackage{array} % for better arrays (eg matrices) in maths
-%\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
-%\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
-%\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
-% These packages are all incorporated in the memoir class to one degree or another...
-
-%%% HEADERS & FOOTERS
-%\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
-%\pagestyle{fancy} % options: empty , plain , fancy
-%\renewcommand{\headrulewidth}{0pt} % customise the layout...
-%\lhead{}\chead{}\rhead{}
-%\lfoot{}\cfoot{\thepage}\rfoot{}
-
-%%% SECTION TITLE APPEARANCE
-%\usepackage{sectsty}
-%\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
-% (This matches ConTeXt defaults)
-
-%%% ToC (table of contents) APPEARANCE
-%\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
-%\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
-%\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
-%\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
-
-%%% END Article customizations
-
-%%% The "real" document content comes below...
-
 \title{Odorant receptors of \textit{Drosophila} are sensitive to molecular volume of odorants}
-
 
 \author[1]{Majid Saberi}
 \author[1,*]{Hamed Seyed-allaei}
@@ -78,20 +26,6 @@
 
 \affil[*]{hamed@ipm.ir}
 
-
-
-
-%\author{Majid Saberi \and Hamed Seyed-allaei\thanks{hamed@ipm.ir}}
-%\institution{School of Cognitive Sciences, \\ Institute for Research in Fundamental Sciences (IPM), \\Tehran, Iran}
-%Olfactory System; Odorant Receptor; Chemical Range; G Protein-Coupled Receptors; Odor-Structure Relation;
-%Majid Saberi <majidsaberi048@gmail.com>
-%leslie.vosshall@rockefeller.edu
-%giovanni.galizia@uni-konstanz.de
-%m.schmuker@biomachinelearning.net Michael Schmuker
-
-%\date{} % Activate to display a given date or no date (if empty),
-         % otherwise the current date is printed 
-
 \newcommand{\numberofreceptors}{ 28 }
 \newcommand{\bonferroni}{ 11 }
 \newcommand{\fdr}{ 26 }
@@ -99,8 +33,7 @@
 
 \begin{document}
 
-
-%\linenumbers
+\linenumbers
 
 \begin{abstract} 
 Which properties of a molecule define its odor? This is a basic question of olfaction, 
@@ -119,14 +52,8 @@ This provides a reason for the smell differences of similar molecules with diffe
 
 \flushbottom
 \maketitle
-% * <john.hammersley@gmail.com> 2015-02-09T12:07:31.197Z:
-%
-%  Click the title above to edit the author information and abstract
-%
+
 \thispagestyle{empty}
-
-
-
 
 %\section*{Significance Statement}
 %We perceive wavelength of light as its colors and frequency of sound as its pitch. But we don’t know yet what properties of molecules are perceived as smell. In this work, for the first time, we showed that molecular volume of an odorant is an important factor in the fruit fly. It affects two dimensions of smell: its intensity (weak or strong) and its quality (sweet, floral, fruity or etc). The molecular volume could describe the difference in the smell of methanol and butanol. Methanol smells pungent while butanol smells winy with a tad of banana like aroma.
