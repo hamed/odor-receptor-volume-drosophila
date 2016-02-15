@@ -621,26 +621,28 @@ as well as affecting the function of the ORs.
 %% This can be changed. %%  https://bitbucket.org/allaei/odor-receptor-volume/issues/36/
 In this work, we have excluded many factors, 
 because the nature of the problem is inherently complex and otherwise would not be feasible to study. 
-There are many factors that affects the concentration of odorant molecules close to the receptors, 
-like molecular mass, vapor pressure, solubility in water, sensillum lymph and its odorant binding proteins (LUSH) \cite{xu2005drosophila,gomez2013ligands}. 
-It is difficult to control them in the current experimental apparatus, the model will be very complex with many sets of parameters. 
-For example just puffing at the same dilution does not guarantee equal concentrations at the sensilla, because 
-(a) some of the mists might directly hit the sensilla, 
-(b) the concentration in air depends on the vapor pressure,
-(c) The concentration in lymph depends water solubility of odorant, and  
-(d) odorant binding-proteins may affect the process. 
-To make the matter even more complicated, 
-the effect of vapor pressure is not linear. 
+There are many factors that affects the concentration of odorant molecules at the receptors, 
+like molecular mass, the method of mixing odorant and air, vapor pressure, solubility in water, sensillum lymph and odorant binding proteins (LUSH) \cite{xu2005drosophila,gomez2013ligands}. 
+It is difficult to control them in the current experimental apparatus, 
+the model will be very complex with many sets of parameters. 
+
+If we puff an odorant into the air, we will have a mixture of air, vapor and mist, 
+the mixture gets to sensilla, 
+mixes with sensillum lymph, 
+and may get a ride from odorant binding proteins and finally reaches to receptors. 
+Two important parameters in this process are vapor pressure and water solubility. 
 Vapor pressure puts an upper limit on the concentration of the vapor of a liquid. 
-If we are far from that concentration, 
-then we can neglect the effect of vapor pressure, 
-if we are close to that concentration, 
-then the vapor pressure is very important. 
+Water solubility puts an upper bound on how much of an odrant can dissolve in water. 
+Both are nonlinear, if we are at low concentrations, 
+then we can neglect the effect of vapor pressure or water solubility, 
+if we are close to the concentrations, 
+then the vapor pressure or solubility in water is very important. 
 We expect these factors have minimal effect on smaller molecules, 
 because they evaporate easily and solve in water well and they might not need the help of odorant binding protein, 
 so we can be confident about the lack of response to small molecules more than what we can say about larger molecules. 
 Using experimental paradigm like Luciferase Assay \cite{mainland2015human}, 
-may provide valuable complementary information to our simple model.
+may provide valuable complementary information to our simple model, 
+in this setting the concentrations are accurate but the experiment is {\it in-vitro}. 
 
 \begin{figure}
 \centering
