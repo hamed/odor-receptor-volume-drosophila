@@ -2,7 +2,7 @@
 % !TEX encoding = UTF-8 Unicode
 % !TEX spellcheck = en_US
 
-\documentclass[fleqn,10pt]{wlscirep} % use larger type; default would be 10pt
+\documentclass[fleqn,11pt]{wlscirep}
 
 \usepackage{lineno}
 \usepackage{doi}
@@ -13,9 +13,6 @@
 \usepackage{graphicx}
 
 \graphicspath{{./}{./fig/}}
-
-%\usepackage[style=numeric-comp, sorting=none, url=false, isbn=false]{biblatex}
-%\addbibresource{binding-pocket.bib}
 
 \title{Odorant receptors of \textit{Drosophila} are sensitive to molecular volume of odorants}
 
@@ -56,7 +53,11 @@ This provides a reason for the smell differences of similar molecules with diffe
 \thispagestyle{empty}
 
 %\section*{Significance Statement}
-%We perceive wavelength of light as its colors and frequency of sound as its pitch. But we don’t know yet what properties of molecules are perceived as smell. In this work, for the first time, we showed that molecular volume of an odorant is an important factor in the fruit fly. It affects two dimensions of smell: its intensity (weak or strong) and its quality (sweet, floral, fruity or etc). The molecular volume could describe the difference in the smell of methanol and butanol. Methanol smells pungent while butanol smells winy with a tad of banana like aroma.
+%We perceive wavelength of light as its colors and frequency of sound as its pitch. But we don’t know yet what properties of a molecule are perceived as its smell. 
+%In this work, for the first time, we showed that molecular volume of an odorant is an important factor in the fruit fly. 
+%It affects two dimensions of smell: its intensity (weak or strong) and its quality (sweet, floral, fruity or etc). 
+%The molecular volume could describe the difference in the smell of methanol and butanol. 
+%Methanol smells pungent while butanol smells winy with a tad of banana like aroma.
 
 \section*{Introduction}
 \begin{figure}
@@ -72,34 +73,15 @@ This provides a reason for the smell differences of similar molecules with diffe
 	\label{fig:binding-pocket}
 \end{figure}
 
-%Survival of many species depends on their olfactory system. 
-%They use it  to find food, 
-%avoid poison, 
-%escape from danger, 
-%mate, 
-%and bind to their offspring.
-%An olfactory system detects volatile chemicals in the surrounding, 
-%encodes the results and transmit them to limbic system and cortex.
-
 We know that which properties of the light are measured by our eyes and how our eyes do that. 
 That knowledge assisted the production of cameras and displays. 
 Unfortunately we do not have the same knowledge in olfaction, 
 we do not know the relation between the stimuli --molecular properties-- and sensory experiences --the quality of smells.  
 
-%Molecules of a volatile material evaporates into air, 
-%the concentration of the vapor depends on the vapor pressure of the material and its temperature, 
-%the vapor reaches sensilla of the insect (epithelium in human), 
-%depending on their solubility in water, they enter sensillum lymph (mucosa in human), 
-%and the odorant binding protein may also help them to reach odorant receptor neurons (ORNs) and bind to their odorant receptors (ORs). 
-
-olfactory receptor neurons (ORNs) are  the front end of the olfactory system.
+Olfactory receptor neurons (ORNs) are  the front end of the olfactory system.
 Each ORN expresses only one kind of OR. 
-% (in insects many are co-expressed with Orco \cite{Larsson2004}).
 ORNs of the same type converge into the same glomeruli of antennal lobe in insects (or the olfactory bulb in human)
-%so that each glomerulus receives an amplified signal from only one type of OR
 ~\cite{root2007,Carey2011,Vosshall2000,Couto2005,fishilevich2005,gao2000,wang1998,mombaerts1996,vassar1994}.
-%That makes the olfactory bulb (or antennal lobe in insects) the target of methods like calcium imaging (eg. ~\cite{Silbering2012}), 
-%whereas electro-physiological studies directly target olfactory receptor neurons (eg.~\cite{Benton2010}). 
 
 The olfactory system uses a combinatorial code: 
 unlike many other receptors which are activated by only one specific ligand -- a neurotransmitter or a hormone,
@@ -588,7 +570,6 @@ in this setting the concentrations are accurate but the experiment is {\it in-vi
 
 \section*{Conclusion}
 
-%%% 
 We showed that molecular volume was an important factor, 
 but not the only one that determined the response of olfactory receptor neurons (ORNs). 
 
@@ -617,33 +598,13 @@ Although this work was on the data of \textit{Drosophila},
 we expect that the general principles and methodologies of this work hold for vertebrates as well, 
 we are working to apply the same method to data of human olfactory receptors \cite{mainland2015human}.
 
-%There are two main assumption in this work: 
-%First we assumed that the response of an OR could be factorized into two terms, 
-%according to (\ref{eqn:factors}).
-%Second, we assumed that the volume dependence factor $f_n(v_m)$ in (\ref{eqn:factors}) 
-%had a Gaussian form (Eq. \ref{eqn:volume-dependence}).
-%Considering the physics and chemistry behind the binding-process (Fig. \ref{fig:binding-pocket}), 
-%and the neural responses (Fig. \ref{fig:vol-res}), 
-%these assumptions were logical. n
-
-
-%Our work can be improved in many ways, we can consider the anisotropy of molecular shape, and we can improve the approximation of $f_n(v)$. 
-
-%Molecules have complex shapes, 
-%in this work we have used the simplest possible approximation, 
-%we approximated a molecule with a sphere, 
-%kept only its volume and discarded any other spatial complexity. 
-%This can be improved by approximating a molecule with an ellipsoid, 
-%In this way more spatial details will be taken into account. 
 
 \section*{Acknowledgments}
 We are especially grateful to B. N. Araabi, S. Aghvami, N. Doostani and Shima Seyed-allaei for the careful reading of the manuscript.
-%; and P. Carloni for the fruitful discussion.
 
 %\printbibliography
 
 \bibliography{binding-pocket}
-
 
 \section*{Contributions}
 
@@ -651,6 +612,5 @@ M.S. and H.S. equally contributed to the design of the study. H.S. developed the
 
 \section*{Competing interests}
 The authors declare no competing financial interests.
-
 
 \end{document}
