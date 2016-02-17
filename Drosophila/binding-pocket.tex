@@ -109,8 +109,6 @@ the activated OR changes the potential of the cell,
 directly (ionotropic in insects) or indirectly (metabotropic in vertebrates);
 Therefore, what we learn from olfactory system of \textit{Drosophila} could help us to decode human olfaction. 
 
-%and it was assumed that insects use the same kind of signal transduction~\cite{Brody2000,Hill04102002}. 
-
 The amount of change in the membrane potential of an ORN depends on the number of activated ORs and the time that they remain activated,
 which are determined by various physio-chemical properties of the odorant and the OR~\cite{Turin,Araneda2000,Gabler2013,guerrieri2005,uchida2000}.
 One important factor is the relative size of the ligand and the OR's binding pocket. 
@@ -120,13 +118,11 @@ Proteins are not rigid bodies,
 and they can change shape, 
 depending on the amino acids involved~\cite{Ramachandran,apostolakis1998docking,gunasekaran2007different}.
 
-%% This can be changed. %%  https://bitbucket.org/allaei/odor-receptor-volume/issues/36/
 Therefore, here we focused on the volume and the flexibility of the binding-pocket.
 The molecular volume of a ligand should match the dimensions of the binding-pocket of the OR,
 then it fits into the binding-pocket of the OR and triggers the signal transduction. 
 Any mismatch in the volume will decrease the neural responses, 
 on the other hand the flexibility of the binding-pocket can compensate for the volume mismatch (Fig. \ref{fig:binding-pocket}).
-%%
 
 We could know the volume and flexibility of the binding-pocket, 
 if we knew its three dimensional structure. 
@@ -153,48 +149,27 @@ We suggested a functional relation between molecular volume and the neural respo
 we provided a methodology to estimate the {\it molecular receptive range} or {\it tuning function} of ORs,
 and then we predicted the structural properties of the binding-pocket of OR - the volume and the flexibility of binding-pocket.
 Our results may help to select odorants  for new experimental studies (supplemental file proposed-odorants.csv), 
-%may provide additional information about the structure of ORs to structural biologists, 
 and may contribute to the study of olfactory coding by unmasking the effect of other possible factors.
 
-%%
-%There are many studies that tries to connect physio-chemical properties of molecules to their perceived smells, like the current work, which studies the effect of molecular volume of odorants on the response of odorant receptors.
-
-%The olfactory system of insects are similar to the olfactory system of vertebrates in many ways ...  However, there are also differences .... 
-
 %Some receptors respond to few molecules, some response to many.
-
 %Insects receptors neurons show spontaneos activity of 8 Hz.
-
 %Drosophila's odorant receptors are ionotropic. They may be metabotropic. It is under debate.
-
 % They have seven trans-membrane domains. They need Or83b to work. 
 % they may construct a complex that work as a cation channel or Or83b functions as cation channel and collaborte with odorant receptor.
-
 % odorant receptor are presents in other organs like kindny ans sperms.
-
 %chemical receptory range.
-
 %in GPCR odorant interact with helix 2,7
 %2-58 candidate residues.
-
 %Drosophila about 60 receptors, mamals 300-1300 receptors. 
-
 %In low concentraiotn the response is narrow. In high concentration the response is broad.
-
 %OR67d Pheremone. 
 %Odor prediciton from the shape.
 %Olfactory white.
-
-
 %we show that the Drosophila melanogaster male-specific pheromone 11-cis-vaccenyl acetate (cVA) acts through the receptor Or67d to regulate both male and female mating behaviour. ~\cite{Kurtovic2007}
 %we show that a Drosophila melanogaster CD36 homologue, Sensory neuron membrane protein (SNMP), is expressed in a population of olfactory sensory neurons (OSNs) implicated in pheromone detection.~\cite{Benton2007}
- 
 %we find that Drosophila ORs and OR83b adopt a novel membrane topology with their N-termini and the most conserved loops in the cytoplasm.~\cite{Benton2006}
-
 %We find that major components of olfaction, including olfactory receptors (ORs), olfactory-related adenylate cyclase (AC3) and the olfactory G protein (G olf), are expressed in the kidney.~\cite{Pluznick2009}
- 
 %Most Drosophila olfactory neurons express two types of odorant receptor genes: Or83b, a broadly expressed receptor of unknown function, and one or more members of a family of 61 selectively expressed receptors.~\cite{Larsson2004}
- 
 %Humans can discriminate several million different colors and almost half a million different tones,On the basis of the results of psychophysical testing, we calculated that humans can discriminate at least 1 trillion olfactory stimuli.~\cite{Bushdid2014}
 
 \section*{Material and methods}
@@ -202,12 +177,10 @@ and may contribute to the study of olfactory coding by unmasking the effect of o
 	\centering
 	\includegraphics[width=0.5 \textwidth]{hist-volumes}
 	\caption{Density function of molecular volumes $g(v)$, considering all molecules of DoOR database. 
-		%The actual density function of molecular of volumes in each experiment, $g(v)$, might be slightly different  because each experiment uses a different subset of molecules. 
-		The solid line is a Gaussian fit (Eq. \ref{eqn:hist-volumes}) and the dashed line shows the median, 
-		which is slightly different from  the mean.}
+	The solid line is a Gaussian fit (Eq. \ref{eqn:hist-volumes}) and the dashed line shows the median, 
+	which is slightly different from  the mean.}
 	\label{fig:hist-volumes}
 \end{figure}
-%We studied the relation between neural responses and molecular volumes, 
 We took the neural data of DoOR 1.0 database \cite{Galizia2010}, hold out the additional data of DoOR 2.0 as a test set \cite{muench2015door,
 de2010,dweck2015,dweck2013,marshall2010,montague2011,Gabler2013}. 
 We calculated molecular volume (supplemental file odorants.csv) using a computational chemistry software -- VEGA ZZ~\cite{Pedretti2004}. 
@@ -358,16 +331,8 @@ use a permutation test ($6\times10^4$ shuffles) and measure the probability of b
 \section*{Results and discussions}
 \begin{figure}
 	\centering
-%	\begin{subfigure}[b]{\textwidth}
 		\includegraphics[width= \textwidth]{vol-res-}
-		%\caption{}
 		\label{fig:vol-res:all}		
-%	\end{subfigure}
-%	\begin{subfigure}[b]{0.75 \textwidth}
-%		\includegraphics[width= \textwidth]{fig/vol-res-Or35a}
-%		\caption{}	
-%		\label{fig:vol-res:one}	
-%	\end{subfigure}
 	\caption{Response of ORs  versus molecular volume of odorants (circles),  
 			the fitted functions $f_n(v)$ from Eq.~\ref{eqn:factors} (solid lines), 
 			and the error bars of the mean of $f_n(v)$ (red vertical lines), 
@@ -383,11 +348,6 @@ use a permutation test ($6\times10^4$ shuffles) and measure the probability of b
 \begin{figure}
 		\centering
 		\includegraphics[height= 1  \textwidth , angle=-90]{mean-std-vol-}
-% ORs sort in preferd volumes
-% bracketed numbers show percent of odorants in DoOR2 to total of odorants which are tested for that OR in DoORs.
-%Stares Show obtained OR profile in DoOR2
-%there isnt any relation between flexibilty and preferd volume
-
 	\caption{The preferred volumes of \numberofreceptors OR, $v_n$ (right). 
 		and their flexibilities $\sigma_n$ (left). 
 		The error bars were calculated using Jack-Knife method. 
@@ -395,14 +355,14 @@ use a permutation test ($6\times10^4$ shuffles) and measure the probability of b
 		but some others like Or19a,  Or1a and  Or49a preferred larger molecules.
 		Some ORs like Or46a,  Or22b and Or30a were volume  selective, 
 		but some others like Or19a,  Or67b and  Or22a responded to broader range of molecular volumes.
-		Asterisks are updated results using DoOR 2.0.
+		Asterisks are updated results using DoOR 2.0, 
+		and the numbers in (\dots) show the percentage of DoOR 2.0 to the total data for each receptor.
 		}
 		\label{fig:preferred_volume}
 \end{figure}
 
 
 \begin{figure}
-% do not touch this fig.
 	\centering
 	\includegraphics[width= 0.75 \textwidth]{pair-pval}
 	\caption{Pairs of ORs that differed significantly in their binding-pocket's volume (upper triangle) and flexibility (lower triangle).
