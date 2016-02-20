@@ -52,12 +52,12 @@ This provides a reason for the smell differences of similar molecules with diffe
 
 \thispagestyle{empty}
 
-%\section*{Significance Statement}
-%We perceive wavelength of light as its colors and frequency of sound as its pitch. But we don’t know yet what properties of a molecule are perceived as its smell. 
-%In this work, for the first time, we showed that molecular volume of an odorant is an important factor in the fruit fly. 
-%It affects two dimensions of smell: its intensity (weak or strong) and its quality (sweet, floral, fruity or etc). 
-%The molecular volume could describe the difference in the smell of methanol and butanol. 
-%Methanol smells pungent while butanol smells winy with a tad of banana like aroma.
+\section*{Significance Statement}
+We perceive wavelength of light as its colors and frequency of sound as its pitch. But we don’t know yet what properties of a molecule are perceived as its smell. 
+In this work, for the first time, we showed that molecular volume of an odorant is an important factor in the fruit fly. 
+It affects two dimensions of smell: its intensity (weak or strong) and its quality (sweet, floral, fruity or etc). 
+The molecular volume could describe the difference in the smell of methanol and butanol. 
+Methanol smells pungent while butanol smells winy with a tad of banana like aroma.
 
 \section*{Introduction}
 \begin{figure}
@@ -326,8 +326,6 @@ we took any pair of ORs that are sensitive to molecular volume (\numberofrecepto
 calculate their difference, 
 use a permutation test ($6\times10^4$ shuffles) and measure the probability of being different only by chance (Fig.~\ref{fig:p-values}).
 
-%Now we know the preferred volume $v_n$ of each receptor and also its flexibility $\sigma_n$.
-
 \section*{Results and discussions}
 \begin{figure}
 	\centering
@@ -361,7 +359,6 @@ use a permutation test ($6\times10^4$ shuffles) and measure the probability of b
 		\label{fig:preferred_volume}
 \end{figure}
 
-
 \begin{figure}
 	\centering
 	\includegraphics[width= 0.75 \textwidth]{pair-pval}
@@ -370,10 +367,6 @@ use a permutation test ($6\times10^4$ shuffles) and measure the probability of b
 			two darker shades have FDR corrected p-values less than 0.05 and the darkest shade has Bonferroni corrected p-value less than 0.05.}
 	\label{fig:p-values}
 \end{figure}
-
-%but, to be sure, we also put them in a test. 
-%After calculating function $f_n(v)$ for each odorant receptor, we can calculate $\psi_{nm}$ of the equation \ref{eqn:factors}.
-%If $\psi_{nm}$ is independent of molecular volumes, it means that the assumptions where justified.
 
 The relation between the molecular volumes and the response of ORNs was evident (Fig.~\ref{fig:vol-res}). 
 The function $f_n(v)$ could be considered as the tuning curve of OR $n$ in response to molecular volumes (Fig.~\ref{fig:vol-res}). 
@@ -386,7 +379,6 @@ The flexibility of a receptor may affect the broadness of it tuning curve,
 but we did not see any significant relation, 
 using three definition of broadness: depth of selectivity, breadth of selectivity and kurtosis \cite{moody1998model,freedman2006experience,muench2015door}.
 
-
 From the results of \numberofreceptors ORs, 
 \bonferroni of them were significant according to Bonferroni correction (OR name in black), 
 \fdr of them were significant according to FDR correction (OR name in gray), 
@@ -398,7 +390,6 @@ The rest could be sensitive to molecular volume as well,
 but the current evidence is not enough and more experiments are necessary. 
 
 \begin{figure}
-% do not touch this fig.
 	\centering
 	\includegraphics[width= 0.75 \textwidth]{vol-res-Or82a.eps}
 	\caption{The response of Or82a to odorants.  Geranyl acetate (the outlier) did not confirm our theory with a p-value of 0.55 (left), 
@@ -411,17 +402,6 @@ It binds to Geranyl acetate much better than any other molecule.
 When we removed Geranyl acetate from the data, suddenly Or82a became a perfect fit with a Bonferroni corrected p-value of 0.03 (Fig. \ref{fig:Or82a}). 
 This makes the underlying interaction between Geranyl acetate and Or82a, a special case that needs more investigations.
 
-%\begin{table}
-%\begin{center}
-%    \begin{tabular}{ | l | l | l |l |}
-%    \hline
-%     &  $p_{value} < 0.05$ & FDR & Bonferroni \\ \hline
-%     {\small Receptors are sensitive to molecular volume} &  28 &  26 & 11\\ 
-%     $v_{n_1} = v_{n_2}$&  21 & 23 & 38\\ \hline
-%    \end{tabular}
-%\end{center}
-%\caption{Times that the null hypothesis has been rejected, according to different method}
-%\end{table}
 The parameters of $f_n(v)$, $v_n$ and $\sigma_n$ are in Fig. \ref{fig:preferred_volume}.
 Figure \ref{fig:preferred_volume} demonstrate that the molecular volume preference of ORs were different (right). 
 and the flexibility of ORs were also different (left).
@@ -469,12 +449,6 @@ most data points are on the tails of $f_n(v)$, which is close to zero.
 We suggested the best selection of odorants for each of \numberofreceptors studied ORs 
 (see Venn diagram in Fig.~\ref{fig:odorant-suggest} and supplemental file proposed-odorants.csv), 
 saving time and expenses of future experiments. 
-
-%After gathering enough data, 
-%by considering the effect of molecular volume on the response of odorant receptor neurons, 
-%one might discover more subtle dependence between other molecular features and neural responses, 
-%by investigating $\psi_{nm}$, 
-%which otherwise would be masked by this non-linear relation $f_n(v)$.
 
 We also predicted some {\it in-vivo} structural aspects of  the binding-pocket of ORs:
 the preferred volume of each OR results from the volume of the binding-pocket,
@@ -563,8 +537,6 @@ we are working to apply the same method to data of human olfactory receptors \ci
 
 \section*{Acknowledgments}
 We are especially grateful to B. N. Araabi, S. Aghvami, N. Doostani and Shima Seyed-allaei for the careful reading of the manuscript.
-
-%\printbibliography
 
 \bibliography{binding-pocket}
 
